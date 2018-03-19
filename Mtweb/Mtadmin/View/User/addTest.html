@@ -1,0 +1,18 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>添加测试号</h2>
+	</div>
+	
+	<div>
+        <form action="{:U()}" method="post" class="form-horizontal">
+    		<div id="first">
+                请输入用户id:&nbsp;<input id="uid" type="text" value="" name="uid" placeholder="用户ID"/>
+            </div>
+            <div>&nbsp;&nbsp;</div>
+            <button type="submit" id="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">添 加</button>
+        </form>
+    </div>
+    <br>
+</block>

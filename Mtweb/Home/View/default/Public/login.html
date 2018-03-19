@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+        <link rel="stylesheet" type="text/css" href="__CSS__/login.css" />
+        <script type="text/javascript" src="__JS__/new_index/jquery.min.js"></script>
+        <style >
+        	.login-from p{
+        		color: #1D98F6;
+        	}
+        	
+        	@media (max-width: 750px){
+        		footer {
+        			margin-top: 0rem;
+        		}
+                
+        	}
+        </style>
+    </head>
+    <body>
+        <div class="page-content">
+            <div class="login-box">
+                <a class="login-box" href="#"><img src="__IMG__/new_index/hdt-logo.png"  alt="" /></a>
+            </div>
+            
+            <div class="text_middle">
+            	
+            </div>
+            
+            <div class="login-from">
+                <div class="login">
+                	<p>互动力是(基于区块链)去中心化的应用社区。根据智能合约对用户有效的互动行为进行奖励，发放任务通行证。互动力将应用开发者与用户整合在一个去中心化社区。在一个自治社区内，充分激发用户与应用开发者的价值共创。</p>
+                    <label for="phone">
+                    <!--<if condition="$lang eq 1">
+                        请输入你的手机号
+                    <else/>
+                        Enter your phone number
+                    </if>-->
+                   	请输入你的手机号
+                    </label>
+                    <input  class="hdt-input" type="text" name="username" id="username" />
+                    <button class="hdt-btn">
+                    	下一步
+                        <!--<if condition="$lang eq 1">下一步<else/>Next</if>-->
+                    </button>
+                </div>
+            </div>
+            
+            <div class="code-btn" style="display: none;">
+                <span></span>
+            </div>
+            <span class="footer">
+                INTERACTION PRODUCES VALUE
+            </span>
+            <!-- <footer>
+            </footer> -->
+        </div>
+    </body>
+<script type="text/javascript">
+
+  $(function(){
+    $('input').focus();
+});
+$('input').on('click', function () {
+  var target = this;
+  setTimeout(function(){
+        target.scrollIntoViewIfNeeded();
+        console.log('scrollIntoViewIfNeeded');
+      },400);
+});
+
+function checkRate(number){
+    if(document.getElementById("username")!=null&&$("#username").val()==''){
+        alert("手机号码不能为空");
+        get_obj('username').focus();
+        return false;
+    }
+    var re =/^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;   //判断字符串是否为11位数字     
+
+    if (!re.test(number)){
+        /*alert("请输入正确的手机号");*/
+        document.getElementById("username").value = "";
+        return false;
+    }
+}
+
+$('.hdt-btn').click(function(){
+    var username = $.trim($('#username').val());
+    var status = checkRate(username);
+    $.post("{:U('public/login')}",{username:username},function(result){
+        if(result){
+            console.log(result)
+            if(result.info){
+                $('.code-btn span').html(result.info);
+                $('.code-btn').show();
+                setInterval(function(){
+                    $('.code-btn').hide();
+                 }, 2000);    
+            }
+
+            if(result.url){
+                window.location.href = result.url;
+            }
+        }
+    });
+
+});
+ 
+</script>
+
+</html>

@@ -1,0 +1,13 @@
+.demo{width:900px;margin:0px auto;}
+.demo .btn:hover{background-color: #e95a00;text-decoration: none;color:#fff;}
+.demo .ul_pics{margin-top:10px;margin-left:50px;}
+.demo .ul_pics li{float:left;width:160px;height:160px;border:1px solid #ddd;padding:2px;text-align: center;margin:0 5px 5px 0;list-style:none;}
+.demo .ul_pics li .img{width: 150px;height: 140px;display: table-cell;vertical-align: middle;position:relative;}
+.demo .ul_pics li img{max-width: 150px;max-height: 140px;vertical-align: middle;}
+.demo .progress{position:relative;padding: 1px; border-radius:3px; margin:60px 0 0 0;} 
+.demo .bar {background-color: green; display:block; width:0%; height:20px; border-radius:3px; } 
+.demo .percent{position:absolute; height:20px; display:inline-block;top:3px; left:2%; color:#fff } 
+.demo .span_del{display:block;height:16px;width:16px;position:absolute;top:5px;right:5px;cursor:pointer;background:url(../static/plupload/Image/close.png);display:none;}
+input,button,submit,textarea,option,textarea{font-family:'微软雅黑';}
+.demo .baocun{cursor:pointer;}
+.demo .clear{clear:both;}

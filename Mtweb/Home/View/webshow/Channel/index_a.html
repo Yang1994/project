@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>17玩直播，美女直播</title>
+<link rel="stylesheet" type="text/css" href="__CSS__/index/common.css" media="all">
+<link rel="stylesheet" href="__CSS__/index/swiper-3.4.1.min.css">
+<link rel="stylesheet" type="text/css" href="__CSS__/index/mobile_landing.css" media="all">
+<script type="text/javascript" src="__JS__/index/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__JS__/index/swiper-3.4.1.jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container', {
+		// 如果需要前进后退按钮
+		/*nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',*/
+		autoplay: 2000,
+		autoplayDisableOnInteraction: false
+	});
+});
+
+</script>
+</head>
+<body>
+<input type="hidden" name="auto_download" class="auto_download" value="{$info['auto_download']}">
+<div id="container">
+	<div class="viewport">
+		<div class="main">
+			<a href="{:U('Channel/download','id='.$info['id'],false)}" id="down_btn">
+				<div class="swiper-container swiper-container-horizontal">
+					<div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 300ms;">
+						<div class="swiper-slide swiper-slide-active" style="width: 375px;"><img src="{$info['link_img']}" width="100%"></div>
+						<div class="swiper-slide swiper-slide-next" style="width: 375px;"><img src="{$info['img1']}" width="100%"></div>
+						<div class="swiper-slide" style="width:  375px;"><img src="{$info['img2']}" width="100%"></div>
+					</div>
+					<!-- <div class="swiper-button-prev swiper-button-black"></div>
+					<div class="swiper-button-next swiper-button-black"></div> -->
+				</div>
+				<div style="position:fixed; bottom:18px; left:0; right:0; z-index:1; text-align:center;">
+					<div><img src="{$info['bottom_img']}" width="82%"></div>
+					<div style="padding:6px 0 0;"><img src="__IMG__/foot.png" width="64%"></div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    var auto = $('.auto_download').val();
+    if(auto==1){
+    	setTimeout(function(){
+			invokeClick(document.getElementById("down_btn"));	
+		},500);
+    } 
+	function invokeClick(element) {
+	if(element.click){
+		element.click(); //判断是否支持click() 事件  
+	} else if(element.fireEvent) {
+		element.fireEvent('onclick'); //触发click() 事件  
+	} else if(document.createEvent) {  
+		var evt = document.createEvent("MouseEvents"); //创建click() 事件  
+		evt.initEvent("click", true, true); //初始化click() 事件  
+		element.dispatchEvent(evt); //分发click() 事件  
+	}
+}
+</script>

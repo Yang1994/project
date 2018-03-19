@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="format-detection" content="telephone=no">
+            <title>邀请朋友</title>
+            <link rel="stylesheet" href="__CSS__/normalize.css" />
+            <link rel="stylesheet" href="__CSS__/prism.css" />
+            <link rel="stylesheet" href="__CSS__/j.css" >
+            <link rel="stylesheet" href="__CSS__/bottom.css">
+            <link rel="stylesheet" href="__CSS__/center.css">
+            <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+            <script type="text/javascript" src="__JS__/new_index/prism.js" ></script>
+            <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+            <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+            <script type="text/javascript">
+              function register(loc) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: loc});
+                  // window.location.assign("https://app.monkeylearn.com/accounts/register/")
+                  return false;
+              }
+
+              function registerForm(form) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: "footer"});
+                  window.location.assign("https://app.monkeylearn.com/accounts/register/?email=" + form.email.value)
+                  return false;
+              }
+
+            </script>
+
+            <script type="text/javascript">
+            </script>
+            <style type="text/css">
+                html {
+                    background: #f6f7fb;
+                }
+                #wrapper_header #header .container nav .navbar>li>a {
+                    color: #2b4250;
+                }
+                #wrapper_header #header {
+                    background: #fff;
+                }
+                
+                .right-content {
+                    position: absolute;
+                    top: 90px;
+                    right: 0;
+                    left: 250px;
+                    height: auto;
+                    padding: 20px 30px;
+                    padding-bottom: 150px;
+                }
+                #wrapper_header #header .container nav #toggle_m_nav #m_nav_menu .m_nav_ham {
+                    background: #2b4250;
+                }
+                /* //css */
+                .left-nav ul li {
+                    list-style: none;
+                }
+                .certification ul li a {
+                    color: #2b4250;
+                }
+                .left-nav  ul li a {
+                    width: 220px;
+                    height: 40px;
+                    line-height: 40px;
+                    margin: 10px 15px;
+                    border-radius: 20px;
+                    display: inline-block;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #333;
+                    
+                    color: #2b4250;
+                }
+                .left-nav  ul li .choose {
+                    background: #d6f7ff;
+                }
+                .account {
+                    /* display: none; */
+                    float: left;
+                    width: 100%;
+                }
+                h3 {
+                    font-size: 30px;
+                    margin: 50px 0;
+                }
+                .content-detail {
+                    float: left;
+                    width: 875px;
+                    height: 24rem;
+                    background: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.13);
+                }
+                .content-detail .detail-header {
+                    float: left;
+                    width: 100%;
+                    height: 230px;
+                    background: url(Public/Home/images/new_index/tittle.png) no-repeat center center;
+                    border-radius: 10px 10px 0 0px ;
+
+                }
+                .content-detail .detail-header img {
+                    width: 24%;
+                    padding: 70px 20px;
+                }
+                .hdt-number {
+                    float: right;
+                    padding: 80px 20px;
+                    font-size: 28px;
+
+                }
+                .hdt-number span {
+                    float: left;
+                    width: 100%;
+                    color: #fff;
+                }
+                .content-detail ul {
+                    float: left;
+                    width: 100%;
+                }
+                .content-detail ul li {
+                    float: left;
+                    width: 90%;
+                    padding: 0 5%;
+                    height: 78px;
+                    font-size: 22px;
+                    line-height: 78px;
+                    color: #2b4250;
+                    cursor: pointer;
+                    background: url(Public/Home/images/new_index/arrow.png) no-repeat 90% center;
+                }
+                .under-line {
+                    border-bottom: 1px solid #d1d1d1;
+                }
+                .certification {
+                    display: none;
+                    float: left;
+                    width: 100%;
+                }
+                .certification h3, .join h3 {
+                    float: left;
+                    width: 100%;
+                   
+                }
+                .certification-tittle span {
+                    float: left;
+                    width: 100%;
+                    color: #7f8a96;
+                    /* font-size: 20px; */
+                    margin-top: 20px;
+                }
+                .certification ul {
+                    float: left;
+                    width: 875px;
+                    
+                    background: #fff;
+                    margin-top: 10px;
+                    border-radius: 10px;
+                    color: #2b4250;
+                }
+                .certification ul li {
+                    padding: 0 30px;
+                    
+                    line-height: 83px;
+                    color: #2b4250;
+                }
+                .certification ul li:nth-child(1) {
+                    border-bottom: 1px solid #d1d1d1;
+                }
+                .certification .certification-header li span, .join .under-line span {
+                    padding-right: 10px;
+                    color: #2b4250;
+                }
+                .certification .certification-header li input, .join .under-line input {
+                    width: 67%;
+                    height: 2.5rem;
+                    padding-left: 3%;
+                    margin-right: 2%;
+                    border-radius: 5px;
+                    border: 1px solid #d1d1d1;
+                    color: #2b4250;
+                }
+                .certification .certification-header li button, .join .under-line button {
+                    width: 10%;
+                    height:2rem;
+                    background: #2ebf6d;
+                    color: #fff;
+                    border: none;
+                }
+                .get-hdt {
+                    background: url(Public/Home/images/new_index/get-hdt.png) no-repeat 30px center;
+                    background-size: 4%;
+                }
+                .get-hdt span {
+                    padding-left: 40px;
+                }
+                .get-hdt .get-number {
+                    float: right;
+                    padding-right: 0px;
+                    color: #7f8a96;
+                }
+                .pc-none {
+                    display: none;
+                } 
+                .certification .certification-header li button a {
+                    color: #fff;
+                }
+                ul li label {
+                    float: left;
+                    width: 18%;
+                    text-align: left;
+
+                }
+                .acc-img {
+                    width: 100%;
+                }
+                #sss {
+                    position: relative;
+                    width: 40%;
+                    margin: 0 auto;
+                }
+                #sss img {
+                    width: 100%;
+                }
+                #sss input {
+                    float: left;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                #sss .acc_sc {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                
+                @media only screen and (max-width: 768px) {
+                    h3 {
+                        font-size: 30px;
+                        margin: 20px 0;
+                    }
+                    .left-nav {
+                        display: none;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   c 
+                    }
+                    #sss {
+                        width: 90%;
+                    }
+                    ul li label {
+                        width: 40%;
+                    }
+                    .right-content {
+                        left: 0;
+                        padding: 20px 18px;
+                    }
+                    .content-detail {
+                        width: 100%;
+                        height: 19.5rem;
+                    }
+                    .content-detail .detail-header img {
+                        width: 44%;
+                        padding: 50px 20px;
+                    }
+                    .hdt-number {
+                        float: right;
+                        padding: 40px 0px;
+                        font-size: 28px;
+                    }
+                    .content-detail .detail-header {
+                        float: left;
+                        width: 100%;
+                        height: 160px;
+                        background: url(Public/Home/images/new_index/tittle.png) no-repeat center center;
+                        border-radius: 10px 10px 0 0px;
+                    }
+                    .certification ul {
+                        width: 100%;
+                        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.13);
+                    }
+                    .certification ul li {
+                        padding: 0 10px;
+                    }
+                    .certification .certification-header li span {
+                        padding-right: 34%;
+                    }
+                    .certification .certification-header li input {
+                        width: 48%;
+                    }
+                    .certification .certification-header li button {
+                        width: 20%;
+                        border-radius: 5px;
+                    }
+                    .get-hdt {
+                        background: url(Public/Home/images/new_index/get-hdt.png) no-repeat 10px center;
+                        background-size: 8%;
+                    }
+                    .pc-none {
+                        display: block;
+                    } 
+                   
+                }
+                .certification {
+                    display: block;
+                }
+                
+            </style>
+
+</head>
+
+
+<body>
+
+
+<div id="wrapper">
+<!-- HEADER -->
+     <div id="wrapper_header">
+        <header id="header">
+             <div class="container">
+                 <a href="{:U('index/index')}"  class="logo">
+                     <img src="__IMG__/new_index/logo-blue.png" class="logo_white" data-no-retina>
+                     <img src="__IMG__/new_index/logo_black.svg" class="logo_sticky" data-no-retina>
+                 </a>
+                 <nav>
+                    <div class="tab-mobile"><a href="index-cn.html">中文</a></div>
+                     <div id="toggle_m_nav" href="#">
+                         <div id="m_nav_menu" class="m_nav">
+                             <div class="m_nav_ham" id="m_ham_1"></div>
+                             <div class="m_nav_ham" id="m_ham_2"></div>
+                             <div class="m_nav_ham" id="m_ham_3"></div>
+                         </div>
+                     </div>
+                     <span class="nav_wrapper" id="m_nav_container" >
+                         <ul class="navbar" >
+                            <h6 class="title">Menu</h6>
+                            <li><a href="{:U('user/index')}">个人中心</a></li>
+                            <li class="pc-none"><a href="{:U('index/about')}">关于我们</a></li>
+                            <li class="pc-none"><a href="{:U('index/information')}">资讯</a></li>
+                            <li class="pc-none"><a href="#"></a></li>
+                            <!-- <li><a class="" href="MonkeyLearn - Privacy Policy.htm" >关于我们</a></li> -->
+                             
+                             <!-- <li><a class="drop" data-toggle="popover" data-placement="bottom">Resources</a></li> -->
+                         </ul>
+                         <span class="movile">
+                            <div class="no_visible">
+                                <h6 class="title">Company</h6>
+                                <li><a href="{:U('index/index','lang=cn',false)}">首页</a></li>
+                                <li><a class="" href="{:U('index/about')}">关于我们</a></li>
+                                <li><a href="{:U('index/information')}">资讯</a></li>
+                            </div>
+                            <div class="visible">
+                                <a href="{:U('public/logout')}"><button class="signUp exit">退出</button></a>
+                            </div>
+                         </span>
+                     </span>
+                 </nav>
+             </div>
+         </header>
+   </div>
+<!--END HEADER -->
+    <div class="left-nav">
+        <ul>
+            <li><a href="{:U('user/index')}">总览</a></li>
+            <li><a class="choose" href="{:U('user/invite')}">邀请朋友</a></li>
+            <li><a href="{:U('user/join')}">加入社区</a></li>
+            <li><a href="{:U('user/transfer')}">HDT转出</a></li>
+            <li><a href="{:U('user/safe_center')}">安全中心</a></li>
+            <li><a href="{:U('user/code')}">提取码</a></li>
+        </ul>
+    </div>
+    <div class="right-content">
+        <div class="certification">
+            <div class="certification-header"> 
+                <div class="certification-tittle">
+                    <h3>实名认证</h3>
+                    
+                </div>
+                <ul>
+                    <li>
+                        <label for="name">输入真实姓名</label>
+                        <input type="text" name="name" id="name" />
+                    </li>
+                    <li>
+                        <label for="id-card">输入身份证号码</label>
+                        <input type="text" name="id-card" id="id-card" />
+                    </li>
+                </ul>
+            </div>
+            <div class="certification-bottom">
+                <div class="certification-tittle">
+                    <h3>上传证件照</h3>
+                </div>
+                <ul>
+                    <li>
+                        <span>上传身份证背面照</span>
+                        <div class="acc_img">
+                            <div id="sss">
+                                <img class="acc_imgin img0" src="__IMG__/new_index/face.png" id="img0">
+                                <div class="acc_sc">
+                                    
+                                    <input class="file0"  type="file" name="file0" id="file0" multiple class="ph08" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <span>上传身份证正面照</span>
+                        <div class="acc_img">
+                            <div id="sss">
+                                <img class="acc_imgin img0" src="__IMG__/new_index/back.png" id="img1">
+                                <div class="acc_sc">
+                                    
+                                    <input class="file0" type="file" name="file0" id="file0" multiple class="ph08" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <span>上传手持身份证照</span>
+                        <div class="acc_img">
+                            <div id="sss">
+                                <img class="acc_imgin img0" src="__IMG__/new_index/hand.png" id="img2">
+                                <div class="acc_sc">
+                                    
+                                    <input type="file" class="file0" name="file0" id="file0" multiple class="ph08" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+
+<!--HERO -->
+          
+
+  <footer id="footer">
+      
+
+          
+      
+  </footer>
+
+</div>
+
+    <script type="text/javascript" src="__JS__/new_index/retina.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/retina.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js" ></script>
+    <script src="__JS__/new_index/packed.3704eaef.min.js" ></script>
+
+   <script type="text/javascript">
+       $('#signUp-form').validate({
+           messages: {
+               email: {required: "This field is required" , email: "Please enter a valid email address"}
+           }
+       });
+   </script>
+
+   <script type="text/javascript">
+      
+
+        function alerths(str) {
+            $("#tip").fadeIn()
+            $("#tip .pack p").html(str)
+            return false;
+        }
+        $(".acc_sure").on("click", function() {
+            alerths("请等待审核！")
+            return false;
+        })
+
+        $(".file0").change(function() {
+            if (this.files && this.files[0]) {
+                var objUrl = getObjectURL(this.files[0]);
+                console.log("objUrl = " + objUrl);
+                if (objUrl) {
+                    $(this).parents().siblings().attr("src", objUrl);
+                    $(this).click(function(e) {
+                        $(this).parents().siblings().attr("src", objUrl);
+                    });
+                } else {
+                    //IE下，使用滤镜
+                    this.select();
+                    var imgSrc = document.selection.createRange().text;
+                    var localImagId = document.getElementById("sss");
+                    //图片异常的捕捉，防止用户修改后缀来伪造图片
+                    try {
+                        preload.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = data;
+                    } catch (e) {
+                        this._error("filter error");
+                        return;
+                    }
+                    this.img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + data + "\")";
+                }
+            }
+        });
+        //建立一個可存取到該file的url
+        function getObjectURL(file) {
+            var url = null;
+            if (window.createObjectURL != undefined) { // basic
+                url = window.createObjectURL(file);
+            } else if (window.URL != undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL != undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+
+        }
+    
+       
+
+         
+
+   </script>
+
+
+
+
+    </body>
+</html>

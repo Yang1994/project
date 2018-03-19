@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html class=" -webkit-" style="font-size: 64.6875px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <title>17玩直播</title>
+    <link rel="stylesheet" type="text/css" href="__CSS__/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/base.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/common.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/niuniu.css">
+    <script src="__JS__/jquery.js"></script>
+    <script type="text/javascript">
+        var gift_config = {
+                    "1":{"gift_mark":2,"gift_lucky":false,"gift_float":false,"gift_type":1,"real_points":10,"gift_special":false,"gift_double":true,"gift_id":1,"gift_name":"棒棒糖"},
+                    "2":{"gift_mark":2,"gift_lucky":false,"gift_float":false,"real_points":20,"gift_special":false,"gift_double":true,"gift_id":2,"gift_name":"甜蜜果汁","gift_type":1},
+                    "5":{"gift_mark":4,"gift_lucky":false,"gift_float":false,"real_points":666,"gift_special":false,"gift_double":true,"gift_id":5,"gift_icon":"http:\/\/res.appbocai.com\/live_gift_3.png","gift_name":"666","gift_type":1},
+                    "6":{"gift_mark":1,"gift_lucky":false,"gift_float":false,"real_points":100,"gift_special":false,"gift_double":false,"gift_id":6,"gift_name":"唇印","gift_type":1},
+                    "7":{"gift_mark":0,"gift_lucky":false,"gift_float":false,"real_points":200,"gift_special":false,"gift_double":false,"gift_id":7,"gift_name":"钻戒","gift_type":1},
+                    "11":{"gift_mark":4,"gift_lucky":false,"gift_float":true,"real_points":10,"gift_special":false,"gift_double":false,"gift_id":11,"gift_name":"礼物箱","gift_type":2},
+                    "12":{"gift_mark":3,"gift_lucky":false,"gift_float":true,"real_points":20,"gift_special":false,"gift_double":false,"gift_id":12,"gift_name":"真棒","gift_type":2},
+                    "13":{"gift_mark":3,"gift_lucky":false,"gift_float":true,"real_points":50,"gift_special":false,"gift_double":false,"gift_id":13,"gift_name":"么么哒","gift_type":2}};
+        var game_config = {"interval_time":10,"icon":"bullfightingnew.png","bet_option":"10,100,1000,10000","pre_time":1,"icon_tag":"kaixinniuzai_icon.png","icon_big":"kaixinniuzai.png","gift_option":"10,100,1000,10000","id":1006,"icon_word":"kaixinniuzai.png","payout_config":[],"icon_rgb":"#f05799","min_version":0,"name":"\u5f00\u5fc3\u725b\u4ed4","card_list":[{"id":1,"icon":"cardgamble_1.png","multi":""}],"max_bet":100000,"bet_time":40,"post_time":4};
+        var msg_limit = {"limit_level":5,"interval":5,"limit_level_count":8,"limit_count":60};
+        var is_yyb = false;
+        var is_login = 1;
+        
+        var is_follow = 0;
+        var game_room = true;
+        var htmlFontSize = 0;
+        function o() {
+            var html = document.querySelector('html');
+            var w = $(window).width() > $(window).height() ? 320 : $(window).width();
+            var rem = w / 6.4;
+            html.style.fontSize = rem + "px";
+            htmlFontSize = rem;
+        }
+        $(function(){
+            o();
+        });
+    </script>
+    <link href="__CSS__/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+    <link rel="stylesheet" type="text/css" href="__CSS__/jw.css">
+</head>
+
+<body style="background-color: #000">
+<input type="hidden" name="avstar" value="{$data['face']}" class="avstar" style="display: inline-block;">
+<input type="hidden" name="type" value="{$data['game_type']}" class="game_type"/>
+<input type="hidden" name="nickname" value="{$data['nick_name']}" class="nickname">
+<input type="hidden" name="anchor_id" value="{$data['anchor_id']}" class="anchor_id">
+<input type="hidden" name="hls_url" value="{$data['mobile']}" class="hls_url">
+<input type="hidden" name="room_id" value="{$data['rid']}" class="room_id">
+<input type="hidden" name="live_cover" value="{$data['cover']}" class="live_cover">
+<input type="hidden" name="live_status" value="{$data['status']}" class="live_status">
+<input type="hidden" name="user_id" value="{$info['Uid']}" class="user_id">
+<input type="hidden" name="user_token" value="{$info['Token']}" class="user_token">
+<input type="hidden" name="user_name" value="{$info['NickName']}" class="user_name">
+
+<!-- 立即下载 -->
+<div class="now-down">
+    <img src="__IMG__/index/17play.png" alt="logo" />
+    <a href="http://www.baidu.com">立即下载</a>
+</div>
+<!-- 充值Recharge -->
+<div class="recharge">
+    <img class="ljdh" src="__IMG__/index/ljdh.png" alt="立即兑换" />
+    <img class="re-close" src="__IMG__/index/qx_up.png"  alt="关闭兑换框" />
+    <div class="coin">
+        <div class="diamond-num">
+            <span>1000</span>
+        </div>
+        <p>当前游戏币余额</p>
+    </div>
+    <ul class="recharge-detail">
+        <li data-id="gold_100">
+            <span class="recharge-num">100</span>
+            <input type="text" value="￥1" />
+        </li>
+        <li data-id="gold_600">
+            <span class="recharge-num">600</span>
+            <input type="text" data="gold_600" value="￥6" />
+        </li>
+        <li data-id="gold_3000">
+            <span class="recharge-num">3000</span>
+            <input type="text" value="￥30" />
+        </li>
+        <li data-id="gold_9800">
+            <span class="recharge-num">9800</span>
+            <input type="text" value="￥98" />
+        </li>
+        <li data-id="gold_19800">
+            <span class="recharge-num">19800</span>
+            <input type="text" value="￥198" />
+        </li>
+    </ul>
+    <!-- <div class="ex-success">兑换成功，请查询账户余额</div>
+    <div class="ex-defeat">
+        <p>兑换失败，请前往充值</p>
+        <div class="ex-defeat-btn">
+            <span class="ex-de-close">取消</span>
+            <span class="ex-de-open">确认</span>
+        </div>
+    </div> -->
+</div>
+<!-- 金币兑换 -->
+<div class="exchange">
+    <img class="ljdh" src="__IMG__/index/ljdh.png" alt="立即兑换" />
+    <img class="close" src="__IMG__/index/qx_up.png"  alt="关闭兑换框" />
+    <div class="coin">
+        <div class="coin-num">
+            <span>1000</span>                                      
+        </div>
+        <p>当前游戏币余额</p>
+    </div>
+    <ul class="exchange-detail">
+        <li>
+            <span class="exchange-num">100</span>
+            <input type="text" value="100" />
+        </li>
+        <li>
+            <span class="exchange-num">600</span>
+            <input type="text" value="600" />
+        </li>
+        <li>
+            <span class="exchange-num">3000</span>
+            <input type="text" value="3000" />
+        </li>
+        <li>
+            <span class="exchange-num">9800</span>
+            <input type="text" value="9800" />
+        </li>
+        <li>
+            <span class="exchange-num">19800</span>
+            <input type="text" value="19800" />
+        </li>
+    </ul>
+    <div class="ex-success">兑换成功，请查询账户余额</div>
+    <div class="ex-defeat">
+        <p>兑换失败，请前往充值</p>
+        <div class="ex-defeat-btn">
+            <span class="ex-de-close">取消</span>
+            <span class="ex-de-open">确认</span>
+        </div>
+    </div>
+</div>
+<!-- 游戏规则 -->
+<div class="game-help">
+    <img class="yxjs" src="__IMG__/index/yxjs.png" alt="立即兑换" />
+    <img class="yxjs-close" src="__IMG__/index/qx_up.png"  alt="关闭兑换框" />
+    <div class="game-help-conetent" sroll="no">
+        <p>游戏帮助：</p>
+        <p>某日，森林里的三只小狐狸：阿狸、阿稞和阿紫为了争夺一块蛋糕而产生了矛盾，他们决定通过德州扑克来决一胜负，胜利者将得到蛋糕，不要走，一起决战到黎明！</p>
+        <p>玩法介绍：</p>
+        <p> 1.游戏开始时，会首先发放五张公牌，每个角色两张私牌。此时你可以点击角色旁边的计分板选择支持的角色，每点击一次对该角色的支持就多一分。一局游戏结束后，胜利的角色将会拿出一些游戏币作为奖励发给它的支持者哦。</p>
+        <p>2.开牌后，从每个角色的两张私牌与五张公牌中取任意五张，组成牌型，根据三个角色各自的牌型来比较大小。</p>
+        <p> 牌型大小说明： </p>
+        <p>皇家同花顺>同花顺>四条>葫芦>同花>顺子>三条>两对>一对>高牌</p>
+    </div>
+</div>
+<!-- 历史记录 -->
+<div class="game-lsjl">
+    <img class="lsjr" src="__IMG__/index/lsjr.png" alt="立即兑换" />
+    <img class="lsjl-close" src="__IMG__/index/qx_up.png"  alt="关闭兑换框" />
+    <div class="lsjl-head">
+        <ul>
+            <li><img src="__IMG__/index/fox1.png"></li>
+            <li><img src="__IMG__/index/fox2.png"></li>
+            <li><img src="__IMG__/index/fox3.png"></li>
+        </ul>
+    </div>
+    <div class="ha"></div>
+</div>
+
+<div class="avstar" style="display: none;">
+    <img src="{$data['face']}" alt="" id="anchor_avstar">
+    <div class="anchor_info">
+        <li id="user_infos">
+            <span class="renqi"></span>
+        </li>
+        <a href="#">
+            <img src="__IMG__/index/attention.png" alt="" id="attention1">
+        </a>
+    </div>
+    <div class="user-id">
+        <span>ID:</span>
+        <span class="xq_id">{$data['anchor_id']}</span>
+    </div>
+    <div class="charm">
+        <span></span>
+    </div>
+</div>
+
+<!--播放器-->
+<div class="player" style="margin:0 auto;z-index:2;position: absolute;">
+    <div id='container'>
+    </div>       
+</div>
+
+<!--播放器 结束-->
+<!--直播-->
+<div id="live-bg" style="height: 9.088rem; display: none;">
+    <img src="__IMG__/index/12.jpg" class="live-bg blur" width="100%" height="100%">
+    <img src="__IMG__/index/play.png" class="play-btn bobo">
+    <div class="live-bg-text">
+        <p>直播已结束</p>
+        <p>下载客户端，精彩继续</p>
+    </div>
+</div>
+<div class="show_tips">
+    <em></em>
+</div>
+
+<!-- 聊天 -->
+<div class="chat_message" style="">
+    <ul class="chat-thread">
+        
+    </ul>
+</div>
+
+
+<!-- 游戏 -->
+<div id="maskLayer" style="display: none;"></div>
+<div class="main_contents" style="height: 736px;">
+    <div class="bottom" style="">
+        <div class="talk">
+            <div class="send_box" style="display: none;">
+                <input id="message" class="talk-input" value="" placeholder="说点什么吧">
+                <a href="javascript:;" class="talk-btn" id="send">发送</a>
+            </div>
+           <!-- <div id="share" style="display: none">
+                <img src="/Public/images/share/share_19.png" alt="" >
+            </div>-->
+            <div class="chat_icon">
+                <img src="__IMG__/index/chat_icon.png">
+            </div>
+            <div class="gift gift_btn">
+                <a href="javascript:;"><i class="gift-icon">&#xe649;</i> </a>
+            </div>
+            <div class="game_btn" style="display: none;">
+                <img src="__IMG__/index/btn_yx.png">
+            </div>
+            <div class="help">
+                <a href="javascript:;"><img src="__IMG__/index/bz.png"></a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="game">
+            <div class="game_layer" style="display: none;"></div>
+            
+            <div class="qmdouniu dezhou">
+                <div class="mask_layers" style="display: none;"></div>
+                <img src="__IMG__/index/fox-bj.png" alt="" class="bet_bg1">
+                <li class="bet_bg2"></li>
+                <div class="pai_djs" style="display: block;">
+                    <span class="djs">32</span>
+                </div>
+                <div class="pai_box pai_left_box">
+                    <div class="zy_bg zy_bg_animate" style="opacity: 1;"></div>
+                    <div class="banner" style="display: none;">
+                        <div class="niu_text" style="background-image: url(&quot;http://res.appbocai.com/h5/Public/images/niuniu/n7.png&quot;);"></div>
+                    </div>
+                </div>
+                <div class="pai_box pai_center_box">
+                    <div class="zy_bg zy_bg_animate" style="opacity: 1;"></div>
+                    <div class="banner" style="display: none;">
+                        <div class="niu_text" style="background-image: url(&quot;http://res.appbocai.com/h5/Public/images/niuniu/n7.png&quot;);"></div>
+                    </div>
+                </div>
+                <div class="pai_box pai_right_box">
+                    <div class="zy_bg zy_bg_animate" style="opacity: 1;"></div>
+                    <div class="banner" style="z-index: 102; display: none;">
+                        <div class="niu_text" style="background-image: url(&quot;http://res.appbocai.com/h5/Public/images/niuniu/n7.png&quot;);"></div>
+                    </div>
+                </div>
+                <div class="pai_box pai_top_box" style="z-index: 123;">
+                    <div class="zy_bg zy_bg_animate" style="opacity: 1;"></div>
+                    <div class="banner" style="z-index: 102; display: none;">
+                    </div>
+                </div>
+                <div class="bet_area">
+                    <img src="__IMG__/index/fox1.png" alt="" class="katong katong01 xunhuan_renwu cartoon_animate" style="width: 0.74rem; height: 1.4rem; z-index: 60;">
+                    <ul class="betArea_a betArea_a_01 betArea_b" style="display: block; z-index: 60;">
+                        <img src="__IMG__/index/xzq.png" alt="" class="betNum_contain">
+                        <li class="betNum_contain_1 " data-id="0" value="" style="opacity: 1;">
+                            <span class="bet_name">阿狸x3</span>
+                            <img src="__IMG__/index/dianz.png" alt="" class="dianzan" style="opacity: 1;">
+                            <span class="bet_tatal" value="0"></span>
+                            <span class="ber_self" value="0"></span>
+                        </li>
+                    </ul>
+                    <img src="__IMG__/index/fox2.png" alt="" class="katong katong02 xunhuan_renwu cartoon_animate" style="width: 0.74rem; height: 1.4rem; z-index: 60;">
+                    <ul class="betArea_a betArea_a_02 betArea_b" style="display: block; z-index: 60;">
+                        <img src="__IMG__/index/xzq.png" alt="" class="betNum_contain">
+                        <li class="betNum_contain_1" data-id="1" value="" style="opacity: 1;">
+                            <span class="bet_name">阿稞x3</span>
+                            <img src="__IMG__/index/dianz.png" alt="" class="dianzan" style="opacity: 1;">
+                            <span class="bet_tatal" value="0"></span>
+                            <span class="ber_self" value="0"></span>
+                        </li>
+                    </ul>
+                    <img src="__IMG__/index/fox3.png" alt="" class="katong katong03 xunhuan_renwu cartoon_animate" style="width: 0.74rem; height: 1.4rem; z-index: 60;">
+                    <ul class="betArea_a betArea_a_03 betArea_b" style="z-index: 60; display: block;">
+                        <img src="__IMG__/index/xzq.png" alt="" class="betNum_contain">
+                        <li class="betNum_contain_1" data-id="2" value="" style="opacity: 1;">
+                            <span class="bet_name">阿紫x3</span>
+                            <img src="__IMG__/index/dianz.png" alt="" class="dianzan" style="opacity: 1;">
+                            <span class="bet_tatal" value="0"></span>
+                            <span class="ber_self" value="0"></span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="lsjl" style="display: none;">
+                    <img class="ljdl-img" src="__IMG__/index/lsjr.png"/>
+                    <div class="lsjl_contents">
+                        <div class="ba">
+                            <ul>
+                                <li><img src="__IMG__/index/d2.png"></li>
+                                <li><img src="__IMG__/index/dq2.png"></li>
+                                <li><img src="__IMG__/index/xq2.png"></li>
+                            </ul>
+                        </div>
+                        <div class="ha">
+                                                              
+                                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+
+            <div id="his_help"></div>
+            <div class="tsy" style="display: none;">
+                <img src="__IMG__/index/dt.png" class="dt-bg">
+                <span class="hint">开始支持</span>
+            </div>
+            <div class="win_tsy" style="display:none;">
+                <img src="__IMG__/index/dt.png" class="dt-bg">
+                <div class=" hint">恭喜您赢了,获得<span class="win_gold">10000</span>星星</div>
+            </div>
+        </div>
+        <div class="gift_list" style="display:none;">
+            <ul>
+                <li data-id="1" data-name="棒棒糖">
+                    <p class="xuanzhong"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/PresentGift_Sweet.png"></p>
+                    <p class="gift_bottom">10<img src="__IMG__/index/40.png"></p>
+                </li>
+                <li data-id="2" data-name="甜蜜果汁">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/PresentGift_FruitJuice.png"></p>
+                    <p class="gift_bottom">20<img src="__IMG__/index/40.png"></p>
+                </li>
+                <li data-id="5" data-name="666">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/live_gift_3.png"></p>
+                    <p class="gift_bottom">666<img src="__IMG__/index/40.png"></p>
+                </li>
+                <li data-id="6" data-name="唇印">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/gift_668427fbde03ce5592d2a8e855ffa9d3.png"></p>
+                    <p class="gift_bottom">100<img src="__IMG__/index/40.png"></p>
+                </li>
+                <li data-id="7" data-name="钻戒">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/gift_4daf98ffd8423bb26ae5f2d34f120913.png"></p>
+                    <p class="gift_bottom">200<img src="__IMG__/index/40.png"></p>
+                </li>
+                <li data-id="11" data-name="礼物箱">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/live_gift_6.png"></p>
+                    <p class="gift_bottom">10<img src="__IMG__/index/39.png"></p>
+                </li>
+                <li data-id="12" data-name="真棒">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/gift_9429391e2f42b1ec0d8a7543d98d2d6a.png"></p>
+                    <p class="gift_bottom">20<img src="__IMG__/index/39.png"></p>
+                </li>
+                <li data-id="13" data-name="么么哒">
+                    <p class="xuanzhong" style="display:none;"><img src="__IMG__/index/xuanzhong.png"></p>
+                    <p class="gift_icon"><img src="__IMG__/index/gift_ea7241edf39e50b47fbdb4d6de16fa66.png"></p>
+                    <p class="gift_bottom">50<img src="__IMG__/index/39.png"></p>
+                </li>            
+            </ul>
+        </div>
+        <div class="money basicMoney">
+            <div class="cz">
+                <div class="money-line"> 
+                    <span class="gold_points" id="gold_points">{$info['Score']}</span>
+                    <!-- <span class="dh-bg"><img src="__IMG__/index/coin-btn.png"></span> -->
+                </div>
+            </div>
+            <div class="diamond">
+                <div class="diamond-line">
+                    <span class="diamond_points" id="diamond_points">{$info['Diamond']}</span>
+                </div>
+            </div>
+            <div class="tz">
+                <li class="bet_num bet_num10 bet_num_a" value="10">
+                    <img src="Public/Home/images/index/dianz.png" alt="10">
+                    <span style="color: rgb(227, 167, 36);">10</span>
+                </li>
+                <li class="bet_num" value="100">
+                    <img src="Public/Home/images/index/dianz.png" alt="100">
+                    <span style="color: rgb(227, 167, 36);">100</span>
+                </li>
+                <li class="bet_num" value="1000">
+                    <img src="Public/Home/images/index/dianz.png" alt="1000">
+                    <span style="color: rgb(227, 167, 36);">1000</span>
+                </li>
+                <li class="bet_num" value="10000">
+                    <img src="Public/Home/images/index/dianz.png" alt="10000">
+                    <span style="color: rgb(227, 167, 36);">1万</span>
+                </li>
+            </div>
+            <div class="history">
+                <a href="javascript:;">
+                    <img src="__IMG__/index/lsjl.png">
+                </a>
+            </div>
+            <div class="send_gift" style="display: none;"><a href="javascript:;">赠送</a></div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        var type =$('.game_type').val();
+        console.log(type);
+        if(type == 0) {
+            console.log('ymt');
+            $('.bottom .money').css('display','none');
+            $('.bottom').css('height', '0.7rem');
+            $('.dezhou').remove();
+            $('.money').hide();
+            $('.chat_message').css('bottom', '0.65rem').attr('data-hide',1);
+            $('.game_btn').remove();
+            $('.player').click(function() {
+                $('.send_box').hide();
+                $('.chat_icon').show();
+                $('.bottom').css('height', '0.7rem');
+                $('.chat_message').css('bottom', '0.65rem').attr('data-hide',1);
+                $('.gift_btn').show();
+                $('.money').hide();
+            });
+            $('.talk-btn').on('click',function(){
+                console.log(22222);
+                $('.qmdouniu').show();
+                var date = new Date();
+                var time = date.getTime();
+                if ((time - msg_senttime) < msg_limit.interval * 1000) {
+                    show_tips('发言过快，请稍后！');
+                    return false;
+                }
+                event.stopPropagation();
+                $('.game .zp_pai ul').show();
+                //if(client_status == 0) return false;
+                if($('.send_box #message').prop("disabled") != false)  return false;
+                var message = $('.talk-input').val();
+                if(message == '') return false;
+                $('.talk-input').val('');
+                //sendPublicMessage(message, 0);
+                //模拟发送聊天信息
+                console.log(2222222);
+                var talk_message = {
+                    "mtype":1,
+                    "msg":message,
+                    "uid":uid,
+                    "name":user_name
+                }
+                console.info(talk_message);
+                sendMessage(talk_message);
+                var chat_html = '<li><span class="name" >'+user_name+':</span> <span class="message">'+$.trim(message)+'</span></li>';
+                leave_message(chat_html);
+                msg_senttime = time;
+            });
+        } else {
+            $('.player').click(function() {
+                $('.send_box').hide();
+                $('.chat_icon').show();
+                judge_opacity();
+                $('.qmdouniu').show();
+            });
+            $('.main_contents').click(function(){
+                judge_opacity();
+                $('.game .zp_pai ul').show();
+                $('.send_box').hide();
+                $('.chat_icon').show();
+                $('.qmdouniu').show();
+
+            });
+            $('.talk-btn').on('click',function(){
+                console.log(22222);
+                $('.qmdouniu').show();
+                var date = new Date();
+                var time = date.getTime();
+                if ((time - msg_senttime) < msg_limit.interval * 1000) {
+                    show_tips('发言过快，请稍后！');
+                    return false;
+                }
+                event.stopPropagation();
+                judge_opacity();
+                $('.game .zp_pai ul').show();
+                //if(client_status == 0) return false;
+                if($('.send_box #message').prop("disabled") != false)  return false;
+                var message = $('.talk-input').val();
+                if(message == '') return false;
+                $('.talk-input').val('');
+                //sendPublicMessage(message, 0);
+                //模拟发送聊天信息
+                console.log(2222222);
+                var talk_message = {
+                    "mtype":1,
+                    "msg":message,
+                    "uid":uid,
+                    "name":user_name
+                }
+                console.info(talk_message);
+                sendMessage(talk_message);
+                var chat_html = '<li><span class="name" >'+user_name+':</span> <span class="message">'+$.trim(message)+'</span></li>';
+                leave_message(chat_html);
+                msg_senttime = time;
+            });
+
+        }
+    </script>
+    <!-- <script type="text/javascript" src="__JS__/hm.js"></script> -->
+    <script type="text/javascript" src="__JS__/jwplayer.js"></script>
+    <script>jwplayer.key="iUSw7V+0KgpFCmli/We5QUGoHW+yQUkOfEfCyQ==";</script>
+    <script type="text/javascript" src="__JS__/dezhou.js"></script>   
+    <script type="text/javascript" src="__JS__/basic.js"></script>
+    <script type="text/javascript" src="__JS__/functions.js"></script>
+    <script type="text/javascript" src="__JS__/layer.js"></script>
+    <script type="text/javascript" src="__JS__/niuniuCustom.js"></script>
+    <script type="text/javascript" src="__JS__/game_common.js"></script>
+    <script type="text/javascript" src="__JS__/move.js"></script>
+    <script type="text/javascript" src="__JS__/player.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.transit.min.js"></script>
+    </body>
+</html>

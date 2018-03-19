@@ -1,0 +1,117 @@
+/* 
+* @Author: anchen
+* @Date:   2018-01-15 11:51:39
+* @Last Modified by:   anchen
+* @Last Modified time: 2018-01-15 14:36:02
+*/
+.bottom {
+    float: left;
+    width: 60%;
+    height: 25%;
+    background: #041528;
+    padding: 0 20%;
+}
+.bottom-left {
+    float: left;
+    width: 50%;
+    padding-top: 60px;
+}
+.bottom-left .logo {
+    float: left;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.bottom-left .logo img {
+    width: 40%;
+}
+.bottom-right {
+    float: right;
+    padding-top: 50px;
+    width: 50%;
+}
+.bottom-right dl {
+    float: left; 
+    width: 30%;
+}
+.bottom-right dl dt {
+    margin: 0 auto;
+    padding: 0 15%;
+}
+.bottom-right dl img {
+    width: 100%;
+  
+}
+.bottom-right dl dd {
+    text-align: center;
+    padding-top: 10px;
+    color: #fff;
+    margin: 0;
+}
+.detail-text {
+    float: left;
+    width: 100%;
+}
+.detail-text span {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 5px;
+}
+@media (max-width: 768px) {
+    
+    .phone-bottom {
+        display: block;
+        float: left;
+        width: 100%;
+    }
+    .code img {
+        width: 17%;
+    }
+    .phone-bottom .code {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .phone-bottom .code span {
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .phone-bottom span {
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    .bottom {
+        float: left;
+        width: 100%;
+        padding: 0; 
+    }
+    .bottom-left {
+        float: left;
+        width: 100%;
+        padding-top: 60px;
+    }
+    .bottom-left .logo {
+        text-align: center;
+    }
+    .detail-text {
+        
+        text-align: center;
+    }
+    .detail-text span {
+        font-size: 12px;
+    }
+    .bottom-right {
+        float: left;
+        width: 100%;
+        padding-left: 95px;
+    }
+    .bottom-right dl dd {
+        font-size: 12px;
+        margin: 0;
+    }
+}

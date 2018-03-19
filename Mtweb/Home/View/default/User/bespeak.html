@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>互动币预约--全球首家基于区块链的互动交流平台</title>
+    <meta name="description" content="全球首家基于区块链的互动交流平台">
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="__CSS__/reset.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bespeak.css" />
+    <link rel="shortcut icon" href="__IMG__/bespeak/coin.png" />
+    <link rel="stylesheet" type="text/css" href="__CSS__/bottom.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            .wrap {
+                position: relative;
+                height: 830px !important;
+            }
+            .bg {
+                height: 100%;
+                background: url(__IMG__/bespeak/phone-bg.png) no-repeat center center;
+                background-size: 100% 100%;
+            }
+            
+            .data {
+                bottom: 220px;
+            }
+            .bottom {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0);
+                width: 60% !important;
+                height: 28% !important;
+                padding: 0 20% !important;
+            }
+            .bottom-right {
+                padding-left: 18px !important;
+                padding-top: 0 !important;
+            }
+            .button input {
+                width: 166px;
+                height: 36px;
+                line-height: 36px;
+                background: #f15a24;
+                color: #fff;
+                border: none;
+                font-size: 20px;
+                font-weight: bold;
+                background: url(__IMG__/bespeak/button.png) center center no-repeat;
+            }
+            .data span {
+                font-size: 12px;
+            }
+            .bottom-right dl {
+                float: left;
+                width: 30%;
+                margin: 0.5em 0;
+            }
+            .button {
+                bottom: 250px;
+            }
+            .exit {
+                background-color: rgba(0, 0, 0, 0);
+            }
+            .dumu .submit {
+                background: url(__IMG__/bespeak/button.png) center center no-repeat;
+            }
+            .logo {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bg">
+            <div class="header">
+               
+                <div class="exit">
+                    <if condition="is_user_login()">
+                        <a href="{:U('User/index')}">个人中心</a>
+                        <a href="{:U('Public/logout')}">退出</a>
+                    <else/>
+                        <a href="{:U('Public/login')}">登录</a>
+                        <a href="{:U('Public/register')}">注册</a>
+                    </if>
+                </div>
+                <div class="phone-logo">
+                    
+                    <img src="__IMG__/bespeak/phone-logo.png" alt="" width="60%";/>
+                </div>
+                <div class="button">
+                    <if condition="$status eq 1">
+                        <input type="button" id="ready_order" value="立即预约" />
+                    <else/>
+                        <input type="button" id="forbid_order" value="抢完了" />
+                    </if>
+                </div>
+                <div class="data">
+                    <span>2018年1月26日12:00准时开抢</span>
+                </div>
+            </div>
+        </div>
+        <div class="dumu">
+            <div class="dumu-text">
+                <div class="close">
+                    <span>关闭</span>
+                </div>
+                <h2>提交您在DragonEX交易所的账户ID</h2>
+                <form action="{:U('order/add')}" method="post" class="form-horizontal">
+                <input type="text" id="address" name="address" />
+                <p>按HDT互动力发行计划，将在Dragonex正式首发，故领取此活动糖果，需提交你Dragonex的账户ID。活动截止后我们将会把您领取的HDT转入您DragonEX的账户中。</p>
+                <span>DragonEX交易所官网地址：dragonex.io </span>
+                <span>非常感谢您对HDT互动币的支撑！</span>
+                <input class="submit" type="submit" value="提交" />
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-left">
+                <div class="logo">
+                    <img src="__IMG__/bespeak/phone-logo.png" alt="" />
+                </div>
+                <div class="detail-text">
+                    <span>互动网络国际有限公司</span>
+                    <span>官网网址：hudt.io</span>
+                    <span>商务微信：hudt-business</span>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/wechat.jpg" alt="" />
+                    </dt>
+                    <dd>商务微信号</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/Beechat.png" alt="" />
+                    </dt>
+                    <dd>Beechat群</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/Telegram.png" alt="" />
+                    </dt>
+                    <dd>Telegram群</dd>
+                </dl>
+            </div>
+        </div>
+        
+        
+    </div>
+    <script src="__JS__/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+     $(".wrap").height($(window).height());
+     $(".j-btn-menu").click(function() {
+         $("ul").toggle();
+     });
+     // $(window).resize(function(){ location.reload() });
+     $("#ready_order").on("click", function(){
+        $.ajax({ url: "{:U('user/is_login')}", success: function(res){
+            if(res.status==1){
+                $(".dumu").show();
+            }else{
+                window.location.href = "{:U('public/login')}";
+            }
+        }});
+        
+    });
+     $(".close").on("click", function(){
+        $(".dumu").hide();
+    });
+    </script>
+</body>
+</html>

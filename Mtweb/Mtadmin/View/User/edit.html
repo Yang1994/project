@@ -1,0 +1,151 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>编辑账号</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">账号名称：
+                <span>{$info['username']}</span>
+            </label>
+        </div>
+
+        <div class="form-item">
+            <!-- <input type="hidden" name="group_id" id="group_id" value="{$info['group_id']}">
+                <label class="item-label">角色类型:  &nbsp;
+                    {$info['title']}
+                </label>
+            </div> -->
+        <if condition="$info.group_id eq 10 or $info.group_id eq 8 or $info.group_id eq 9">
+            <div class="form-item">
+            <input type="hidden" name="group_id" id="group_id" value="{$info['group_id']}">
+                <label class="item-label">角色类型:  &nbsp;
+                    <eq name="info.group_id" value="8">渠道方</eq>
+                    <eq name="info.group_id" value="9">运营长</eq>
+                    <eq name="info.group_id" value="10">家族长</eq>
+                    <eq name="info.group_id" value="11">官方长</eq>
+                </label>
+            </div>
+        <else/>
+            <div class="form-item">
+                <label class="item-label">角色类型:  &nbsp;
+                    <select id="group_id" name="group_id">
+                        <volist name="Group" id="vo">
+                            <option value="{$vo.id}" <eq name="info['group_id']" value="$vo.id">selected</eq> >{$vo.title}</option>
+                        </volist>
+                    </select>
+                </label>
+            </div>
+        </if>
+        </div>
+
+        <div class="form-item">
+            <div class="user_id">
+                <label class="item-label">用户id：
+                    <span class="check-tips">（当账户为家族主播管理者或者运营主播管理者是，用户id不能为空）</span>
+                </label>
+                <div class="controls">
+                    <input type="user_id" class="text input-large" id="user_id" name="user_id" value="{$info['user_id']}">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item" >    
+            <div class="channel_id">
+                <label class="item-label">渠道id：</label>
+                <div class="controls">
+                    <volist name="Channel" id="vo">
+                        <span>{$vo.channel_name}</span>
+                        <input class="channel_id" type="checkbox" value="{$vo.channel_id}" name="channel_id[]" <eq name="vo.select" value="1">checked="checked"</eq> >&nbsp;&nbsp;
+                    </volist>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item" >
+            <div class="family_percent">
+                <label class="item-label">分成比例：</label>
+            
+                <div class="data-table">
+                    <table>
+                        <!-- 表头 -->
+                        <thead>
+                            <tr>
+                                <th>分配人</th><th>主播</th><th>主播管理者</th>
+                                <th>系统</th>
+                            </tr>
+                        </thead>
+                        <volist name="gift" id="gift">           
+                        <tr>
+                            <td>{$gift.category_name}<input type="hidden" name="gift_type[]" value="{$gift.category_id}"></td>
+                            <td><input type="text" name="anchor_percent[]" value="{$gift.anchor_percent}">%</td>
+                            <td><input type="text" name="leader_percent[]" value="{$gift.leader_percent}">%</td>
+                            <td><input type="text" name="system_percent[]" value="{$gift.system_percent}">%</td>
+                        </tr>
+                        </volist>
+                        <volist name="guard" id="guard">           
+                        <tr>
+                            <td>{$guard.name}<input type="hidden" name="guard_type[]" value="{$guard.id}"></td>
+                            <td><input type="text" name="anchor_guard[]" value="{$guard.anchor_percent}">%</td>
+                            <td><input type="text" name="leader_guard[]" value="{$guard.leader_percent}">%</td>
+                            <td><input type="text" name="system_guard[]" value="{$guard.system_percent}">%</td>
+                        </tr>
+                        </volist>
+                    </table> 
+                </div>
+            </div>
+        </div>
+       
+        <div class="form-item">
+            <input type="hidden" name="family_id" class="family_id" value="{$info['family_id']}">
+            <input type="hidden" name="id" class="id" value="{$info['id']}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/index')}');
+        var groupVal = $('#group_id').val();
+        //console.log(groupVal);
+        if(groupVal==9){
+            $('.user_id').css('display','block');
+            $('.family_percent').css('display','block');
+        }else if(groupVal==10){
+            $('.user_id').css('display','block');
+            $('.family_percent').css('display','block');
+        }else{
+            $('.user_id').css('display','none');
+            $('.family_percent').css('display','none');
+        }
+        if(groupVal!=8){
+            $('.channel_id').css('display','none');
+        }
+
+        //根据角色类型弹出不同输入条件
+        $(function(){ 
+            //console.log(123);
+            $("#group_id").change(function(){ 
+                var group_id = $(this).children('option:selected').val();  
+                if(group_id == 8) {  
+                    $(".channel_id").show();
+                    $(".user_id").hide();
+                    $("#user_id").attr("value","");
+                }else if(group_id == 9 || group_id == 10) {  
+                    $(".channel_id").hide();
+                    $(".user_id").show();
+                    $('input:checkbox').attr('checked', false);
+                }else{
+                    $(".channel_id").hide();
+                    $(".user_id").hide();
+                    $("#user_id").attr("value","");
+                    $('input:checkbox').attr('checked', false);
+                }
+            }); 
+        });
+    </script>
+</block>

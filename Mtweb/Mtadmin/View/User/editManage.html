@@ -1,0 +1,150 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+  <!-- 标题栏 -->
+	<div class="main-title">
+		<h2><font color="#EE7613">编辑主播信息</font></h2>
+	</div>
+	<div class="data-table">
+		<label>主播昵称:{$data['nick_name']}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+		<label>主播Id:{$data['uid']}</label>&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+	<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="form-item">
+			<label class="item-label">
+				主播管理人名称:
+				<span class="check-tips">
+					<select id="admin_id" name="admin_id">
+            <volist name="list" id="vo">
+                <option value="{$vo.id}" <eq name="vo.select" value="1">selected</eq> >
+                {$vo.username}
+                </option>
+            </volist>
+          </select>	
+				</span>
+			</label>
+			<label class="item-label" style="color: red;">（*每月仅限修改一次）</label>
+		</div>
+		
+    <div class="form-item">
+      <div class="controls">
+        <input type="file" id="upload_picture_img">
+        <input type="hidden" name="image" id="cover_id_img" value="{$data['image']}"/>
+          <div class="upload-img-box">
+            <notempty name="data['image']">
+              <div class="upload-pre-item"><img src="{$data['image']}"/></div>
+            </notempty>
+          </div>
+      </div>
+    </div>
+
+		<div class="form-item">
+			<input type="hidden" name="uid" value="{$data['uid']}">
+      <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+      <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+	</form>
+	    
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form1').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/index')}');
+
+    var commossion_id = $('#commossion_id').val();
+    //console.log(groupVal);
+    if(commossion_id==11){
+        $(".commossion11").show();
+   		$(".commossion10,.commossion9").hide();
+    }
+    if(commossion_id==10){
+        $(".commossion10").show();
+   	    $(".commossion11,.commossion9").hide();
+    }
+    if(commossion_id==9){
+        $(".commossion9").show();
+   		$(".commossion11,.commossion10").hide();
+    }
+
+    $(function(){ 
+           
+        $("#commossion_id").change(function(){
+   			var commossion_id = $(this).children('option:selected').val();
+   			console.log(commossion_id);
+   			if(commossion_id==11){
+   				$(".commossion11").show();
+   				$(".commossion10,.commossion9").hide();
+   			} else if (commossion_id==2) {
+   				$(".commossion10").show();
+   				$(".commossion11,.commossion9").hide();
+   			}else if(commossion_id==9){
+   				$(".commossion9").show();
+   				$(".commossion11,.commossion10").hide();
+   			}
+   		}); 
+    });
+	</script>
+
+  <script type="text/javascript">
+
+  //上传背景图片
+  /* 初始化上传插件 */
+  $("#upload_picture_img").uploadify({
+    "height"          : 30,
+    "swf"             : "__STATIC__/uploadify/uploadify.swf",
+    "fileObjName"     : "download",
+    "buttonText"      : "上传主播头像",
+    "uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+    "width"           : 120,
+    'removeTimeout'   : 1,
+    'fileTypeExts'    : '*.jpg; *.png; *.gif; *.jpeg;',
+    "onUploadSuccess" : uploadPictureimg,
+    'onFallback' : function() {
+      alert('未检测到兼容版本的Flash.');
+    }
+  });
+  function uploadPictureimg(file, data){
+    var data = $.parseJSON(data);
+    var src = '';
+    
+    if(data.status){
+      var path = 'http://h5.17playlive.com/'+data.path;
+      $("#cover_id_img").val(path);
+      src = data.url || '__ROOT__' + data.path;
+      $("#cover_id_img").parent().find('.upload-img-box').html(
+        '<div class="upload-pre-item"><img src="__ROOT__' + src + '"/></div>'
+      );
+    } else {
+      updateAlert(data.info);
+      setTimeout(function(){
+        $('#top-alert').find('button').click();
+        $(that).removeClass('disabled').prop('disabled',false);
+      },1500);
+    }
+  }
+  </script>
+</block>

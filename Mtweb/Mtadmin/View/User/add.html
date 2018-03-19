@@ -1,0 +1,136 @@
+0<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>新增账号</h2>
+    </div>
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">账号名称</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="username" value="">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">密码<span class="check-tips">（用户密码不能少于6位）</span></label>
+            <div class="controls">
+                <input type="password" class="text input-large" name="password" value="">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">确认密码</label>
+            <div class="controls">
+                <input type="password" class="text input-large" name="repassword" value="">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label class="item-label">角色类型:  &nbsp;
+                <select id="group_id" name="group_id">
+                    <volist name="Group" id="vo">
+                        <option value="{$vo.id}">{$vo.title}</option>
+                    </volist>
+                </select>
+            </label>
+        </div>
+
+        <div class="form-item" >
+            <div class="family_percent" style="display: none;">
+                <label class="item-label">分成比例：</label>
+            
+                <div class="data-table">
+                    <table>
+                        <!-- 表头 -->
+                        <thead>
+                            <tr>
+                                <th>分配人</th><th>主播</th><th>主播管理者</th>
+                                <th>系统</th>
+                            </tr>
+                        </thead>
+                        <volist name="data" id="data">           
+                        <tr>
+                            <td>{$data.category_name}<input type="hidden" name="gift_type[]" value="{$data.category_id}"></td>
+                            <td><input type="text" name="anchor_percent[]" value="">%</td>
+                            <td><input type="text" name="leader_percent[]" value="">%</td>
+                            <td><input type="text" name="system_percent[]" value="">%</td>
+                        </tr>
+                        </volist>
+                        <volist name="info" id="info">           
+                        <tr>
+                            <td>{$info.name}<input type="hidden" name="guard_type[]" value="{$info.id}"></td>
+                            <td><input type="text" name="anchor_guard[]" value="">%</td>
+                            <td><input type="text" name="leader_guard[]" value="">%</td>
+                            <td><input type="text" name="system_guard[]" value="">%</td>
+                        </tr>
+                        </volist>
+                    </table> 
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="user_id" style="display: none;">
+                <label class="item-label">用户id：
+                    <span class="check-tips">（当账户为家族主播管理者或者运营主播管理者是，用户id不能为空）</span>
+                </label>
+                <div class="controls">
+                    <input type="user_id" class="text input-large" name="user_id" value="">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item" >
+            <div class="channel_id" style="display: none;">
+                <label class="item-label">渠道id：</label>
+                <div class="controls">
+                    <volist name="Channel" id="vo">
+                        <span>{$vo.channel_name}</span>
+                        <input class="channel_id" type="checkbox" value="{$vo.channel_id}" name="channel_id[]">&nbsp;&nbsp;
+                    </volist>
+                </div>
+            </div>
+        </div>
+       
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('User/index')}');
+
+        //根据角色类型弹出不同输入条件
+        $(function(){ 
+            //console.log(123);
+            $("#group_id").change(function(){ 
+                var group_id = $(this).children('option:selected').val();
+                console.log(group_id);  
+                if(group_id == 8) {  
+                    $(".channel_id").show();
+                    $(".user_id").hide();
+                    $(".family_percent").hide();
+                    $("table input").val("");
+                    $("#user_id").val('');
+                }else if(group_id == 9 || group_id == 10) {  
+                    $(".channel_id").hide();
+                    $(".user_id").show();
+                    $(".family_percent").show();
+                    $("#channel_id").val(''); 
+                }else{
+                    $(".channel_id").hide();
+                    $(".user_id").hide();
+                    $("#user_id").val('');
+                    $("#channel_id").val('');
+                    $(".family_percent").hide();
+                    $("table input").val("");
+                }
+            }); 
+        });
+    </script>
+</block>

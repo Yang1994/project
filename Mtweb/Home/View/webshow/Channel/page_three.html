@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>17玩</title>
+    <link rel="stylesheet" href="__CSS__/reset.css">
+    <style>
+        body {
+            float: left;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .wrap { 
+            float: left;
+            width: 100%;
+        }
+        .wrap img {
+            float: left;
+            width: 100%;
+        }
+        .bottom-bg {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+        }
+        .bottom-bg img {
+            float: left;
+            width: 100%;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <input type="hidden" name="auto_download" class="auto_download" value="{$info['auto_download']}">
+    <div class="wrap">
+       <a href="{:U('Channel/download','id='.$info['id'],false)}" id="down_btn"><img src="{$info['link_img']}" alt="17wan" /></a>
+    </div>
+    <div class="bottom-bg">
+        <a href="{:U('Channel/download','id='.$info['id'],false)}"><img src="{$info['bottom_img']}" alt="17wan下载" /></a>
+    </div>
+    <script src="__JS__/jquery.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
+<script type="text/javascript">
+    var auto = $('.auto_download').val();
+    if(auto==1){
+        setTimeout(function(){
+            invokeClick(document.getElementById("down_btn"));   
+        },500);
+    } 
+    function invokeClick(element) {
+    if(element.click){
+        element.click(); //判断是否支持click() 事件  
+    } else if(element.fireEvent) {
+        element.fireEvent('onclick'); //触发click() 事件  
+    } else if(document.createEvent) {  
+        var evt = document.createEvent("MouseEvents"); //创建click() 事件  
+        evt.initEvent("click", true, true); //初始化click() 事件  
+        element.dispatchEvent(evt); //分发click() 事件  
+    }
+}
+</script> 

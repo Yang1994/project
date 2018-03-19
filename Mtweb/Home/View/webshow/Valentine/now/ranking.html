@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>中秋活动|17玩直播</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+
+    <link rel="stylesheet" href="/Public/Home/css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/data-table.js"></script>
+</head>
+
+<body>
+
+<script>
+    $(document).ready(function () {
+        $.get('./model/revRanking.php', function (data) {
+            $('#table_body').html(getTableData(data));
+        });
+    });
+</script>
+
+<div class="wrap">
+    <div class="header-text">
+        <span>活动规则</span>
+        <span>1.    活动期间，主播根据收到“月饼”的数量进行排名，并在活动结束后对排名前十的主播给予奖励。</span>
+        <span>2.    用户根据赠送的“月饼”数量进行排名，并在活动结束后对排名前十的用户给予奖励。</span>
+        <span>3.    活动时间2017.9.30---2017.10.09。</span>
+    </div>
+    <div class="table">
+        <div class="tabtitle">
+            <span class="header-img choose">王者主播</span>
+            <span class="header-img">至尊土豪</span>
+        </div>
+        <div class="table-header">
+            <span class="nickname">昵称</span>
+            <span>名次</span>
+            <span>数量</span>
+            <span>奖励</span>
+        </div>
+        <div id="table_body">
+            
+        </div>
+    </div>
+    <div class="footer">
+        <p>原则上出现相同数量的将按照收礼先后进行排名。</p>
+        <p>所有奖励将在活动结束后的5个工作日内发放。</p>
+    </div>
+</div>
+<script>
+    $(".tabtitle span").click(function() {
+        $(this).addClass('choose').siblings().removeClass("choose");
+        var val  = $(this).text();
+        console.log(val);
+        if(val=="王者主播"){
+            url = "./model/revRanking.php";
+        }else{
+            url = "./model/sendRanking.php";
+        }
+        console.log(url);
+        $.get(url, function (data) {
+            if(val=="王者主播"){
+                $('#table_body').html(getTableData(data));
+            }else{
+                $('#table_body').html(getDiamondTableData(data));
+            }   
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+    <link rel="stylesheet" href="__CSS__/normalize.css"/>
+    <link rel="stylesheet" href="__CSS__/prism.css"/>
+    <link rel="stylesheet" href="__CSS__/j.css">
+    <link rel="stylesheet" href="__CSS__/new_bottom.css">
+    <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/prism.js"></script>
+    <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+    <style type="text/css">
+        #wrapper_header #header .container nav .navbar .pc-block {
+            display: none;
+        }
+        #wrapper_header #header .container nav .visible button.login {
+          /* background-color: rgba(255,255,255,0.1); */
+          background-color: #2EBF6D;
+          color: #fff;
+          width: 90px;
+        }
+        
+        #wrapper_header #header .container nav #toggle_m_nav #m_nav_menu .m_nav_ham {
+          background: #000;
+        }
+        #wrapper_header {
+          position: relative;
+          /* background: #fff; */
+        }
+        #hero {
+          background: url(__IMG__/new_index/information.png) no-repeat center center;
+          height: 588px;
+        }
+        #wrapper_header #header .container nav .navbar>li>a {
+          color: #000;
+        }
+        .new-content {
+           width: 100%;
+        }
+        .new-content .news-title {
+            width: 908px;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 40px;
+        }
+        .news-title a {
+            color: #008bfe;
+        }
+        .news-text {
+            position: relative;
+            width: 908px;
+            margin: 0 auto;
+        }
+        .news-text h1 {
+            font-size: 24px;
+            line-height: 40px;
+            color: #333;
+            font-weight: 400;
+            margin: 22px 0 20px;
+        }
+        .news-text .origin {
+            font-size: 12px;
+            color: #999;
+        }
+        .news-text .text-detail {
+            float: left;
+            width: 100%;
+            font-size: 16px;
+            line-height: 34px;
+            color: #333;
+            padding: 30px 0 50px;
+        }
+        @media only screen and (max-width: 768px) { 
+            #wrapper_header #header .container nav .navbar  .pc-none {
+                display: none;
+            }
+            #wrapper_header #header .container nav .navbar .pc-block {
+                display: block;
+            }
+            #wrapper_header #header .container nav .navbar .pc-center {
+                display: none;
+            }
+            .new-content .news-title {
+                width: 90%;
+            }
+            .news-text {
+                width: 90%;
+            }
+            .text-detail img {
+              width: 100%;
+            }
+            .content-text {
+              width: 65%;
+            }
+            .infor-detail li {
+              margin-bottom: 25px;
+            }
+            .infor-detail {
+              float: left;
+              width: 80%;
+              padding: 0 10%;
+              margin-bottom: 20px;
+            }
+            .infor-detail li .data {
+              margin-right: 5%;
+            }
+            .content-text h4 a {
+              font-size: 18px;
+            }
+            .content-text span {
+              display: none;
+            }
+            .news-text .text-detail {
+                float: left;
+                width: 100%;
+                font-size: 16px;
+                line-height: 24px;
+                color: #333;
+                padding: 30px 0 50px;
+            }
+          
+            
+        }
+
+
+    </style>
+</head> 
+
+<body>
+<div id="wrapper">
+<!-- HEADER -->
+    <div id="wrapper_header">
+        <header id="header">
+            <div class="container">
+                <a href="{:U('index/index')}"  class="logo">
+                    <img src="__IMG__/new_index/hdt-logo.png" class="logo_white" data-no-retina>
+                    
+                </a>
+                <nav>
+                    <!-- <div class="tab-mobile"><a href="{:U('index/index','lang=cn',false)}">中文</a></div> -->
+                    <div id="toggle_m_nav" href="#">
+                        <div id="m_nav_menu" class="m_nav">
+                            <div class="m_nav_ham" id="m_ham_1"></div>
+                            <div class="m_nav_ham" id="m_ham_2"></div>
+                            <div class="m_nav_ham" id="m_ham_3"></div>
+                        </div>
+                    </div>
+                    <span class="nav_wrapper" id="m_nav_container" >
+                        <ul class="navbar" >
+                            <h6 class="title">Menu</h6>
+                                <li class="pc-block"><a href="{:U('index/index')}">首页</a></li>
+                                <li class="pc-none"><a href="{:U('index/about')}">关于我们</a></li>
+                                <li class="pc-none"><a href="{:U('index/information')}">资讯</a></li>
+                                <if condition="is_user_login()">
+                                    <li class="pc-center"><a href="{:U('User/index')}">个人中心</a></li>
+                                <else/>
+                                </if>
+                            <li><a href="#"></a></li>
+                         </ul>
+                         <span class="movile">
+                            <div class="no_visible">
+                                <h6 class="title">Company</h6>
+                                <li><a href="{:U('index/about')}">关于我们</a></li>
+                                <li><a href="{:U('index/information')}">资讯</a></li>
+                                <if condition="is_user_login()">
+                                    <li><a href="{:U('User/index')}">个人中心</a></li>
+                                <else/>
+                                </if>
+                            </div>
+                            <div class="visible">
+                                <if condition="is_user_login()">
+                                    <a href="{:U('public/logout')}"><button class="signUp exit">退出</button></a>
+                                <else/>
+                                    <a href="{:U('public/login')}"><button class="login">登录</button></a>
+                                    <a href="{:U('public/login')}"><button class="signUp">注册</button></a>
+                                </if> 
+                                <!-- <span class="tab"><a href="{:U('index/index','lang=cn',false)}">中文</a></span> -->
+                                
+                            </div>
+                        </span>
+                    </span>
+                </nav>
+            </div>
+        </header>
+    </div>
+<!--END HEADER -->
+
+
+<div class="new-content">
+    <div class="news-title">
+        <a href="{:U('index/information')}">资讯</a>
+        &nbsp;&nbsp; > &nbsp;&nbsp;
+        <span>{$data['title']}</span>
+    </div>
+    <div class="news-text">
+        <h1>{$data['title']}</h1>
+        <p class="origin">
+            <span>{$data['the_time']}</span>
+        </p>
+        <div class="text-detail">
+            {$data['content']}
+        </div>
+    </div>
+</div>
+
+
+<!--END HERO -->
+  <footer id="footer">
+
+      <div class="bottom">
+          <div class="bottom-left">
+              <div class="logo">
+                  <img src="__IMG__/new_index/logo-blue.png" alt="" />
+              </div>
+              <div class="detail-text">
+                  <span>HuDong Network Technology Co.,Ltd</span>
+                  <span>official website：hudt.io</span>
+                  <span>official wechat：hudt-business</span>
+              </div>
+          </div>
+          <div class="bottom-right">
+              <dl>
+                  <dt>
+                      <img src="__IMG__/new_index/wechat.jpg" alt="" />
+                  </dt>
+                  <dd>Wechat</dd>
+              </dl>
+              <dl>
+                  <dt>
+                      <img src="__IMG__/new_index/Beechat.png" alt="" />
+                  </dt>
+                  <dd>Beechat</dd>
+              </dl>
+              <dl>
+                  <dt>
+                      <img src="__IMG__/new_index/Telegram.png" alt="" /> 
+                  </dt>
+                  <dd>Telegram</dd>
+              </dl>
+          </div>
+          <span class="bot">Hudong Tap Inc.All rights reserved 2018</span>
+      </div>              
+  </footer>
+
+</div>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.min.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js"></script>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js"></script>
+    <script type="text/javascript" src="__JS__/new_index/packed.3704eaef.min.js"></script>
+    <script type="text/javascript">
+    //判断图片前缀
+    function parseImageUrl(urlstr) {
+      if (urlstr.indexOf('http://') < 0) {
+        urlstr = 'http://admin.hudt.io' + urlstr;
+      }
+      return urlstr;
+    }
+
+    window.onload = function(){
+      var aImgs = $(".text-detail img");
+      var l = aImgs.length;
+      for(var i=0;i<l;i++){
+        aImgs[i].src = parseImageUrl(aImgs[i].getAttribute('src'));
+      }
+    };
+    </script>
+</body>
+</html>

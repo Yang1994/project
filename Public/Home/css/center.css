@@ -1,0 +1,225 @@
+.left-nav ul li {
+    list-style: none;
+}
+.left-nav  ul li a {
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+    
+    color: #2b4250;
+}
+.left-nav  ul li .choose {
+    background: #d6f7ff;
+}
+.account {
+    /* display: none; */
+    float: left;
+    width: 100%;
+}
+h3 {
+    font-size: 30px;
+    margin: 50px 0;
+}
+.content-detail {
+    float: left;
+    width: 875px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.13);
+}
+.content-detail .detail-header {
+    float: left;
+    width: 100%;
+    height: 230px;
+    background: url(static/img/tittle.png) no-repeat center center;
+    border-radius: 10px 10px 0 0px ;
+
+}
+.content-detail .detail-header img {
+    width: 24%;
+    padding: 70px 20px;
+}
+.hdt-number {
+    float: right;
+    padding: 80px 20px;
+    font-size: 28px;
+
+}
+.hdt-number span {
+    float: left;
+    width: 100%;
+    color: #fff;
+}
+.content-detail ul {
+    float: left;
+    width: 100%;
+}
+.content-detail ul li {
+    float: left;
+    width: 90%;
+    padding: 0 5%;
+    height: 78px;
+    font-size: 22px;
+    line-height: 78px;
+    color: #2b4250;
+    cursor: pointer;
+    background: url(static/img/arrow.png) no-repeat 90% center;
+}
+.under-line {
+    border-bottom: 1px solid #d1d1d1;
+}
+.intive {
+    display: none;
+    float: left;
+    width: 100%;
+}
+.intive h3, .join h3 {
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.intive-tittle span {
+    float: left;
+    width: 100%;
+    color: #7f8a96;
+    /* font-size: 20px; */
+    margin-top: 20px;
+}
+.intive ul {
+    float: left;
+    width: 55%;
+    height: 165px;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: #2b4250;
+}
+.intive ul li {
+    padding: 0 30px;
+    height: 83px;
+    line-height: 83px;
+    color: #2b4250;
+}
+.intive ul li:nth-child(1) {
+    border-bottom: 1px solid #d1d1d1;
+}
+.intive .intive-header li span, .join .under-line span {
+    padding-right: 10px;
+    color: #2b4250;
+}
+.intive .intive-header li input, .join .under-line input {
+    width: 67%;
+    height: 2.5rem;
+    padding-left: 3%;
+    margin-right: 2%;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+    color: #2b4250;
+}
+.intive .intive-header li button, .join .under-line button {
+    width: 10%;
+    height:2rem;
+    background: #2ebf6d;
+    color: #fff;
+    border: none;
+}
+.get-hdt {
+    background: url(static/img/get-hdt.png) no-repeat 30px center;
+}
+.get-hdt span {
+    padding-left: 70px;
+}
+.get-hdt .get-number {
+    float: right;
+    padding-right: 0px;
+    color: #7f8a96;
+}
+.join {
+    display: none;
+    float: left;
+    width: 100%;
+}
+.join .intive-tittle span {
+    margin-bottom: 10px;
+}
+.join .detail-header {
+    
+    color: #fff;
+}
+.join .detail-header img {
+    float: left;
+}
+.join .detail-header span {
+    float: left;
+    padding-left: 70px;
+    line-height: 230px;
+    font-size: 30px;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .left-nav {
+        display: none;
+    }
+    .right-content {
+        left: 0;
+        padding: 20px 18px;
+    }
+    .content-detail {
+        width: 100%;
+        
+    }
+    .content-detail .detail-header img {
+        width: 44%;
+        padding: 50px 20px;
+    }
+    .hdt-number {
+        float: right;
+        padding: 40px 0px;
+        font-size: 28px;
+    }
+    .content-detail .detail-header {
+        float: left;
+        width: 100%;
+        height: 160px;
+        background: url(static/img/tittle.png) no-repeat center center;
+        border-radius: 10px 10px 0 0px;
+    }
+    .intive ul {
+        width: 100%;
+    }
+    .intive ul li {
+        padding: 0 10px;
+    }
+    .intive .intive-header li span {
+        padding-right: 0px;
+    }
+    .intive .intive-header li input {
+        width: 52%;
+    }
+    .intive .intive-header li button {
+        width: 20%;
+    }
+    .get-hdt {
+        background: url(static/img/get-hdt.png) no-repeat 10px center;
+    }
+    .content-detail ul li {
+        font-size: 16px;
+    }
+    .content-detail ul li {
+        float: left;
+        width: 96%;
+        padding: 0 2%;
+       
+    }
+    .join .under-line input {
+        width: 57%;
+    }
+}
+

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>封号操作|云尚管理平台</title>
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/Public/Mtadmin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Public/Mtadmin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Public/Mtadmin/css/module.css">
+     <!--[if lt IE 9]>
+    <script type="text/javascript" src="/Public/static/jquery-1.10.2.min.js"></script>
+    <![endif]--><!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/Public/Mtadmin/js/jquery.mousewheel.js"></script>
+    <!--<![endif]-->
+</head>
+<block name="body">
+	<div class="main-title">
+		<h2>&nbsp;&nbsp;封号操作</h2>
+	</div>
+    <br>
+    <div class="tab-wrap">
+		<div class="tab-content">
+			<form action="{:U()}" method="post" class="form-horizontal">
+				<!-- 基础 -->
+				<div id="tab1" class="tab-pane in tab1">
+					<div class="form-item">
+						<label class="item-label">
+							封号原因:<span class="check-tips">
+							<input type="text" id="reason" name="reason" class="text input-large" value="{$info['reason']}" >
+							</span>
+						</label>
+		  		    </div>
+			        
+					<div class="form-item">
+				        <input type="hidden" name="id" value="{:I('id')}">
+						<button type="submit" id="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确 定</button>
+				        <input type="button" id="btnclose" class="btn btn-return" name="Submit" value="关闭">
+		            </div>
+		        </div>
+			</form>	
+			<div id="result"></div>	
+        </div>
+  	<!-- End #Tab-content -->
+	</div>
+ 	<!-- End #Tap-wrap -->
+	
+</block>
+
+<block name="script">
+
+	<script type="text/javascript">
+  
+    var reason = $('#reason').val();
+    if(reason){
+    	window.opener.location.reload(); 
+	    window.close();
+    }
+	    	    	
+	$("#btnclose").click(function(){
+	  	window.close(); 
+	});
+	
+	</script>	
+</block>
+

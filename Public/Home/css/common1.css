@@ -1,0 +1,224 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,header,nav,h1,h2,h3,h4,h5,h6,a,ul,li,age,name{padding:0;margin:0;}
+img{border:none;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+a{text-decoration:none;color:#000;}
+*{font-family:"微软雅黑";}
+li{ list-style:none;}
+iframe{border:none;padding:0;margin:0;}
+
+#hot{position:absolute;right:15px;top:0;width:34px;height:50px;margin:0}
+#new{position:absolute;right:10px;top:0;width:49px;height:47px;margin:0}
+
+/*---top  css---*/
+.top{background-color:#323232;width:100%;height:80px;}
+.top header{width:1200px;margin-left:auto;margin-right:auto;overflow:hidden;}
+.top header img{float:left;margin-top:16px;margin-left:30px;}
+.top header nav{float:left;overflow:hidden;margin-left:120px;}
+.top header nav a{float:left;color:white;font-size:24px;line-height:80px;margin-right:50px;}
+.top header nav a:hover{color:#f54337;}
+
+
+
+.content{width:1200px;margin-left:auto;margin-right:auto;overflow:hidden;}
+.content header{text-align:center;}
+.content header h1{font-size:40px;font-weight:bold;color:#323232;margin-top:40px;}
+.content header h2{color:#323232;margin-top:10px;font-family:"微软雅黑 light";}
+.content dl{overflow:hidden;}
+.content dl dd{float:left;width:240px;text-align:center;line-height:40px;margin-left:120px;margin-top:50px;}
+
+.content .header{margin-top:30px;}
+.content .header a{cursor:pointer;float:right;margin-right:30px;background-color:#4cbf0a;line-height:56px;font-size:28px;border:none;text-align:center;color:white;border-radius:50px;padding:0px 30px;}
+
+
+
+#lxf-box { position: relative; width:1200px;margin:30px auto;}
+#lxf-box li { position: absolute; background: #fff; border:none; left: 0px; top: 0;box-shadow:0 0 5px #ccc;border:1px solid #ccc;}
+#lxf-box h3 { padding-top: 8px; font: bold 12px "微软雅黑"; }
+#lxf-box li name{font-size:20px;margin-left:10px;color:#323232;line-height:40px;}
+#lxf-box li age img{width:16px;margin-left:14px;}
+#lxf-box li section{background-color:#f7f7f7;}
+#lxf-box li section article{overflow:hidden;}
+#lxf-box li section img{padding:10px;display:block;float:left;}
+#lxf-box li section span{float:left;margin-top:14px;color:#323232;}
+#lxf-box li age span{font-size:20px;color:#ef80ff;line-height:40px;}
+#lxf-box li p{line-height:32px;font-size:16px;margin-left:10px;color:#323232;}
+#lxf-box li .line{width:250px;height:1px;background-color:#efefef;}
+#lxf-box li > img:first-child{ width: 280px; height: auto; display: block;}
+#lxf-box img:hover{
+	-webkit-animation:shade 3s ease-in-out 1;
+	-moz-animation:shade 3s ease-in-out 1;
+	-ms-animation:shade 3s ease-in-out 1;
+	-o-animation:shade 3s ease-in-out 1;
+	animation:shade 3s ease-in-out 1;	
+}
+/*css3动画*/
+#lxf-box li { animation: zoomIn 2s ease 0s 1 both; }
+@-webkit-keyframes zoomIn{0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}
+
+
+@-webkit-keyframes shade{
+	from{opacity:1;}
+	15%{opacity:0.4;}
+	to{opacity:1;}
+}
+@-moz-keyframes shade{
+	from{opacity:1;}
+	15%{opacity:0.4;}
+	to{opacity:1;}
+}
+@-ms-keyframes shade{
+	from{opacity:1;}
+	15%{opacity:0.4;}
+	to{opacity:1;}
+}
+@-o-keyframes shade{
+	from{opacity:1;}
+	15%{opacity:0.4;}
+	to{opacity:1;}
+}
+@keyframes shade{
+	from{opacity:1;}
+	15%{opacity:0.4;}
+	to{opacity:1;}
+}
+
+
+.name{float:left;}
+.name *{float:left;}
+.name name{font-size:44px;margin-left:30px;}
+.name age img{margin-left:30px;margin-top:30px;}
+.name age span{font-size:24px;color:#ef80ff;margin-left:6px;margin-top:22px;}
+.name game img{margin-left:30px;margin-top:16px;}
+
+.data{width:1200px;margin-left:auto;margin-right:auto;overflow:hidden;margin-top:20px;}
+.data section,.data img{float:left;text-align:center;}
+.data section{width:398px;}
+.data section h1,.data section h2{font-size:26px;font-family:"微软雅黑 light";margin-bottom:10px;}
+.data article{padding-top:110px;text-align:center;}
+.data article p{font-size:26px;font-family:"微软雅黑 light";}
+
+.sidebar{position:fixed;top:50%;margin-top:-137px;right:0;}
+.code_small{position:absolute;left:5px;top:5px;}
+.close{position:absolute;left:16px;top:190px;cursor:pointer;}
+.code_big{position:fixed;top:50%;margin-top:-137px;right:60px;}
+
+
+/*----tip  css----*/
+.bg{
+	background-image:url(../images/bg_download.png);
+	background-repeat:no-repeat;	
+}
+
+.tip_header{
+	text-align:center;
+	margin-top:60px;	
+}
+
+.tip_header h1{
+	font-size:56px;	
+	color:white;
+}
+
+.tip_header h2{
+	font-size:28px;	
+	font-family:"微软雅黑 light";
+	color:white;
+}
+
+.tip_code{
+	text-align:center;	
+	margin-top:60px;
+	margin-bottom:100px;
+}
+
+.tip_code p{
+	font-size:24px;	
+	font-family:"微软雅黑 light";
+	color:white;	
+}
+
+.tip_code span{
+	font-size:32px;	
+	background-color:#f54337;
+	border-radius:50px;
+	padding:12px 40px;
+	line-height:64px;
+	color:white;
+}
+/*---footer  css ---*/
+
+.footerbox{
+    width:100%;
+    background-color:#323232;
+	
+}
+
+.footerbox footer{
+    width:1200px;
+    height:180px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow:hidden;
+}
+
+.footerbox section{
+	float:left;
+	margin-top:50px;
+	margin-left:20px;
+}
+
+.footerbox section nav *{
+    float:left;
+    color:#ccc;
+    font-size:18px;
+    margin-right:20px;
+}
+
+.footerbox section nav img{
+	margin-top:4px;
+}
+
+.footerbox section h1,.footerbox section h2{
+	font-size:18px;
+	color:#ccc;	
+}
+
+.footerbox article{
+	float:right;	
+}
+
+.footerbox article *{
+	float:right;	
+}
+
+.footerbox article img{
+	margin:20px;	
+}
+
+.footerbox article p{
+	font-size:18px;
+	color:#ccc;
+	text-align:right;
+	margin-top:50px;
+}
+
+
+
+
+
+
+/*----以下为轮播css---*/
+
+
+.imageflow{overflow:hidden; position:relative; text-align:left; visibility:hidden; width:100%}
+.imageflow img{border:none; position:absolute; top:0px; visibility:hidden; -ms-interpolation-mode:bicubic}
+.imageflow p{margin:0 auto; text-align:center}
+.imageflow .loading{border:1px solid #ccc; height:15px; left:50%; margin-left:-106px; padding:5px; position:relative; visibility:visible; width:200px}
+.imageflow .loading_bar{background:#ccc; height:15px; visibility:visible; width:1%}
+.imageflow .caption{font-weight:bold; position:relative; text-align:center; z-index:10000}
+.imageflow .scrollbar{border-bottom:1px solid #b3b3b3; position:relative; visibility:hidden; z-index:10001; height:1px}
+.imageflow .slider{height:14px; margin:-6px 0 0 -7px; position:absolute; width:14px; z-index:10002}
+.imageflow .images{overflow:hidden; white-space:nowrap}

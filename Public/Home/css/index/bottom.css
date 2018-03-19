@@ -1,0 +1,132 @@
+/* 
+* @Author: anchen
+* @Date:   2018-01-15 11:51:39
+* @Last Modified by:   anchen
+* @Last Modified time: 2018-02-01 15:12:27
+*/
+.bottom {
+    float: left;
+    width: 60%;
+    height: 25%;
+    background: #f5f7fa;
+    padding: 0 20%;
+}
+.bottom-left {
+    float: left;
+    width: 50%;
+    padding-top: 60px;
+}
+.bottom-left .logo {
+    float: left;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.bottom-left .logo img {
+    width: 120px;
+}
+.bottom-right {
+    float: right;
+    padding-top: 80px;
+    width: 50%;
+}
+.bottom-right dl {
+    float: left; 
+    width: 21%;
+    margin: 0 5px;
+}
+.bottom-right dl dt {
+    margin: 0 auto;
+    
+}
+.bottom-right dl img {
+    width: 100%;
+  
+}
+.bottom-right dl dd {
+    text-align: center;
+    padding-top: 20px;
+    color: #7f8a96;
+    margin: 0;
+}
+.detail-text {
+    float: left;
+    width: 100%;
+}
+.detail-text span {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #7f8a96;
+    padding-bottom: 5px;
+}
+.bot {
+    float: left;
+    padding: 50px 0 40px;
+    color: #7f8a96;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    
+    .phone-bottom {
+        display: block;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    .code img {
+        width: 17%;
+    }
+    .phone-bottom .code {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .phone-bottom .code span {
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .phone-bottom span {
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    .bottom {
+        float: left;
+        width: 100%;
+        padding: 0; 
+    }
+    .bottom-left {
+        float: left;
+        width: 100%;
+        padding-top: 60px;
+    }
+    .bottom-left .logo {
+        text-align: center;
+    }
+    .detail-text {
+        
+        text-align: center;
+    }
+    .detail-text span {
+        font-size: 12px;
+    }
+    .bottom-right {
+        float: left;
+        width: 100%;
+        padding-left: 63px;
+    }
+    .bottom-right dl dd {
+        font-size: 12px;
+        margin: 0;
+    }
+    .bot {
+        width: 100%;
+        text-align: center;
+    }
+    .signUp_section .text_middle {
+        width: 86%;
+    }
+}

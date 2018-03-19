@@ -1,0 +1,185 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/plupload/plupload.full.min.js"></script>
+	<div class="main-title">
+		<h2>网站精选车辆管理</h2>
+	</div>
+	<div class="tab-wrap">
+		<div class="tab-content">
+			<form action="{:U()}" method="post" class="form-horizontal">
+				<!-- 基础 -->
+				<div id="tab1" class="tab-pane in tab1">
+					<div class="form-item">
+						<label class="item-label">
+							车辆型号名称:<span class="check-tips">
+							<input type="text" name="title" class="text input-large" value="{$info.title|default=''}" >
+							</span>
+						</label>
+		  		    </div>
+					 
+				    <div class="form-item">
+                        <div class="controls">
+							<input type="file" id="upload_picture_img">
+							<input type="hidden" name="img" id="cover_id_img" value="{$info['img']}"/>
+						    <div class="upload-img-box">
+							    <notempty name="info['img']">
+								    <div class="upload-pre-item"><img src="{$info['img']}"/></div>
+							    </notempty>
+						     </div>
+						  </div>
+		            </div>
+					
+		  		    <div class="demo">
+	    				<a class="btn" id="btn">上传展示图</a> 最大500KB，支持jpg，gif，png格式。	
+	    				<ul id="ul_pics" class="ul_pics clearfix"></ul>
+	   					<input type='hidden' name="multimage" id="multimage" value="{$info['multimage']}"/>
+	   					<div class="clear"></div>
+					</div>
+					<br/>
+
+					<div class="form-item">
+						<label class="item-label remark">
+							文字内容:
+						</label>&nbsp;
+						<span class="check-tips" >
+							<textarea name="detail" cols="50" rows="7">{$info.detail|default=''}</textarea>
+						</span>
+		  		    </div>
+			        
+					<div class="form-item">
+				        <input type="hidden" name="id" value="{$info.id|default=''}">
+						<button type="submit" id="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">保 存</button>
+				        <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+		            </div>
+		        </div>
+			</form>		
+        </div>
+  	<!-- End #Tab-content -->
+	</div>
+ 	<!-- End #Tap-wrap -->
+</block>
+
+<block name="script">
+<script type="text/javascript">
+	$(document).ready(function(){
+		var img = $("#multimage").val();
+		var arr = img.split('###');
+		console.info(arr);
+		for(var i=0;i<(arr.length-1);i++){
+			var li = '';
+			li = "<li class='li_image' id='abc" + i + "'><div class='progress'><span class='bar'></span></div></li>";
+			$("#ul_pics").append(li);
+			$("#abc" + i).html("<div class='img'><img  src='" + arr[i] + "'/><span class='span_del'></span></div>");
+		}
+	});
+	
+    var uploader = new plupload.Uploader({
+        runtimes: 'html5,flash,silverlight,html4', 
+        browse_button: 'btn', 
+        url: "{:U('File/uploadShowImg',array('session_id'=>session_id()))}", 
+        flash_swf_url: '__STATIC__/plupload/Moxie.swf', 
+        silverlight_xap_url: '__STATIC__/plupload/Moxie.xap', 
+        filters: {
+            max_file_size: '500kb', 
+            mime_types: [
+                {title: "files", extensions: "jpg,png,gif"}
+            ]
+        },
+        multi_selection: true, 
+        init: {
+            FilesAdded: function(up, files) { 
+                if ($("#ul_pics").children("li").length > 30) {
+                    alert("您上传的图片太多了！");
+                    uploader.destroy();
+                } else {
+                    var li = '';
+                    plupload.each(files, function(file) { 
+                        li += "<li class='li_image' id='" + file['id'] + "'><div class='progress'><span class='bar'></span><span class='percent'>0%</span></div></li>";
+                    });
+                    $("#ul_pics").append(li);
+                    uploader.start();
+                }
+            },
+            UploadProgress: function(up, file) { 
+           	var percent = file.percent;
+                $("#" + file.id).find('.bar').css({"width": percent + "%"});
+                $("#" + file.id).find(".percent").text(percent + "%");
+            },
+            FileUploaded: function(up, file, info) { 
+              	
+              	var data = eval("(" + info.response + ")");
+              	console.info(data);
+              	//var data = info.reponse;
+
+                $("#" + file.id).html("<div class='img'><img  src='" + data.file.path + "'/><span class='span_del'></span></div>");
+                var old=$("#multimage").val();
+				$("#multimage").val(old + data.file.path+'###');
+            },
+            Error: function(up, err) { 
+                alert(err.message);
+            }
+        }
+    });
+    uploader.init();
+</script>
+<script type="text/javascript">
+$(function(){
+	$(".demo").on("mouseover",'.li_image',function(){
+		$(this).find(".span_del").show();
+	})
+	$(".demo").on("mouseout",'.li_image',function(){
+		$(this).find(".span_del").hide();
+	})
+	$("#ul_pics").on("click",'.span_del',function(){
+		var src=$(this).siblings('img').attr('src');
+		var multimage=$("#multimage").val();
+		var new_multimage=multimage.replace(src+'###', '');
+		$("#multimage").val(new_multimage);
+		$(this).parents('li.li_image').remove();
+	})
+})
+</script>
+<script type="text/javascript">
+	//上传图片
+	/* 初始化上传插件 */
+	$("#upload_picture_img").uploadify({
+		"height"          : 30,
+		"swf"             : "__STATIC__/uploadify/uploadify.swf",
+		"fileObjName"     : "download",
+		"buttonText"      : "上传封面",
+		"uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+		"width"           : 120,
+		'removeTimeout'	  : 1,
+		'fileTypeExts'	  : '*.jpg; *.png; *.gif; *.jpeg;',
+		"onUploadSuccess" : uploadPictureimg,
+		'onFallback' : function() {
+			alert('未检测到兼容版本的Flash.');
+		}
+	});
+	function uploadPictureimg(file, data){
+	   	console.info(data);
+		var data = $.parseJSON(data);
+		var src = '';
+		
+		if(data.status){
+		  
+			$("#cover_id_img").val(data.path);
+			src = data.url || '__ROOT__' + data.path;
+			$("#cover_id_img").parent().find('.upload-img-box').html(
+				'<div class="upload-pre-item"><img src="__ROOT__' + src + '"/></div>'
+			);
+		} else {
+			updateAlert(data.info);
+			setTimeout(function(){
+				$('#top-alert').find('button').click();
+				$(that).removeClass('disabled').prop('disabled',false);
+			},1500);
+		}
+	};
+	
+	highlight_subnav('{:U("SelectCar/index")}');
+</script>
+</block>
+

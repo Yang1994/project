@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>七夕活动|17玩直播</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+
+    <link rel="stylesheet" href="/Public/Home/css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/data-format.js"></script>
+</head>
+
+<body>
+
+<script>
+    $(document).ready(function () {
+        $.get('./model/7_model.php', function (data) {
+            $('#table_body').html(getTableData(data));
+        });
+    });
+</script>
+
+<div class="wrap">
+    <div class="header-text">
+        <span>浪漫七夕来临，赶快行动起来</span>
+        <span>用“花季单车”来表达你的爱，继续相爱吧</span>
+    </div>
+    <div class="active">
+        <span>活动说明</span>
+    </div>
+    <div class="center-text">
+        <p>活动时间内，签约主播根据收礼物“花季单车”的数量进行排名，并获得相应的奖励。</p>
+    </div>
+    <div class="table">
+        <img class="header-img" src="/Public/Home/images/valentine/zbphb-1.png" alt=""/>
+        <div class="table-header">
+            <span class="nickname">昵称</span>
+            <span>名次</span>
+            <span>数量</span>
+            <span>奖励</span>
+        </div>
+        <div id="table_body"></div>
+    </div>
+    <div class="footer">
+        <p>热玩置顶会由专人联系主播沟通发放，原则上热玩每人每日不超过1小时。</p>
+        <p>活动时间：8月27日0:00-8月31日23:59</p>
+        <p>所有奖励将在活动结束后的5个工作日内发放。</p>
+    </div>
+</div>
+
+</body>
+</html>

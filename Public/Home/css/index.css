@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+.banner{width:80%;margin-left:auto;margin-right:auto;padding:20px;}
+.banner img{width:100%;}
+.line{width:80%;height:2px;margin-left:auto;margin-right:auto;background-color:#ccc;}
+.content{width:80%;margin-left:auto;margin-right:auto;}
+.title h1{padding:20px;color:#f19ec2;float:left;}
+.title h2{padding:20px;float:right;}
+.title h2 a{color:#999;}
+.title{overflow:hidden;}
+.char{overflow:hidden;}
+.char dd{background-color:white;float:left;text-align:center;margin:20px;position:relative;}
+.char img{margin:30px;}
+#hot{position:absolute;right:15px;top:0;width:34px;height:50px;margin:0}
+#new{position:absolute;right:10px;top:0;width:49px;height:47px;margin:0}
+/* = 分页
+------------------------------------------ */
+.page {
+    margin: 10px 0;
+    *zoom: 1;
+}
+.page:before,
+.page:after {
+    display: table;
+    content: "";
+}
+.page:after {
+    clear:both;
+}
+.page a,
+.page span {
+    float: left;
+    margin-left: -1px;
+    padding: 0 14px;
+    height: 30px;
+    line-height: 30px;
+    color: #000;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    /*background-color: #4bbd00;*/
+}
+.page a:hover
+ {
+    text-decoration: none;
+    background-color: #387C0B;
+}
+.page .current {
+	border-top: 1px solid #387C0B;
+}
+.page .next,
+.page .prev {
+    font-family: "宋体";
+    font-weight: bold;
+}
+.page .rows {
+	border-right: 1px solid #CCCCCC;
+}

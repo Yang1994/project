@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+/*重置*/
+body,h1,h2,h3{margin:0}
+img{display:block;border:none;}
+a{ text-decoration:none;color:black;}
+*{font-family:"微软雅黑";}
+input{border:none;outline:none;}
+h1,h2{font-weight:normal;}
+dl,dd{margin:0;padding:0;}
+ul{margin:0}
+li{list-style:none;}
+/*头部*/
+.top{width:100%;background-color:#f2f2f2;line-height:70px;box-shadow:0px 2px 2px #ccc;}
+.head{width:80%;margin-left:auto;margin-right:auto;overflow:hidden;}
+.logo{float:left;font-size:36px;font-weight:bold;margin-left:20px;}
+.nav img{float:left;margin-top:30px;margin-left:10px;}
+.nav a{float:left;font-size:26px;padding-left:50px;}
+.nav a:hover{color:#f19ec2;}
+.search{float:right;margin-right:50px;}
+.search img{float:right;margin-top:20px;cursor:pointer;}
+.entry{width:200px;line-height:26px;color:#ccc;background-color:white;text-indent:10px;}
+.login{float:right;margin-right:20px;}
+
+
+/*背景*/
+.bg{background-image:url(../images/bg.png); background-repeat:repeat; background-size:100%;position:relative;margin-top:2px;margin-bottom:2px;}
+
+
+
+/*底部*/
+.footerbox{width:100%;background-color:#f2f2f2;box-shadow:0px -2px 2px #ccc;}
+.footer{width:80%;margin-left:auto;margin-right:auto;overflow:hidden;padding-top:20px;padding-bottom:20px;}
+.tel{float:right;margin-right:20px;}
+.tel *{float:left;}
+.copyright{float:left;margin-left:20px;}
+.copyright dl{margin-top:10px;}
+.copyright dd{float:left;color:#999;}
+.copyright span{color:#ccc;}
+.tel h1{font-size:36px;}
+.tel h2{font-size:18px;margin-top:16px;}

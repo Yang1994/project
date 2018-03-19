@@ -1,0 +1,55 @@
+<include file="Public/head"/>
+<link rel="stylesheet" type="text/css" href="__CSS__/bottom.css">
+<style>
+.bg{
+    background: #041527;
+}
+.bg img{display:inline;padding-top:8%;margin-bottom:20px;background: #041527;}
+.success{width:100%;height:100%;text-align:center;padding-bottom:70px;}
+.success h1{font-size:48px;margin-bottom:12px;color: white;}
+.success h2{font-size:30px;color:white;}
+.success p{font-size:24px;color:white;}
+.btn{
+    text-align:center;
+    width: 100%;
+    ,animation: 
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0); }
+.btn input{border: none;width:100%; max-width: 460px; 
+    margin: 0 auto;
+    background-color: #43b2eb;line-height:35px;font-size:14px;border-radius:4px;color:#fff;cursor:pointer;}
+</style>
+
+<div class="bg">
+	<div class="success">
+		<img src="__IMG__/success.png">
+        <h1>恭喜你，<?php echo($message); ?></h1>
+        <p class="jump">
+          <b id="wait"><?php echo($waitSecond); ?></b> 秒后页面将自动跳转
+        </p>
+        <div class="btn">
+            <a id="href" href="<?php echo($jumpUrl); ?>"><input type="button" value="立即跳转"></a>
+            <!-- <input id="btn-stop" type="button" onclick="stop()" value="停止跳转"> -->
+        </div>  
+    </div>
+</div>
+
+<script type="text/javascript">
+(function(){
+    var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+    var interval = setInterval(function(){
+     	var time = --wait.innerHTML;
+     	if(time <= 0) {
+     		location.href = href;
+     		clearInterval(interval);
+     	};
+    }, 1000);
+    window.stop = function (){
+        //console.log(111);
+        clearInterval(interval);
+    }
+})();
+</script>
+<include file="Public/footer"/>

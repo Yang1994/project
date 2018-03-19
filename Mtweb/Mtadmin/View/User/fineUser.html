@@ -1,0 +1,52 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>优质主播列表</h2>
+	</div>
+	
+	<!-- 数据表格 -->
+    <div class="data-table">
+		<table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"></th>
+                    <th>序列</th><th>用户id</th><th>昵称</th><th>归属家族</th>
+            		<th>操作</th>  				
+                </tr>
+            </thead>
+			
+			<volist name="data" id="data"  key="k">
+                <tr>
+					<td><input class="ids" type="checkbox" value="{$data['id']}" name="ids[]"></td>
+					<td>{$k}</td> 
+					<td>{$data['uid']}</td>
+					<td>{$data['nick_name']}</td>		       
+					<td>{$data['username']}</td>
+					<td>
+					   <a href="{:U('User/setFine','&group_id=0&uid='.$data['uid'],false)}" class="confirm ajax-get">解除绑定</a>					  
+					</td>
+            	</tr>
+            </volist>
+        </table>
+  	</div>
+	
+	<!-- 分页 -->
+	<div class="page">
+         {$_page}
+    </div>
+
+	<div class="cf">
+		<button class="btn document_add" onclick="location='{:U('User/findUser')}'">添加主播</button>
+	</div>
+</block>
+
+<block name="script">
+
+	<script type="text/javascript">
+    //导航高亮
+    highlight_subnav('{:U('User/fineUser')}');
+	</script>	
+
+</block>

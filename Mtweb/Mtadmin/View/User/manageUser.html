@@ -1,0 +1,86 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2><font color="#EE7613">管理者主播管理</font></h2>
+	</div>
+	<div class="cf">
+
+        <!-- 高级搜索 -->
+		<div class="search-form1">
+			<label>主播id：</label>
+			<input type="text" name="uid" class="search-input" value="{:I('uid')}" placeholder="请输入主播id">
+			<label>主播昵称：</label>
+			<input type="text" name="nick_name" class="search-input" value="{:I('nick_name')}" placeholder="请输入主播昵称">
+			<label>运营昵称：</label>
+			<input type="text" name="username" class="search-input" value="{:I('username')}" placeholder="请输入运营昵称">
+			<a class="sch-btn" href="javascript:;" id="search" url="{:U('user/manageUser')}"><i class="btn-search"></i></a>
+		</div>
+		
+    </div>
+	
+	<!-- 数据表格 -->
+	<div class="data-table">
+		<table>
+			<!-- 表头 -->
+			<thead>
+				<tr>
+					<th>序列</th><th>主播ID</th><th>主播昵称(身份)</th>
+					<th>归属运营</th><th>操作</th>
+				</tr>
+			</thead>			
+			<volist name="data" id="data" key="k">
+				<tr>
+				    <td>{$k}</td>
+				    <td>{$data['uid']}
+				    </td>
+				    <td>	
+				    	{$data['nick_name']}
+				    	<in name="data.group_id" value="9,10">({$data['group_name']})
+				    	</in>
+				    </td>
+				    <td>{$data['username']}</td>
+				    <td>
+				    	<notin name="data.group_id" value="9,10">
+				    	<a href="{:U('User/editManage','uid='.$data['uid'],false)}">编辑</a>
+				    	</notin>
+				    </td>
+				</tr>
+			</volist>
+		</table>
+	</div>    
+
+    <div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form1').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/index')}');
+	</script>
+</block>

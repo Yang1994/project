@@ -1,0 +1,104 @@
+<include file="Public/head"/>  
+<link href="__CSS__/information.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="__CSS__/bottom.css">
+<div class="bg">
+  <h1 class="logo3">
+    <img class="hdt_img" src="__IMG__/index/DTLOGO.png">
+  </h1>
+   <form action="{:U('Public/login')}" method="post" name="fromart" id="fromart" onSubmit="return oncheck();">
+	<div class="table"> 
+  <table>
+      <tr>
+         <td align="left"><input type="text" id="username" placeholder="输入手机号" name="username" value=""/></td>
+      </tr>      
+			<tr>
+       	
+        <td align="left"><input type="password" id="password" placeholder="请输入密码（6~16位字母、数字或符号）" name="password" value=""/></td>
+      </tr>
+			<tr>
+        <td class="verify-detail" align="left"> 
+          <div class="item verifycode">
+            <i class="icon-login-verifycode"></i>
+            <input type="text" class="verify" name="verify" placeholder="请填写验证码" autocomplete="off">
+          </div>
+          <div><img class="verifyimg reloadverify" alt="点击切换" src="{:U('Public/verify')}"></div>
+	      </td>
+      </tr>
+		</table>
+    <div class="btn">
+      <input name="sbt" type="submit" value="登录">
+    </div>
+	  </div>	
+	</form>
+</div>
+
+<script type="text/javascript">
+function oncheck(){
+  
+	if(document.getElementById("username")!=null&&get_obj('username').value==''){
+		alert("手机号码不能为空");
+		get_obj('username').focus();
+		return false;
+	}
+	
+	if(document.getElementById("password")!=null&&get_obj('password').value==''){
+		alert("密码不能为空");
+		get_obj('password').focus();
+		return false;
+	}
+
+}
+
+ </script>
+ <script type="text/javascript">
+    	/* 登陆表单获取焦点变色 */
+    	$(".login-form").on("focus", "input", function(){
+            $(this).closest('.item').addClass('focus');
+        }).on("blur","input",function(){
+            $(this).closest('.item').removeClass('focus');
+        });
+
+    	//表单提交
+		$(function(){
+		    $(".reloadverify").click();
+			//初始化选中用户名输入框
+			$("#itemBox").find("input[name=username]").focus();
+			//刷新验证码
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+
+            //placeholder兼容性
+                //如果支持 
+            function isPlaceholer(){
+                var input = document.createElement('input');
+                return "placeholder" in input;
+            }
+                //如果不支持
+            if(!isPlaceholer()){
+                $(".placeholder_copy").css({
+                    display:'block'
+                })
+                $("#itemBox input").keydown(function(){
+                    $(this).parents(".item").next(".placeholder_copy").css({
+                        display:'none'
+                    })                    
+                })
+                $("#itemBox input").blur(function(){
+                    if($(this).val()==""){
+                        $(this).parents(".item").next(".placeholder_copy").css({
+                            display:'block'
+                        })                      
+                    }
+                })    
+            }
+		});
+    </script>
+
+<include file="Public/footer"/>
+

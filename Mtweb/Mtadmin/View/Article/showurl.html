@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>订单交易流水管理|盟塔管理平台</title>
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/Public/Mtadmin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Public/Mtadmin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/Public/Mtadmin/css/module.css">
+
+	
+     <!--[if lt IE 9]>
+    <script type="text/javascript" src="/Public/static/jquery-1.10.2.min.js"></script>
+    <![endif]--><!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/Public/Mtadmin/js/jquery.mousewheel.js"></script>
+    <!--<![endif]-->
+    
+</head>
+<block name="body">
+	<div class="main-title">
+		<h2>&nbsp;&nbsp;查看活动网址</h2>
+	</div>
+    <div class="fl">
+			<div class="btn-group">
+			<table align="center" >
+            <!-- 表头 -->
+            <tr>
+					<tr><td>&nbsp;</td></tr>
+                <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{:C('WEB_URL')}/index.php?s=/ActivityType/index/articleid/{$articleid}/template/activity.html</td>
+                </tr>
+				<tr><td>&nbsp;</td></tr>
+                   
+				<tr>
+                <td align="center">
+				
+				    <input type="button" id="copyBtn" class="btn" value="复制"  />
+					<input type="button" id="btnclose" class="btn" name="Submit" value="关闭">
+				</td>
+                </tr>
+			
+			</table>
+				
+				<br><br>
+				
+				
+					 <input type="hidden" id="copyFromTxt"  value="{:C('WEB_URL')}/index.php?s=/ActivityType/index/articleid/{$articleid}/template/activity.html" />
+                   		
+				
+			</div>
+          
+
+  </div>
+	
+	
+	<!-- 数据表格 -->
+  <div class="data-table">
+   <script type="text/javascript">
+        $(function() { 
+
+           $("#copyBtn").click(function() {
+		   
+				var clipboardData = window.clipboardData; //for IE
+				if (!clipboardData) { // for chrome
+					clipboardData = e.originalEvent.clipboardData;
+				}
+				clipboardData.setData('Text',$("#copyFromTxt").val());
+
+
+              // window.clipboardData.setData("Text", $("#copyFromTxt").val());
+            });
+            $("#pasteBtn").click(function() {
+                $("#copyToTxt").val(window.clipboardData.getData("Text"));
+            });
+			$("#btnclose").click(function(){
+	           window.close(); 
+	        })
+        });
+		
+    </script> 
+
+  </div>
+	</div>
+
+</block>
+
+<block name="script">
+
+</block>

@@ -1,0 +1,89 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+	<div class="main-title">
+		<h2>{:isset($info['id'])?'编辑':'新增'}城市</h2>
+	</div>
+	<div class="tab-wrap">
+		<div class="tab-content">
+		
+			<form action="{:U()}" method="post" class="form-horizontal">
+				<!-- 基础 -->
+				<div id="tab1" class="tab-pane in tab1">
+					<div class="form-item">
+						<label class="item-label">
+							城市名:<span class="check-tips">
+							<input type="text" name="city_name" class="text input-large" value="{$info.city_name|default=''}" >
+							</span>
+						</label>
+		  		    </div>
+				   	
+					<div class="form-item">
+						<label class="item-label">
+							国家:<span class="check-tips"> 
+							<input type="text" name="country" class="text input-large" value="{$info.country|default=''}">
+						     </span>
+						</label>
+		            </div>
+
+		            <div class="form-item">
+						<label class="item-label">
+							取还车地:
+							<a href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" id="AddMoreFileBox" class="btn-info">添加</a></p>
+						</label>
+						<label>
+							<div id="InputsWrapper">
+								<volist name="data" id="data" key="k">
+									<div>
+										地址:<input type="text" name="store[]" value="{$data['store_name']}"/>
+										经度:<input type="text" name="lat[]" value="{$data['geo_lat']}"/>
+										纬度:<input type="text" name="lng[]" value="{$data['geo_lng']}"/>
+										<a href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" class="removeclass"><input type="button" value="删除"></a></div>
+									</div>
+								</volist>
+							</div>
+						</label>
+						<br> 
+		  		    </div>
+			        
+					<div class="form-item">
+				        <input type="hidden" name="id" value="{$info.id|default=''}">
+						<button type="submit" id="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确 定</button>
+				        <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+		            </div>
+				</form>	
+           </div>   
+  </div>
+  <!-- End #Tab-content -->
+</div>
+ <!-- End #Tap-wrap -->
+</block>
+
+<block name="script">
+<script>
+	var MaxInputs    = 8; //maximum input boxes allowed
+	var InputsWrapper  = $("#InputsWrapper"); //Input boxes wrapper ID
+	var AddButton    = $("#AddMoreFileBox"); //Add button ID
+	var x = InputsWrapper.length; //initlal text box count
+	var FieldCount=1; //to keep track of text box added
+	$(AddButton).click(function (e){ //on add input button click   
+	    if(x <= MaxInputs) //max input box allowed
+	    {
+	      FieldCount++; //text box added increment
+	      //add input box
+	      $(InputsWrapper).append('<div>地址:<input type="text" name="store[]" value=""/> 经度:<input type="text" name="lat[]" value=""/> 纬度:<input type="text" name="lng[]" value=""/> <a href="#" rel="external nofollow" rel="external nofollow" rel="external nofollow" class="removeclass"><input type="button" value="删除"></a></div>');
+	      x++; //text box increment
+	    }
+		return false;
+	});
+	$("body").on("click",".removeclass", function(e){ //user click on remove text
+	    if( x >= 1 ) {
+	        $(this).parent('div').remove(); //remove text box
+	        x--; //decrement textbox
+	    }
+	return false;
+	})
+
+</script>
+</block> 

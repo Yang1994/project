@@ -1,0 +1,130 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>用户管理</h2>
+	</div>
+    
+	<div class="cf">
+		<!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div>
+				<label>&nbsp;</label>
+				<label>用户id:</label>
+				<input type="text" name="uid" value="{:I('uid')}" placeholder="请输入主播id">
+				<label>&nbsp;</label>
+				<label>昵称:</label>
+				<input type="text" name="nickname" value="{:I('nickname')}" placeholder="请输入主播昵称">
+				<label>&nbsp;</label>
+				<label>状态：</label>
+				<select id="forbid" name="forbid" class="forbid">
+				 	<option value=""  <if condition="$Forbid eq ''">selected</if>>全部</option>
+					<option value="1" <if condition="$Forbid eq 1 ">selected</if>>已封</option>
+				</select>&nbsp;
+				<a class="sch-btn" href="javascript:;" id="search" url="{:U('User/user')}"><i class="btn-search"></i></a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 数据表格 -->
+    <div class="data-table">
+		<table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"></th>
+                    <th>编号</th>
+                    <th>用户id</th><th>昵称</th><th>头像</th>
+                    <th>用户等级</th><th>用户经验</th>
+                    <th>钻石</th><th>游戏币</th>
+                    <th>星星</th><th>冻结星星</th><th>月亮</th>
+                    <th>注册时间</th><th>注册渠道</th><!--th>是否封直播间</th--><th>是否封号</th>
+            		<th>操作</th>  				
+                </tr>
+            </thead>
+			
+			<volist name="data" id="data"  key="k">
+                <tr>
+					<td><input class="ids" type="checkbox" value="{$data['uid']}" name="ids[]"></td>
+					<td>{$k}</td> 
+					<td>{$data['uid']}</td>
+					<td>{$data['nick_name']}</td>		       
+					<td>
+						<div class="upload-img-box">
+							<div class="upload-pre-item"><img src="{$data['image']}"/></div>
+						</div>
+					</td>
+					<td>{$data['user_level']}</td>
+					<td>{$data['user_exp']}</td>
+					<td>{$data['diamond']}</td>
+					<td>{$data['score']}</td>
+					<td>{$data['coupons']}</td>
+					<td>{$data['frozen_coupons']}</td>
+					<td>{$data['moon']}</td>
+					<td>{$data['register_time']}</td>
+					<td>{$data['channel_name']}</td>
+					<!--td>{$data['forbid']?'是':'否'}</td--> 
+					<td>{$data['forbid_powers']?'是':'否'}</td> 
+					<td>
+				   		<!--a title="{$data.forbid_powers|show_forbid_op}" 
+				   		href="{:U('User/setForbid?uid='.$data['uid'].'&forbid_powers='.abs(1-$data['forbid_powers']))}" class="ajax-get">
+				    	{$data.forbid_powers|show_forbid_op}
+					    </a-->&nbsp;&nbsp;
+					    <a href="{:U('User/forbidChange?oid='.$data['oid'].'&forbid='.abs(1-$data['forbid_powers']))}" class="confirm">{$data.forbid_powers|show_forbid_op}</a>					  
+					</td>
+            	</tr>
+            </volist>
+        </table>
+  </div>
+	</div>
+	<!-- 分页 -->
+	<div class="page">
+         {$_page}
+    </div>
+</block>
+
+<block name="script">
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+		
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+
+        var forbid = $('.forbid').val();
+        
+        if(forbid){
+        	searchurl = url+'&forbid='+forbid;
+        }else{
+        	searchurl = url;
+        }
+		window.location.href = searchurl;
+	});
+
+	//回车搜索
+    $(".search-input").keyup(function(e){
+        if(e.keyCode === 13){
+            $("#search").click();
+            return false;
+        }
+    });
+
+    //回车自动提交
+    $('.search-form').find('input').keyup(function(event){
+        if(event.keyCode===13){
+            $("#search").click();
+        }
+    });
+
+    //导航高亮
+    highlight_subnav('{:U('User/user')}');
+	</script>	
+</block>

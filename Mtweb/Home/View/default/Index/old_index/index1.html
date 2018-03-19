@@ -1,0 +1,424 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+    <head>
+        <meta http-equiv="Cache-Control" content="max-age=259200, must-revalidate"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> -->
+        <meta name="googlebot" content="archive"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+        <meta name="description" content="全球首家基于区块链的互动交流平台">
+        <meta name="keywords" content="互动力,分布式CDN,共享CDN,区块链">
+        <!-- MAIN FAVICON -->
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="__CSS__/normalize-min.css">
+        <link rel="stylesheet" href="__CSS__/pace.css">
+        <link rel="stylesheet" href="__CSS__/main.css">
+        <link rel="shortcut icon" href="__IMG__/bespeak/coin.png" /> 
+        <!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+        <style type="text/css">
+            .btn-arrow-down {
+                left: 27%;
+            
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="page-wrapper page">
+            <div class="exit">
+                <if condition="is_user_login()">
+                    <a href="{:U('User/index')}">个人中心</a>
+                    <a href="{:U('Public/logout')}">退出</a>
+                <else/>
+                    <a href="{:U('Public/login')}">登录</a>
+                    <a href="{:U('Public/register')}">注册</a>
+                </if>
+            </div>
+            <div class="user-menu">
+                <a href="#" class="language j-btn-menu" data-menu='lang-menu'>CN</a>
+                <div class="menu-list" id='lang-menu' style='float: right; text-align: right; position: absolute; right: 0px;'>
+                    <ul>
+                        <li>
+                            <a href='{:U('Index/index','lang=ch',FALSE)}'>CN</a>
+                        </li>
+                        <li>
+                            <a href='{:U('Index/index')}'>EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <img src="__IMG__/news/asteroids-left.png" alt="pic" class="a-left">
+            <img src="__IMG__/news/asteroids-right.png" alt="pic" class="a-right">
+            <img src="__IMG__/news/asteroids-left.png" alt="pic" class="b-left">
+            <img src="__IMG__/news/asteroids-right.png" alt="pic" class="b-right">
+            <div class="container">
+                <!-- THE 1st SCREEN -->
+                <canvas id="canvasOne" class="dusty" width="1280" height="1420"></canvas>
+                <canvas id="canvasAustro" class="austro" width="600" height="640"></canvas>
+                <!-- <canvas id="canvasStars" class="bg-stars" width="600" height="640"></canvas> -->
+                <div class="center screen-7">
+                    <h1 class="title title-big">
+                        <img src="__IMG__/index/DTLOGO.png"  width="400">
+                        <span>互动产生价值</span>
+                    </h1>
+                    <h4 class="title title-small title-special">
+                        全球首家基于区块链的互动交流平台</span>
+                    </h4>
+                    <a href="{:U('User/bespeak')}" class="btn-arrow-down to-second centered">
+                       <!--  <span class='arrow-down-p1'></span>
+                       <span class='arrow-down-p2'></span>
+                       <span class='arrow-down-p3'></span> -->
+                        <div class="animation-text"> 
+                          <div style="animation-delay: 0s;">H</div>
+                          <div style="animation-delay: 0.1s;">D</div>
+                          <div style="animation-delay: 0.2s;">T</div>
+                          <div style="animation-delay: 0.3s;">限</div>
+                          <div style="animation-delay: 0.4s;">量</div>
+                          <div style="animation-delay: 0.5s;">赠</div>
+                          <div style="animation-delay: 0.6s;">送</div>
+                          <div style="animation-delay: 0.7s;">注</div>
+                          <div style="animation-delay: 0.8s;">册</div>
+                          <div style="animation-delay: 0.9s;">立</div>
+                          <div style="animation-delay: 1s;">得</div>
+                        </div>
+                    </a>
+                    <div class="tiny-stars">
+                        <img src="__IMG__/news/stars2.svg" alt="">
+                    </div>
+                    <div class="tiny-stars middle-stars">
+                        <img src="__IMG__/news/stars3.svg" alt="">
+                    </div>
+                    <div class="planet-big centered">
+                        <!-- ORBIT -->
+                        <span class="round round-1"></span>
+                        <span class="round round-2"></span>
+                        <span class="round round-3"></span>
+                        <span class="round round-4"></span>
+                        <span class="round round-5"></span>
+                        <!-- END OF ORBIT -->
+                    </div>
+                    <!-- end of planet-big centered -->
+                    <div class="planet-big-content centered screen-1">
+                        <h2>
+                            互动力是什么？
+                        </h2>
+                        <h4 class="title title-small">互动力（HDT）是去中心化互动流量共享服务</h4>
+                        <p class="text">互动力是基于区块链去中心化的激励型应用社区。应用开发者发布基于互动行为有偿奖励任务，从而获得用户关注。用户领取任务后，进行产品体验。根据智能合约对用户的有效互动行为工作量进行证明，发放任务通行证奖励。互动力将应用开发者与用户整合在一个去中心化社区，创建一个自治的生态系统，充分激发用户与应用开发者的价值共创。</p>
+                        <a href="upload/pdf/whitepaper.pdf" class="btn fd-contact-us btn-big">白皮书下载</a>
+                    </div>
+                    <img src="__IMG__/news/planet-1.png" alt="" class="abs planet-1">
+                    <img src="__IMG__/news/moon.png" alt="" class="abs moon">
+                    <!-- END OF THE 1st SCREEN -->
+                    <!-- THE 2nd SCREEN -->
+                    <div class="screen-2">
+                        <div class="block">
+                            <h3 class="title title-medium">
+                                <i>市场痛点</i>
+                            </h3>
+                            <h4 class="title title-small">Market Pain Point</h4>
+                            <p class="text">
+                                用户流量是所有互联网企业最核心的关注点，目前存在诸多亟待解决的痛点。互动力的目标是借助区块链+大数据+深度学习技术，去掉流量中介，让企业需求方与价值用户直接对接，从而让行业更高效，更透明。让企业把自己从繁琐的推广工作中脱身出来，更加专注于做好产品和服务，使用户得到更加优秀的用户体验。
+                            </p>
+                        </div>
+                        <!-- end of block -->
+                        <div class="rhombs">
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>平台控制流量</span>
+                                    <p>中心化应用分发平台控制流量，决定了应用的生死大权<br /><br /><br /></p>
+                                </div>
+                            </div>
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>用户粘性弱</span>
+                                    <p>人均单设备应用安装量在20到49的区间内，但46.5%手机网民表示每周打开频率达5次以上的应用量不超过十个<br /></p>
+                                </div>
+                            </div>
+                            
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>评价体系单一</span>
+                                    <p>仅依靠评分、评论直接影响用户下载应用的态度，导致缺乏足够可信的参考价值<br /><br /></p>
+                                </div>
+                            </div>
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs4.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>信息不对称</span>
+                                    <p>让优质、合适的应用寻找到目标人群以及让有需求的用户能找到满足其需求并拥有较高体验水平的应用<br /><br /></p>
+                                 </div>
+                            </div>
+            
+                        </div>
+                        <!-- end of rhombs -->
+
+                    </div>
+                    <!-- END OF THE 2nd SCREEN -->
+                    <!-- THE 3rd SCREEN --> 
+                    <div id='rocket-screen'>
+                        <div class="block screen-5">
+                            <h3 class="title title-medium">
+                                <i>业务流程</i>
+                            </h3>
+                            <h4 class="title title-small">交换获得 HDT 使用权的业务流程</h4>
+                            
+                        </div>
+                        <div class="ye-img">
+                            <img src="__IMG__/news/yewu.png"  alt="" />                       
+                        </div>
+                        <!-- end of block -->
+                        <div class="screen-5">
+                        <div class="block">
+                            <h3 class="title title-medium">
+                                <i>创新之处</i>
+                            </h3>
+                            <h4 class="title title-small">HDT(HUDONG TAP, 互动力的简称）</h4>
+                            <p class="text">互动力致力通过去中心化的设计，让生态内的用户持有基于区块链和智能合约的方式，利用其自身的互动行为为应用进行“投票”和消费，以产生一个公开公平民主的生态系统。</p>
+                        </div>
+                        <ul class="steps">
+                            <li>
+                                <img src="__IMG__/news/rhombs5.png" alt="">
+                                <p>
+                                    <h4>去中心化账号体系</h4>
+                                    <span class="step-text">用户账户不再受任何机构控制，使用户可以自由地选择任何应用，并通过这个去中心化的账户把所有的应用关联起来</span>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="__IMG__/news/rhombs6.png" alt="">
+                                <p>
+                                    <h4>互动产生价值</h4>
+                                    <span class="step-text">
+                                        有效的激励用户的互动行为，以高度动态互动的行为作为激励选择的依据；充分激发互动力应用社区去中心化的特点，达成用户与应用开发者的价值共创
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="__IMG__/news/rhombs7.png" alt="">
+                                <p>
+                                    <h4>创新性的评价体系</h4>
+                                    <span class="step-text">用户在应用内的互动行为是活跃度的有效证明，活跃度将是评价体系的重要组成部分</span>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="__IMG__/news/ready.png" alt="">
+                                <p>
+                                    <h4>智能的推荐体系</h4>
+                                    <span class="step-text">创新性的将基于用户基本信息推荐、基于内容的推荐算法等基本算法和基于区块链的互动行为结合，这些互动行为是个性化智能推荐系统的重要的数据。</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <!-- END OF THE 3rd SCREEN -->
+                    <!-- THE 4th CREEN -->
+                    <div class="screen-8">
+                        
+                    </div>
+                </div>
+                <!-- end of center -->
+            </div>
+            <!-- END OF THE 6th SCREEN -->
+            <!-- THE 7th SCREEN -->
+            <div class="container">
+                <div class="center">
+                    <div class="screen-4">
+                        <div class="block">
+                            <h3 class="title title-medium">
+                                <i>历程与规划</i>
+                            </h3>
+                            <div class="plan">
+                                <div id="plan" class="stm">&nbsp;</div>
+                                <p class="ptitle">历程与规划</p>
+                                <div class="w1200 mgt30">
+                                    <div class="plan-left">
+                                        <div class="pdt1">
+                                            <p class="ptime">2017年9月</p>
+                                            <p class="pitem">项目概念萌芽</p>
+                                        </div>
+                                        <div class="pdt2">
+                                            <p class="ptime">2017年11月</p>
+                                            <p class="pitem">完成技术调研与选型，确定系统架构方案</p>
+                                        </div>
+                                        <div class="pdt3">
+                                            <p class="ptime">2018年1月</p>
+                                            <p class="pitem">互动力启动预售募集,中下旬可在主流交易所交易</p>
+                                        </div>
+                                        <div class="pdt4">
+                                            <p class="ptime">2018年Q2</p>
+                                            <p class="pitem"> Beta公测版上线，对所以用户开放注册使用</p>
+                                        </div>
+                                    </div>
+                                    <div class="plan-time">
+                                        <ul>
+                                            <li class="big"><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="plan-right">
+                                        <div class="pdt7">
+                                            <p class="ptime">2017年10月</p>
+                                            <p class="pitem">完成区块链与互联网社区产品融合需求调研</p>
+                                        </div>
+                                        <div class="pdt8">
+                                            <p class="ptime">2017年12月</p>
+                                            <p class="pitem">正式命名为互动力，产品形态完成定型</p>
+                                        </div>
+                                        <div class="pdt9">
+                                            <p class="ptime">2018年4月</p>
+                                            <p class="pitem">完成Alpha版本内测</p>
+                                        </div>
+                                        <div class="pdt10">
+                                            <p class="ptime">2018年Q3</p>
+                                            <p class="pitem"> 1.0正式版本开发完成，进行试运营</p>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+                </div>
+                <!-- end of center -->
+            </div>
+            
+            
+            <!-- end of container -->
+            <!-- END OF THE 7th SCREEN -->
+            <!-- THE LAST 8th SCREEN -->
+            <div class="screen-8">
+                 <div class="bottom">
+                    <div class="bottom-left">
+                        <div class="logo">
+                            <img src="__IMG__/bespeak/phone-logo.png" alt="" />
+                        </div>
+                        <div class="detail-text">
+                            <span>互动网络国际有限公司</span>
+                            <span>官网网址：hudt.io</span>
+                            <span>商务微信：hudt-business</span>
+                        </div>
+                    </div>
+                    <div class="bottom-right">
+                        <dl>
+                            <dt>
+                                <img src="__IMG__/bespeak/wechat.jpg" alt="" />
+                            </dt>
+                            <dd>商务微信号</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="__IMG__/bespeak/Beechat.png" alt="" />
+                            </dt>
+                            <dd>Beechat群</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="__IMG__/bespeak/Telegram.png" alt="" /> 
+                            </dt>
+                            <dd>Telegram群</dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- end of block-bottom -->
+            </div>
+            <!-- END OF THE LAST 8th SCREEN -->
+            <div class="wrapper-nebula">
+                <div id="container" class="container-nebula">
+                    <div id="output" class="container-nebula">
+                        <canvas id="myCanvas" width="1280" height="1000" style="display: block;"></canvas>
+                    </div>
+                </div>
+            </div> 
+            
+            <!--<canvas id="world" class="planet-3-orbit" width="800" height="600"></canvas>
+            <canvas id="world-2" class="planet-3-orbit" width="800" height="600"></canvas>
+            <canvas id="world-3" class="planet-3-orbit" width="800" height="600"></canvas>-->
+            <canvas id="stars-cursor"></canvas>
+        </div>
+    </body> 
+        <script src="__JS__/jquery-2.1.4.min.js"></script>
+        <script src="__JS__/index/min/modernizr-2.0.6-min.js"></script>
+        <script src="__JS__/index/pixi.js"></script>
+        <script src="__JS__/index/min/austro-min.js"></script>
+        <script src="__JS__/index/bg-stars-pixi.js"></script>
+        <script src="__JS__/index/min/fss-min.js"></script>
+        <script src="__JS__/index/min/magneto-min.js"></script>
+        <script src="__JS__/index/min/main-min.js"></script>
+        <script src="__JS__/index/min/asteroids-min.js"></script>
+        <script type='text/javascript'>
+            $(".menu-container").mouseenter(function(){
+                  $("#site-menu").css("display","block");
+            });
+            $(".menu-container").mouseleave(function(){
+                  $("#site-menu").css("display","none");
+            });
+            $(".language").click(function() {
+                $('.menu-list').toggle();
+            });
+            /*$(".planet-3-area dl dt img").height($('.planet-3-area dl dt img').width());*/
+            // borwserRedirect  
+            (function browserRedirect(){  
+                var sUserAgent = navigator.userAgent.toLowerCase();  
+                var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad';  
+                var bIsIphone = sUserAgent.match(/iphone os/i) == 'iphone os';  
+                var bIsMidp = sUserAgent.match(/midp/i) == 'midp';  
+                var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4';  
+                var bIsUc = sUserAgent.match(/ucweb/i) == 'web';  
+                var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce';  
+                var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile';  
+                var u = navigator.userAgent;
+                var ua = navigator.userAgent.toLowerCase();
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                if (isAndroid) {
+                    $(".screen-3").css('padding-top', '100px');
+                }
+      
+                if(bIsIpad || bIsIphone || bIsMidp || bIsUc7 || bIsUc || bIsCE || bIsWM || isAndroid){ 
+                    $(".btn-arrow-down").css({
+                        'left': '20%',
+                        'top': '600px'
+                    });
+                    
+                    $("head").append("<link>");
+                        css = $("head").children(":last");
+                        css.attr({
+                            rel: "stylesheet",
+                            type: "text/css",
+                            href: "__CSS__/phone_main.css"
+                        });
+                }else{  
+                    
+                }  
+            })(); 
+        </script>
+</html>

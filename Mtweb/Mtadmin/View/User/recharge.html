@@ -1,0 +1,40 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>金币充值</h2>
+	</div>
+	
+	<form action="{:U('User/recharge')}" class="form-horizontal" method="post" name="fromart" id="fromart" onSubmit="return oncheck();">
+	<div>
+		<div>用户id：&nbsp;<input type="text" name="uid" id="uid" value="" /></div><br />
+		<div>金币数量：&nbsp;<input type="text" name="money" id="money" value="" /></div><br />
+		
+	    <div>
+	        <button type="submit" id="submit" class="btn submit-btn" target-form="form-horizontal">充 值</button>
+	    </div><br />
+	</div>
+	</form>
+</block>
+
+<block name="script">
+<script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+	$('#submit').click(function(){
+		  var uid = $.trim($('#uid').val());
+		  var money = $.trim($('#money').val());
+		  
+		  if(uid==""){
+			  alert("用户id不能为空");
+			  $('uid').focus();
+			  return false;
+		  }
+		  
+		  if(money==""){
+			  alert("金额不能为空");
+			  $('money').focus();
+			  return false;
+		  }
+	});
+</script>
+</block>

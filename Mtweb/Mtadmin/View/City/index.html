@@ -1,0 +1,50 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <div class="main-title">
+	    <h2><font color="#EE7613">城市列表</font></h2>
+    </div>
+    <div class="cf">
+	    <div class="fl"> 
+			<button class="btn" onclick="location='{:U('City/edit')}'">新增</button>
+		</div>
+	</div>
+	<!-- 数据表格 -->
+	<div class="data-table">
+		<table>
+			<!-- 表头 -->
+			<thead>
+				<tr>
+					<th>序列</th><th>城市</th>
+					<th>所属国家</th><th>归/还车地址</th>
+					<th>操作</th>
+				</tr>
+			</thead>			
+			<volist name="data" id="data" key="k">
+				<tr align="center">
+				    <td>{$k}</td><td>{$data['city_name']}</td>
+				    <td>{$data['country']}</td>
+				    <td>{$data['store']}</td>
+				    <td>
+				    	<a href="{:U('City/edit','id='.$data['city_id'],false)}">编辑</a>
+				    	<a href="{:U('City/del','id='.$data['city_id'],false)}">删除</a>
+				    </td>
+				</tr>
+			</volist>
+		</table>
+	</div>
+	
+	<!-- 分页 -->
+	<div class="page">
+		{$_page}
+	</div>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+	highlight_subnav('{:U("City/index")}');
+</script>
+</block>
+
+

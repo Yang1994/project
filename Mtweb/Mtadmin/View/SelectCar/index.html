@@ -1,0 +1,78 @@
+<extend name="Public/base"/>
+
+<block name="body">
+
+    <div class="main-title">
+	    <h2><font color="#EE7613">精选车辆管理</font></h2>
+    </div>
+    
+	<!-- 数据表格 -->
+	<div class="data-table">
+		<table>
+			<!-- 表头 -->
+			<thead>
+				<tr>
+					<th>序列</th><th>名称</th>
+					<th>封面预览</th><th>权重设置</th>
+					<th>操作</th>
+				</tr>
+			</thead>			
+			<volist name="data" id="data" key="k">
+				<tr align="center">
+				    <td>{$k}</td> <td>{$data['title']}</td>
+				    <td align="center">
+						<div class="upload-img-box">
+						    <div class="upload-pre-item"><img src="{$data['img']}"/></div>
+						</div>
+				    </td>
+				    <td>
+			    		<div class="search-form">
+					    	<input type="hidden" name="id" value="{$data['id']}">
+					   		<input type="text" name="weight" value="{:I('weight')|$data['weight']}" class="text input-small" placeholder="输入序号">&nbsp;
+					        <a href="javascript:;" class="set-weight" url="{:U('SelectCar/setWeight')}">设置</a>
+				        </div>
+					</td>
+				    <td>
+				    	<a href="{:U('SelectCar/edit','id='.$data['id'],false)}">编辑</a>
+				    </td>
+				</tr>
+			</volist>
+		</table>
+	</div>
+	
+	<!-- 分页 -->
+	<div class="page">
+		{$_page}
+	</div>
+</block>
+
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+	highlight_subnav('{:U("SelectCar/index")}');
+
+	//设置权限
+	$(".set-weight").click(function(){
+		var url = $(this).attr('url');
+        var query = $(this).parents('.search-form').find('input').serialize();
+    
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        
+		window.location.href = url;
+	});
+
+</script>
+</block>
+
+

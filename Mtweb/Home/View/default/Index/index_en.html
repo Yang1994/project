@@ -1,0 +1,510 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+    <head>
+        <meta http-equiv="Cache-Control" content="max-age=259200, must-revalidate"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> -->
+        <meta name="googlebot" content="archive"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+        <meta name="description" content="全球首家基于区块链的互动交流平台">
+        <meta name="keywords" content="互动力,分布式CDN,共享CDN,区块链">
+        <!-- MAIN FAVICON -->
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="__CSS__/normalize-min.css">
+        <link rel="stylesheet" href="__CSS__/pace.css">
+        <link rel="stylesheet" href="__CSS__/main.css">
+        <link rel="shortcut icon" href="__IMG__/bespeak/coin.png" /> 
+        <!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+        <style type="text/css">
+            .btn-arrow-down {
+                left: 25%;
+                z-index: 101;
+            }
+            @media (max-width: 1440px) { 
+                .btn-arrow-down {
+                    left: 18%;
+                    
+                    z-index: 101;
+                }
+            }
+            .animation-text div {
+                animation: none;
+                padding: 6px;
+                background: rgba(0, 0, 0, 0.0);
+            }
+            .planet-big-content {
+                top: 450px;
+            }
+            .title-big span {
+                font-family: 'SimHei';
+            }
+            .text {
+                font-size: 24px;
+                font-family: "Microsoft YaHei";
+            }
+            .rhomb p {
+                font-size: 20px;
+            }
+            .rhomb-wrapper {
+                width: 24%;
+                height: 660px;
+                display: inline-block;
+                margin-left: 0px;
+                border-radius: 50%;
+                padding-top: 0%!important;
+            }
+            .rhomb {
+                float: left;
+                /* display: table-cell; */
+                width: 100%;
+                /* height: 250px; */
+                background-color: #041527;
+                text-align: center;
+                /* vertical-align: middle; */
+                cursor: pointer;
+            }
+            .front-content {
+                /* display: table-cell; */
+                width: 100%;
+                height: 250px;
+                text-align: center;
+                /* vertical-align: middle; */
+            }
+            .front {
+                width: 100%;
+                z-index: 2;
+            }
+            ul {
+                height: 600px;
+            }
+            .steps li {
+                float: left;
+                display: inline-block;
+                vertical-align: baseline;
+                width: 23%;
+                margin-left: 1%;
+                text-align: center;
+            } 
+            @media (min-width: 1340px){
+                .rhomb img {
+                    width: 250px !important;
+                    margin: 0 auto;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="page-wrapper page"> 
+            <div class="exit">
+                <if condition="is_user_login()">
+                    <a href="{:U('User/index')}">Personal center </a>
+                    <a href="{:U('Public/logout')}">Exit</a>
+                <else/>
+                    <a href="{:U('Public/login')}">Login</a>
+                    <a href="{:U('Public/register')}">Register</a>
+                </if>
+            </div>
+            
+            <div class="user-menu">
+                <a href="#" class="language j-btn-menu" data-menu='lang-menu'>EN</a>
+                <div class="menu-list" id='lang-menu' style='float: right; text-align: right; position: absolute; right: 0px;'>
+                    <ul>
+                        <li>
+                            <a href='{:U('Index/index','lang=ch',FALSE)}'>CN</a>
+                        </li>
+                        <li>
+                            <a href='{:U('Index/index')}'>EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <img src="__IMG__/news/asteroids-left.png" alt="pic" class="a-left">
+            <img src="__IMG__/news/asteroids-right.png" alt="pic" class="a-right">
+            <img src="__IMG__/news/asteroids-left.png" alt="pic" class="b-left">
+            <img src="__IMG__/news/asteroids-right.png" alt="pic" class="b-right">
+            <div class="container">
+                <!-- THE 1st SCREEN -->
+                <canvas id="canvasOne" class="dusty" width="1280" height="1420"></canvas>
+                <canvas id="canvasAustro" class="austro" width="600" height="640"></canvas>
+                <!-- <canvas id="canvasStars" class="bg-stars" width="600" height="640"></canvas> -->
+                <div class="center screen-7">
+                    <h1 class="title title-big">
+                        <img src="__IMG__/index/DTLOGO.png"  width="400">
+                        <span>Interaction produces value</span>
+                    </h1>
+                    <h4 class="title title-small title-special">
+                        The world's first blockchain-based interactive trading platform</span>
+                    </h4>
+                    <!-- <a href="ru.htm#0" class="btn-arrow-down to-second centered">
+                        <span class='arrow-down-p1'></span>
+                        <span class='arrow-down-p2'></span>
+                        <span class='arrow-down-p3'></span>
+                        
+                    </a> -->
+                    <a href="ru.htm#0" class="btn-arrow-down to-second centered">
+                       <!--  <span class='arrow-down-p1'></span>
+                       <span class='arrow-down-p2'></span>
+                       <span class='arrow-down-p3'></span> -->
+                        <div class="animation-text"> 
+                          <div style="animation-delay: 0s;">Register  </div>
+                          <div style="animation-delay: 0.1s;">immediately</div>
+                          <div style="animation-delay: 0.2s;">get</div>
+                          <div style="animation-delay: 0.3s;">limited</div>
+                          <div style="animation-delay: 0.4s;">HDT</div>
+                        </div>
+                    </a>
+                    <div class="tiny-stars">
+                        <img src="__IMG__/news/stars2.svg" alt="">
+                    </div>
+                    <div class="tiny-stars middle-stars">
+                        <img src="__IMG__/news/stars3.svg" alt="">
+                    </div>
+                    <div class="planet-big centered">
+                        <!-- ORBIT -->
+                        <span class="round round-1"></span>
+                        <span class="round round-2"></span>
+                        <span class="round round-3"></span>
+                        <span class="round round-4"></span>
+                        <span class="round round-5"></span>
+                        <!-- END OF ORBIT -->
+                    </div>
+                    <!-- end of planet-big centered -->
+                    <div class="planet-big-content centered screen-1">
+                        <h2>
+                            What is HDT(HuDong Tap)?
+                        </h2>
+                        <h4 class="title title-small">The HDT is a decentralized interactive traffic sharing service.</h4>
+                        <p class="text">The HuDong Tap is an incentive application community based on the decentration of the block chain. Application developers publish a paid reward task based on interactive behavior to catch users' attention. After the users gets the task, they will experience the product. According to the intelligent contract, the workload of the user's valid interaction is proved, and the Token award is issued.Interactive coin will integrate application developers and users in a decentralized community to create an autonomous ecosystem, and to fully inspire the value creation of users and application developers.</p>
+                        <a href="upload/pdf/WhitePaper.pdf" class="btn fd-contact-us btn-big">Download WhitePaper</a>
+                    </div>
+                    <img src="__IMG__/news/planet-1.png" alt="" class="abs planet-1">
+                    <img src="__IMG__/news/moon.png" alt="" class="abs moon">
+                    <!-- END OF THE 1st SCREEN -->
+                    <!-- THE 2nd SCREEN -->
+                    <div class="screen-2">
+                        <div class="block">
+                            <h3 class="title title-medium">
+                                <i>Market Pain Point</i>
+                            </h3>
+                            
+                            <p class="text">
+                                User traffic is the core concern of all Internet companies，There are many pain points to be solved. The goal of HDT is to eliminate traffic brokers with blockchain + big data + deep learning technology, Let the demand side of the enterprise and value users directly docking, So that the industry more efficient and more transparent.Let enterprises be free from their cumbersome promotion work, More focused on doing a good job of products and services, Enable users to get more excellent user experience.
+                            </p>
+                        </div>
+                        <!-- end of block -->
+                        <div class="rhombs">
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>Platform control traffic</span>
+                                    <p>application distribution platform to control traffic，decided the application whether can survive.<br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+                                </div>
+                            </div>
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>User stickiness is weak</span>
+                                    <p>Per capita installation of single device applications in the range of 20 to 49, but 46.5% of users said there are not more than ten applications they would open five times per week.<br /><br /><br /><br /><br /><br /></p>
+                                </div>
+                            </div>
+                            
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>Only one dimension to evaluate</span>
+                                    <p>The traditional application store directly affects the user's attitude of downloading the application by scoring and comments, which leads to the lack of sufficient reliable reference value.<br /><br /><br /><br /><br /></p>
+                                </div>
+                            </div>
+                            <div class="rhomb-wrapper flip-container">
+                                <div class="rhomb flipper">
+                                    <div class="front">
+                                        <div class="front-content">
+                                            <img src="__IMG__/news/rhombs4.png" alt="">
+                                        </div>
+                                    </div>
+                                    <span>The problem of asymmetric information</span>
+                                    <p>On the one hand, the realization of its value is to make quality and appropriate applications find the targeted population, on the other hand, it is necessary for users in demand to find applications that meet their needs and have a higher level of experience.<br /><br /></p>
+                                </div>
+                            </div>
+            
+                        </div>
+                        <!-- end of rhombs -->
+
+                    </div>
+                    <!-- END OF THE 2nd SCREEN -->
+                    <!-- THE 3rd SCREEN -->
+                    <div id='rocket-screen'>
+                        <div class="block screen-5">
+                            <h3 class="title title-medium">
+                                <i>Business Process</i>
+                            </h3>
+                            <h4 class="title title-small">Exchange access to the use of HDT process</h4>
+                            
+                        </div>
+                        <div class="ye-img">
+                            <img src="__IMG__/news/yewu_en.png"  alt="" />                       
+                        </div>
+                        <!-- end of block -->
+                        <div class="screen-5">
+                        <div class="block">
+                            <h3 class="title title-medium">
+                                <i>Innovation</i>
+                            </h3>
+                            <h4 class="title title-small">HDT(HUDONG TAP）</h4>
+                            <p class="text">HDT dedicated to let eco-users hold token tokens based on blockchain and smart contracts through decentralized design. Using their own interactive behaviors to vote and spend on apps，To create an open and fair democratic ecosystem.</p>
+                        </div>
+                        <ul class="steps">
+                            <li>
+                                <img src="__IMG__/news/rhombs5.png" alt="">
+                                <p>
+                                    <h4>Under the decentralized account system</h4>
+                                    <span class="step-text">the decentration of account system designed by Ethereum that allows user accounts to be no longer controlled by any organization to make users can freely select any application and link all the applications through the decentration account.</span>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="__IMG__/news/rhombs6.png" alt="">
+                                <p>
+                                    <h4>Interaction produces value</h4>
+                                    <span class="step-text">
+                                        By validly motivating users' interactive behavior, highly dynamic interaction acts as the basis for incentive selection, it fully stimulates the value creation of users and application developers.
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="__IMG__/news/rhombs7.png" alt="">
+                                <p>
+                                    <h4>Innovative evaluation system</h4>
+                                    <span class="step-text">User interaction in application is an valid proof of activity degree. Therefore, by collecting valid user interaction behavior, it can provide users with reference as activity evaluation. Activity will be an important part of evaluation system.</span>
+                                </p>
+                            </li>
+                            <li>
+                                <img src="__IMG__/news/ready.png" alt="">
+                                <p>
+                                    <h4>Intelligent recommendation system</h4>
+                                    <span class="step-text">innovatively combines the three basic algorithms above and the interaction behavior based on the block chain. These interactive behaviors are important data for personalized intelligent recommendation systems.</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <!-- END OF THE 3rd SCREEN -->
+                    <!-- THE 4th CREEN -->
+                    <div class="screen-8">
+                        
+                    </div>
+                </div>
+                <!-- end of center -->
+            </div>
+             
+                
+                   
+            
+            <!-- END OF THE 6th SCREEN -->
+            <!-- THE 7th SCREEN -->
+            
+                
+                    
+
+                    <div class="container">
+                <div class="center">
+                    <div class="screen-4">
+                        <div class="block">
+                            <h3 class="title title-medium">
+                                <i>Development plan</i>
+                            </h3>
+                            <div class="plan">
+                                <div id="plan" class="stm">&nbsp;</div>
+                                <p class="ptitle">Development plan</p>
+                                <div class="w1200 mgt30">
+                                    <div class="plan-left">
+                                        <div class="pdt1">
+                                            <p class="ptime">September 2017</p>
+                                            <p class="pitem">Project concept germination</p>
+                                        </div>
+                                        <div class="pdt2">
+                                            <p class="ptime">November 2017</p>
+                                            <p class="pitem">Completing the research and selection of technology and determining the system architecture</p>
+                                        </div>
+                                        <div class="pdt3">
+                                            <p class="ptime">January 2018</p>
+                                            <p class="pitem">Starting presale and raising of HuDong TAP</p>
+                                        </div>
+                                        <div class="pdt4">
+                                            <p class="ptime">Q2 2018</p>
+                                            <p class="pitem">releasing Beta public-tested version , opening registration for all users</p>
+                                        </div>
+                                    </div>
+                                    <div class="plan-time">
+                                        <ul>
+                                            <li class="big"><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            <li><div class="circle"></div><div class="line"></div></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="plan-right">
+                                        <div class="pdt7">
+                                            <p class="ptime">October 2017</p>
+                                            <p class="pitem">Completing demand research on the integration of block chain and Internet community products</p>
+                                        </div>
+                                        <div class="pdt8">
+                                            <p class="ptime">December 2017</p>
+                                            <p class="pitem">Officially naming it as the HuDong TAP and finishing the product form</p>
+                                        </div>
+                                        <div class="pdt9">
+                                            <p class="ptime">April 2018</p>
+                                            <p class="pitem">Finishing the internal test of the Alpha version</p>
+                                        </div>
+                                        <div class="pdt10">
+                                            <p class="ptime">Q3 2018</p>
+                                            <p class="pitem">Completing the development of 1.0, the official version, and carrying out the trial operation.</p>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+                </div>
+                <!-- end of center -->
+            </div>
+            
+            
+            <!-- end of container -->
+            <!-- END OF THE 7th SCREEN -->
+            <!-- THE LAST 8th SCREEN -->
+            <div class="screen-8">
+                 <div class="bottom">
+                    <div class="bottom-left">
+                        <div class="logo">
+                            <img src="__IMG__/bespeak/phone-logo.png" alt="" />
+                        </div>
+                        <div class="detail-text">
+                            <span>HuDong Network Technology Co.,Ltd</span>
+                            <span>official website：hudt.io</span>
+                            <span>official wechat：hudt-business</span>
+                        </div>
+                    </div>
+                    <div class="bottom-right">
+                        <dl>
+                            <dt>
+                                <img src="__IMG__/bespeak/wechat.jpg" alt="" />
+                            </dt>
+                            <dd>Wechat</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="__IMG__/bespeak/Beechat.png" alt="" />
+                            </dt>
+                            <dd>Beechat</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="__IMG__/bespeak/Telegram.png" alt="" />
+                            </dt>
+                            <dd>Telegram</dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- end of block-bottom -->
+            </div>
+            <!-- END OF THE LAST 8th SCREEN -->
+            <div class="wrapper-nebula">
+                <div id="container" class="container-nebula">
+                    <div id="output" class="container-nebula">
+                        <canvas id="myCanvas" width="1280" height="1000" style="display: block;"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!--<canvas id="world" class="planet-3-orbit" width="800" height="600"></canvas>
+            <canvas id="world-2" class="planet-3-orbit" width="800" height="600"></canvas>
+            <canvas id="world-3" class="planet-3-orbit" width="800" height="600"></canvas>-->
+            <canvas id="stars-cursor"></canvas>
+        </div>
+    </body>
+        <script src="__JS__/jquery-2.1.4.min.js"></script>
+        <script src="__JS__/index/min/modernizr-2.0.6-min.js"></script>
+        <script src="__JS__/index/pixi.js"></script>
+        <script src="__JS__/index/min/austro-min.js"></script>
+        <script src="__JS__/index/bg-stars-pixi.js"></script>
+        <script src="__JS__/index/min/fss-min.js"></script>
+        <script src="__JS__/index/min/magneto-min.js"></script>
+        <script src="__JS__/index/min/main-min.js"></script>
+        <script src="__JS__/index/min/asteroids-min.js"></script>
+        <script type='text/javascript'>
+            $(".menu-container").mouseenter(function(){
+                  $("#site-menu").css("display","block");
+            });
+            $(".menu-container").mouseleave(function(){
+                  $("#site-menu").css("display","none");
+            });
+            $(".language").click(function() {
+                $('.menu-list').toggle();
+            });
+            $(".btn-arrow-down").click(function() {
+                 window.location.href="{:U('user/bespeak')}"
+            });
+            /*$(".planet-3-area dl dt img").height($('.planet-3-area dl dt img').width());*/
+            // borwserRedirect  
+            (function browserRedirect(){  
+                var sUserAgent = navigator.userAgent.toLowerCase();  
+                var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad';  
+                var bIsIphone = sUserAgent.match(/iphone os/i) == 'iphone os';  
+                var bIsMidp = sUserAgent.match(/midp/i) == 'midp';  
+                var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4';  
+                var bIsUc = sUserAgent.match(/ucweb/i) == 'web';  
+                var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce';  
+                var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile';  
+                var u = navigator.userAgent;
+                var ua = navigator.userAgent.toLowerCase();
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                if (isAndroid) {
+                    $(".screen-3").css('padding-top', '100px');
+                }
+      
+                if(bIsIpad || bIsIphone || bIsMidp || bIsUc7 || bIsUc || bIsCE || bIsWM || isAndroid){ 
+                    $(".btn-arrow-down").css({
+                        'left': '18%',
+                        'top':'818px'
+                        
+                    });
+                    $('.planet-big-content').css('top', '700px');
+                    
+                    $("head").append("<link>");
+                        css = $("head").children(":last");
+                        css.attr({
+                            rel: "stylesheet",
+                            type: "text/css",
+                            href: "__CSS__/phone_main_en.css"
+                        });
+                }else{  
+                    
+                }  
+            })(); 
+        </script>
+</html>

@@ -1,0 +1,32 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+
+		<div class="tab-wrap">
+		<ul class="tab-nav nav">
+		<li class="current"><a href="{:U('toolCache')}">清除缓存</a></li>
+		</ul>
+		<div class="tab-content">
+	<!-- 清除缓存 -->
+	<form action="{:U('Tool/toolCacheClean')}" method="post" class="form-horizontal">
+	<div class="form-item cf">
+                 
+				 <label class="item-label">清理类型：</label>
+                 <div class="controls">
+				 <input name="type1" type="checkbox" checked="checked"  value="1" />&nbsp;&nbsp;html缓存&nbsp;&nbsp; 
+				 <input name="type2" type="checkbox" checked="checked"  value="2" />&nbsp;&nbsp;数据库缓存&nbsp;&nbsp;
+				 </div>
+    </div>
+    <br>
+		<div class="form-item">
+			<button type="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">清理</button>
+		</div>
+	</form>
+			</div>
+	</div>
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+</block>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+        <link rel="stylesheet" type="text/css" href="__CSS__/login.css" />
+        <script type="text/javascript" src="__JS__/new_index/jquery.min.js"></script>
+        <style type="text/css">
+            .hdt-input {
+                    padding-left: 25px;
+                    line-height: 40px;
+                    font-size: 40px;
+                    letter-spacing: 51px;
+                    color: #7F8A96;
+                    border: 0;
+                    background: #f6f7fb;
+
+            }
+            .underline {
+                padding: 0 15px;
+            }
+            .underline li {
+                float: left;
+                height: 1px;
+                width: 40px;
+                background: #616161;
+                margin-right: 34px;
+                list-style: none;
+            }
+            
+            .stop-btn {
+                pointer-events: none;
+                background: #818181;
+            }
+
+            @media (max-width: 750px){
+                .code-btn {
+                    left: 20%;
+                    width: 50%;
+                }
+                .underline {
+                    width: 85%;
+                    padding: 0 10px;
+                    padding-left: 50px;
+                }
+                .underline li {
+                    float: left;
+                    height: 1px;
+                    width: 8%;
+                    background: #616161;
+                    margin-right: 8%;
+                }
+                .hdt-input {
+                    padding-left: 50px;
+                    line-height: 40px;
+                    font-size: 32px;
+                    letter-spacing: 28px;
+                    
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-content">
+            <div class="login-box">
+                <a class="login-box" href="#"><img src="__IMG__/new_index/hdt-logo.png" alt="" /></a>
+            </div>
+            <div class="login-from">
+                
+                <div class="login">
+                    <label for="phone">
+                    	输入你收到的验证码
+                    	<!--<if condition="$lang eq 1">输入你收到的验证码<else/>Enter Verification Code</if>-->
+                    </label>
+                    <input class="hdt-input" type="text" name="mobileCode" id="mobileCode" maxlength="6" />
+                    <ul class="underline clearfix">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li> 
+                        <li></li>
+                    </ul>
+                    <button class="hdt-btn">
+                    	下一步
+                    	<!--<if condition="$lang eq 1">下一步<else/>Next</if>-->
+                    </button>
+                    <span class="tip">
+                    	再次发送短信
+                    	<!--<if condition="$lang eq 1">再次发送短信<else/>Resend Code</if>-->
+                    </span>
+                </div>
+                
+            </div>
+            <div class="code-btn1" style="display: none;">
+                <span></span>
+                <div class="code-button">
+                    <button id="ok">
+                    	<!--<if condition="$lang eq 1">确定<else/>ok</if>-->
+                    	确定
+                    </button>
+                    <button id="cancel">
+                    	取消
+                    	<!--<if condition="$lang eq 1">取消<else/>cancel</if>-->
+                    </button>
+                </div>
+                <div class="close">
+                	关闭
+                <!--<if condition="$lang eq 1">关闭<else/>close</if>-->
+                </div>
+            </div>
+            <div class="code-btn" style="display: none;">
+                <span></span>
+            </div>
+            <span class="footer">
+                INTERACTION PRODUCES VALUE
+            </span>
+        </div>
+        <!-- <footer>
+            INTERACTION PRODUCES VALUE
+        </footer> -->
+    </body>
+</html>
+<script type="text/javascript">
+function getCookie(name){
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+        return unescape(arr[2]);
+    else
+        return null;
+}
+$(".tip").click(function(){
+    
+    var mobile =  getCookie('mt_home_User_Mobile');
+    var message = "请确认你的手机号码"+mobile;
+    $('.code-btn1 span').html(message);
+    $('.code-btn1').show();
+});
+
+$(".close").click(function(){
+    $('.code-btn1').hide();
+});
+
+$("#ok").click(function(){
+    window.location.href="{:U('public/identify_code')}";
+});
+
+$("#cancel").click(function(){
+    window.location.href="{:U('public/login')}";
+});
+$('.hdt-input').bind('input propertychange', function() {
+     var cc = $(this).val().length;
+     if(cc == 6) {
+        $('.login button').removeClass('stop-btn');
+     } else {
+        $('.login button').addClass('stop-btn');
+     }
+});
+$(".hdt-btn").click(function(){
+    var mobileCode = $("#mobileCode").val();
+    $.post("{:U('public/identify_code')}",{mobileCode:mobileCode},function(result){
+        if(result){
+            console.log(result)
+            if(result.info){
+                $('.code-btn span').html(result.info);
+                $('.code-btn').show();
+                setInterval(function(){
+                    $('.code-btn').hide();
+                 }, 2000);    
+            }
+
+            if(result.url){
+                window.location.href = result.url;
+            }
+        }
+    });
+});
+</script>

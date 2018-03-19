@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_plus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Changes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Integrations_1" transform="translate(-703.000000, -993.000000)" fill="#D0D6DB">
+            <g id="Group-16" transform="translate(135.000000, 955.000000)">
+                <g id="Group-Copy-2" transform="translate(128.000000, 0.000000)">
+                    <g id="Group-19" transform="translate(309.000000, 0.000000)">
+                        <g id="icon_plus" transform="translate(131.000000, 38.000000)">
+                            <path d="M17,0 L17,0 L17,0 C18.1045695,-2.02906125e-16 19,0.8954305 19,2 L19,31 L19,31 C19,32.1045695 18.1045695,33 17,33 L17,33 L17,33 C15.8954305,33 15,32.1045695 15,31 L15,2 L15,2 C15,0.8954305 15.8954305,2.02906125e-16 17,0 Z" id="Rectangle-2"></path>
+                            <rect id="Rectangle-2-Copy" transform="translate(16.500000, 16.000000) rotate(-270.000000) translate(-16.500000, -16.000000) " x="14.5" y="-0.5" width="4" height="33" rx="2"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

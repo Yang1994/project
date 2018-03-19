@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="format-detection" content="telephone=no">
+            <title>加入我们</title>
+            <link rel="stylesheet" href="__CSS__/normalize.css" />
+            <link rel="stylesheet" href="__CSS__/prism.css" />
+            <link rel="stylesheet" href="__CSS__/j.css" >
+            <link rel="stylesheet" href="__CSS__/bottom.css">
+            <link rel="stylesheet" href="__CSS__/center.css">
+            <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+            <script type="text/javascript" src="__JS__/new_index/prism.js" ></script>
+            
+            <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+            <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+
+            <script type="text/javascript">
+              function register(loc) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: loc});
+                  // window.location.assign("https://app.monkeylearn.com/accounts/register/")
+                  return false;
+              }
+
+              function registerForm(form) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: "footer"});
+                  window.location.assign("https://app.monkeylearn.com/accounts/register/?email=" + form.email.value)
+                  return false;
+              }
+
+            </script>
+
+            <script type="text/javascript">
+            </script>
+            <style type="text/css">
+                html {
+                    background: #f6f7fb;
+                }
+                #wrapper_header #header .container nav .navbar>li>a {
+                    color: #2b4250;
+                }
+                #wrapper_header #header {
+                    background: #fff;
+                }
+               
+                .right-content {
+                    position: absolute;
+                    top: 90px;
+                    right: 0;
+                    left: 250px;
+                    height: auto;
+                    padding: 20px 30px;
+                    padding-bottom: 150px;
+                }
+                #join-btn {
+                    border-radius: 5px;
+                }
+                #wrapper_header #header .container nav #toggle_m_nav #m_nav_menu .m_nav_ham {
+                    background: #2b4250;
+                }
+                .join {
+                    display: block;
+                }
+                /* //css */
+                .left-nav ul li {
+                    list-style: none;
+                }
+                .left-nav  ul li a {
+                    width: 220px;
+                    height: 40px;
+                    line-height: 40px;
+                    margin: 10px 15px;
+                    border-radius: 20px;
+                    display: inline-block;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #333;
+                    
+                    color: #2b4250;
+                }
+                .left-nav  ul li .choose {
+                    background: #d6f7ff;
+                }
+                .account {
+                    /* display: none; */
+                    float: left;
+                    width: 100%;
+                }
+                h3 {
+                    font-size: 30px;
+                    margin: 50px 0;
+                }
+                .content-detail {
+                    float: left;
+                    width: 875px;
+                    
+                    background: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.13);
+                }
+                .content-detail .detail-header {
+                    float: left;
+                    width: 100%;
+                    height: 230px;
+                    background: url(Public/Home/images/new_index/tittle.png) no-repeat center center;
+                    border-radius: 10px 10px 0 0px ;
+
+                }
+                .content-detail .detail-header img {
+                    width: 24%;
+                    padding: 70px 20px;
+                }
+                .hdt-number {
+                    float: right;
+                    padding: 80px 20px;
+                    font-size: 28px;
+
+                }
+                .hdt-number span {
+                    float: left;
+                    width: 100%;
+                    color: #fff;
+                }
+                .content-detail ul {
+                    float: left;
+                    width: 100%;
+                }
+                .content-detail ul li {
+                    float: left;
+                    width: 90%;
+                    padding: 0 5%;
+                    height: 78px;
+                    
+                    line-height: 78px;
+                    color: #2b4250;
+                    cursor: pointer;
+                    background: url(Public/Home/images/new_index/arrow.png) no-repeat 90% center;
+                }
+                .under-line {
+                    border-bottom: 1px solid #d1d1d1;
+                }
+                .intive {
+                    display: none;
+                    float: left;
+                    width: 100%;
+                }
+                .intive h3, .join h3 {
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+                .intive-tittle span {
+                    float: left;
+                    width: 100%;
+                    color: #7f8a96;
+                    /* font-size: 20px; */
+                    margin-top: 20px;
+                }
+                .intive ul {
+                    float: left;
+                    width: 55%;
+                    height: 165px;
+                    background: #fff;
+                    margin-top: 10px;
+                    border-radius: 10px;
+                    color: #2b4250;
+                }
+                .intive ul li {
+                    padding: 0 30px;
+                    height: 83px;
+                    line-height: 83px;
+                    color: #2b4250;
+                }
+                .intive ul li:nth-child(1) {
+                    border-bottom: 1px solid #d1d1d1;
+                }
+                .intive .intive-header li span, .join .under-line span {
+                    padding-right: 10px;
+                    color: #2b4250;
+                }
+                .intive .intive-header li input, .join .under-line input {
+                    width: 67%;
+                    height: 2.5rem;
+                    padding-left: 3%;
+                    margin-right: 2%;
+                    border-radius: 5px;
+                    border: 1px solid #d1d1d1;
+                    color: #2b4250;
+                }
+                .intive .intive-header li button, .join .under-line button {
+                    width: 10%;
+                    height:2rem;
+                    background: #2ebf6d;
+                    color: #fff;
+                    border: none;
+                }
+                .get-hdt {
+                    background: url(Public/Home/images/new_index/get-hdt.png) no-repeat 30px center;
+                }
+                .get-hdt span {
+                    padding-left: 70px;
+                }
+                .get-hdt .get-number {
+                    float: right;
+                    padding-right: 0px;
+                    color: #7f8a96;
+                }
+                .join {
+                    
+                    float: left;
+                    width: 100%;
+                }
+                .join .intive-tittle span {
+                    margin-bottom: 10px;
+                }
+                .join .detail-header {
+                    
+                    color: #fff;
+                }
+                .join .detail-header img {
+                    float: left;
+                }
+                .join .detail-header span {
+                    float: left;
+                    padding-left: 70px;
+                    line-height: 230px;
+                    font-size: 30px;
+        
+                }
+                
+                .pc-none {
+                    display: none;
+                }
+                .content-detail ul li a {
+                    float: left;
+                    width: 100%;
+                    color: #2b4250;
+                } 
+                @media only screen and (max-width: 768px) {
+                    h3 {
+                        font-size: 30px;
+                        margin: 20px 0;
+                    }
+                    .left-nav {
+                        display: none;
+                    }
+                    .right-content {
+                        left: 0;
+                        padding: 20px 18px;
+                    }
+                    .content-detail {
+                        width: 100%;
+                        height: 19.5rem;
+                    }
+                    .content-detail .detail-header img {
+                        width: 44%;
+                        padding: 50px 20px;
+                    }
+                    .hdt-number {
+                        float: right;
+                        padding: 40px 0px;
+                        font-size: 28px;
+                    }
+                    .content-detail .detail-header {
+                        float: left;
+                        width: 100%;
+                        height: 160px;
+                        background: url(Public/Home/images/new_index/tittle.png) no-repeat center center;
+                        border-radius: 10px 10px 0 0px;
+                    }
+                    .intive ul {
+                        width: 100%;
+                    }
+                    .intive ul li {
+                        padding: 0 10px;
+                    }
+                    .intive .intive-header li span {
+                        padding-right: 0px;
+                    }
+                    .join .under-line input {
+                        width: 48%;
+                    }
+                    .join .under-line button {
+                        width: 20%;
+                    }
+                    .get-hdt {
+                        background: url(Public/Home/images/new_index/get-hdt.png) no-repeat 10px center;
+                    }
+                    .content-detail ul li {
+                        font-size: 16px;
+                    }
+                    .content-detail ul li {
+                        float: left;
+                        width: 96%;
+                        padding: 0 2%;
+                    }
+                    .join .under-line span {
+                        padding-right: 0;
+                    }
+                    .pc-none {
+                        display: block;
+                    } 
+                    
+                }
+
+            </style>
+
+</head>
+
+
+<body>
+
+
+<div id="wrapper">
+<!-- HEADER -->
+     <div id="wrapper_header">
+        <header id="header">
+             <div class="container">
+                 <a href="{:U('index/index')}"  class="logo">
+                     <img src="__IMG__/new_index/logo-blue.png" class="logo_white" data-no-retina>
+                     <img src="__IMG__/new_index/logo_black.svg" class="logo_sticky" data-no-retina>
+                 </a>
+                 <nav>
+                    <div class="tab-mobile"><a href="#">中文</a></div>
+                     <div id="toggle_m_nav" href="#">
+                         <div id="m_nav_menu" class="m_nav">
+                             <div class="m_nav_ham" id="m_ham_1"></div>
+                             <div class="m_nav_ham" id="m_ham_2"></div>
+                             <div class="m_nav_ham" id="m_ham_3"></div>
+                         </div>
+                     </div>
+                     <span class="nav_wrapper" id="m_nav_container" >
+                         <ul class="navbar" >
+                            <h6 class="title">Menu</h6>
+                            <li><a href="{:U('user/index')}">个人中心</a></li>
+                            <li class="pc-none"><a href="{:U('index/about')}">关于我们</a></li>
+                            <li class="pc-none"><a href="{:U('index/information')}">资讯</a></li>
+                            <li class="pc-none"><a href="#"></a></li>
+                            <!-- <li><a class="" href="MonkeyLearn - Privacy Policy.htm" >关于我们</a></li> -->
+                             
+                             <!-- <li><a class="drop" data-toggle="popover" data-placement="bottom">Resources</a></li> -->
+                         </ul>
+                         <span class="movile">
+                            <div class="no_visible">
+                                <h6 class="title">Company</h6>
+                                <li><a href="{:U('index/index','lang=cn',false)}">首页</a></li>
+                                <li><a class="" href="{:U('index/about')}">关于我们</a></li>
+                                <li class="pc-none"><a href="{:U('index/information')}">资讯</a></li>
+                            </div>
+                            <div class="visible">
+                                <a href="{:U('public/logout')}"><button class="signUp exit">退出</button></a>
+                            </div>
+                         </span>
+                     </span>
+                 </nav>
+             </div>
+         </header>
+   </div>
+<!--END HEADER -->
+    <div class="left-nav">
+        <ul>
+            <li><a href="{:U('user/index')}">总览</a></li>
+            <li><a href="{:U('user/invite')}">邀请朋友</a></li>
+            <li><a class="choose" href="{:U('user/join')}">加入社区</a></li>
+            <li><a href="{:U('user/transfer')}">HDT转出</a></li>
+            <li><a href="{:U('user/safe_center')}">安全中心</a></li>
+            <li><a href="{:U('user/code')}">提取码</a></li>
+        </ul>
+    </div>
+    <div class="right-content">
+        <div class="join">
+            <div class="intive-tittle">
+                <h3>加入社区</h3>
+                <span>复制下面验证码发送到官方交流社区，即可获得20HDT的奖励</span>
+            </div>
+            
+            <div class="content-detail">
+                <div class="detail-header">
+                    <img src="__IMG__/new_index/tittle_logo.png"  alt="" />
+                    <span>HDT官方交流社区</span>
+                    
+                </div>
+                <ul>
+                    <li class="under-line">
+                        <span>加入社区</span>
+                        <input id="join-text" type="text" readonly="readonly" value="{$data['code']}" />
+                        <button id="join-btn">复制</button>
+                    </li>
+                    <li class="under-line"><a href="https://0.plus/hdtap">币用</a></li>
+                    <li><a href="https://t.me/joinchat/G6C56U2v_tHnkr-W0dD3uA">Telegram</a></li>
+                </ul>   
+
+            </div>
+        </div>
+    </div>
+
+
+<!--HERO -->
+          
+
+  <footer id="footer">
+      
+
+             <!-- <div class="bottom">
+                <div class="bottom-left">
+                    <div class="logo">
+                        <img src="static/img/logo-blue.png" alt="" />
+                    </div>
+                    <div class="detail-text">
+                        <span>HuDong Network Technology Co.,Ltd</span>
+                        <span>official website：hudt.io</span>
+                        <span>official wechat：hudt-business</span>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <dl>
+                        <dt>
+                            <img src="static/img/wechat.jpg" alt="" />
+                        </dt>
+                        <dd>Wechat</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="static/img/Beechat.png" alt="" />
+                        </dt>
+                        <dd>Beechat</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="static/img/Telegram.png" alt="" /> 
+                        </dt>
+                        <dd>Telegram</dd>
+                    </dl>
+                </div>
+                <span class="bot">Hudong Tap Inc.All rights reserved 2018</span>
+                         </div> -->
+            
+      
+  </footer>
+
+</div>
+
+    <script type="text/javascript" src="__JS__/new_index/retina.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/retina.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js" ></script>
+    <script src="__JS__/new_index/packed.3704eaef.min.js" ></script>
+
+   <script type="text/javascript">
+       $('#signUp-form').validate({
+           messages: {
+               email: {required: "This field is required" , email: "Please enter a valid email address"}
+           }
+       });
+   </script>
+
+   <script type="text/javascript">
+       function getRelatedContent(el){
+         return $($(el).attr('href'));
+       }
+       // Get link by section or article id
+       function getRelatedNavigation(el){
+         return $('.scroll [href=#'+$(el).attr('id')+']');
+       }
+       $('.scroll').on('click',function(e){
+         e.preventDefault();
+         $('html,body').animate({scrollTop:getRelatedContent(this).offset().top - 50}, 1000);
+       });
+       
+         window.onload=function(event){
+            var button=document.getElementById("join-btn");
+            button.onclick=function(event){
+                document.getElementById("join-text").select();
+                document.execCommand("copy",false,null);
+                alert("复制成功");
+            };
+
+        };
+
+    </script>
+    </body>
+</html>

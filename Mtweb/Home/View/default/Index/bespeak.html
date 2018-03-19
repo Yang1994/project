@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>互动币预约--全球首家基于区块链的互动交流平台</title>
+    <meta name="description" content="全球首家基于区块链的互动交流平台">
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="__CSS__/reset.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bespeak.css" />
+    <link rel="shortcut icon" href="__IMG__/bespeak/coin.png" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="bg">
+            <div class="header">
+                <div class="logo">
+                    <img src="__IMG__/bespeak/HDTLOGO.png" alt="" />
+                </div>
+                <div class="exit">
+                    <if condition="is_user_login()">
+                        <a href="{:U('User/index')}">个人中心</a>
+                        <a href="{:U('Public/logout')}">退出</a>
+                    <else/>
+                        <a href="{:U('Public/login')}">登录</a>
+                        <a href="{:U('Public/register')}">注册</a>
+                    </if>
+                </div>
+                <div class="phone-logo">
+                    
+                    <img src="__IMG__/bespeak/phone-logo.png" alt="" width="60%";/>
+                </div>
+                <div class="user-menu">
+                    <a href="#" class="language j-btn-menu" data-menu='lang-menu'>CN</a>
+                    <div class="menu-list" id='lang-menu' style='float: right; text-align: right; position: absolute; right: 0px;'>
+                        <ul>
+                            <li>
+                                <a href='{:U('Index/index')}'>CN</a>
+                            </li>
+                            <li>
+                                <a href='easyrocketstudio_default.html'>EN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button">
+                    <if condition="$status eq 1">
+                        <input type="button" id="ready_order" value="立即预约" />
+                    <else/>
+                        <input type="button" id="forbid_order" value="抢完了" />
+                    </if>
+                </div>
+                <div class="data">
+                    <span>自2018年01月11号至2018年01月15日</span>
+                </div>
+            </div>
+        </div>
+        <div class="dumu">
+            <div class="dumu-text">
+                <h2>提交您在私人钱包地址</h2>
+                <input type="text" />
+                <p>按HDT互动币发行计划于2018年1月下旬正式开启，故领取此活动糖果，需提交你私人钱包地址。私人钱包必须支持以太坊ERC20的技术架构。活动截止后我们将会把您领取的HDT转入您钱包的账户中。</p>
+                <span>注：目前HDT官方只支持标准的以太坊钱包。</span>
+                <span>非常感谢您对HDT互动币的支撑！</span>
+                <input class="submit" type="submit" value="提交" />
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-left">
+                <div class="logo">
+                    <img src="__IMG__/bespeak/logo.png" alt="" />
+                </div>
+                <div class="detail-text">
+                    <span>官网网址：www.hudongtoken.com</span>
+                    <span>商务合作：foundation@hudongtoken.com</span>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/wechat.png" alt="" />
+                    </dt>
+                    <dd>官方微信群</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/Beechat.png" alt="" />
+                    </dt>
+                    <dd>Beechat群</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/Telegram.png" alt="" />
+                    </dt>
+                    <dd>Telegram群</dd>
+                </dl>
+            </div>
+            <div class="phone-bottom">
+                <div class="code">
+                    <span>官方微信群</span>
+                    <img src="__IMG__/bespeak/wechat.png" alt="" />
+                </div>
+                <span>www.hudongtoken.com</span>
+            </div>
+        </div>
+        
+    </div>
+    <script src="__JS__/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+     $(".wrap").height($(window).height());
+     $(".j-btn-menu").click(function() {
+         $("ul").toggle();
+     });
+     $(window).resize(function(){ location.reload() })
+    </script>
+</body>
+</html>

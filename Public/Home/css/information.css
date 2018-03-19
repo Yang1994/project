@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+ .content {
+ 	background: rgba(0, 0, 0, 0);
+ }
+ form {
+ 	margin: 0 auto;
+ }
+.table{width:100%;max-width: 460px; margin: 0 auto; padding-top:20px;text-align:center;}
+
+.table input{background-color: rgba(255, 255, 255, 0.3); color: #fff; border-radius:4px;border:1px solid #ccc;line-height:35px;margin-bottom:30px;font-size:14px;text-indent:10px;}
+.table .check-code {
+	background: #42b573;
+}
+.table select{ width:200px;border-radius:10px;border:1px solid #ccc;line-height:35px;margin-bottom:30px;font-size:24px;text-indent:10px;height:58px;color:#999;}
+.table table{ width: 100%;padding-top:250px;}
+.table table input {
+	width: 100%;
+}
+　　::-webkit-input-placeholder { /* WebKit browsers */
+　　	color:#fff;
+　　}
+　　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　	color:#fff;
+　　}
+　　::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　	color:#fff;
+　　}
+　　:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　	color:#fff;
+　　}
+.btn{
+	text-align:center;
+	width: 100%;
+	,animation: 
+	padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0); }
+.btn input{border: none;width:100%; max-width: 460px; 
+	margin: 0 auto;
+	background-color: #43b2eb;line-height:35px;font-size:14px;border-radius:4px;color:#fff;cursor:pointer;}
+.table td{font-size:24px;color:#999;}
+.Wdate{height:54px;}
+.table .get-code input {
+	width: 67%;
+	
+}
+.table .get-code .check-code {
+	width: 30%;
+	margin: 0;
+}
+.bg h1 {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 80px;
+	color: #fff;
+	padding-top: 50px;
+}
+.table table .verify {
+	width: 100%;
+}
+.verify-detail div {
+	float: left;
+}
+.verify-detail div img {
+	width: 100%;
+
+}
+.verify-detail div:nth-child(1) {
+	width: 50%;
+}
+.verify-detail div:nth-child(2) {
+    width: 45%;
+    padding-left: 5%;
+}
+.logo3 {
+	float: left;
+	width: 100%;
+}
+@media (max-width: 768px) { 
+	.table .get-code input {
+		float: left;
+    	width: 38%;
+	}
+	.table .get-code .check-code {
+	    width: 53%;
+	    margin-left: 2%;
+	    margin-top: 2px;
+	    font-size: 14px;
+	    text-align: center
+	}
+}

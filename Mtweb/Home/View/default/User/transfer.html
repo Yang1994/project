@@ -1,0 +1,621 @@
+  <!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="format-detection" content="telephone=no">
+            <title>个人中心</title>
+            <link rel="stylesheet" href="__CSS__/normalize.css" />
+            <link rel="stylesheet" href="__CSS__/prism.css" />
+            <link rel="stylesheet" href="__CSS__/j.css" >
+            <link rel="stylesheet" href="__CSS__/bottom.css">
+            <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+            <script type="text/javascript" src="__JS__/new_index/prism.js" ></script>
+            <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+            <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+            <script type="text/javascript">
+              function register(loc) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: loc});
+                  // window.location.assign("https://app.monkeylearn.com/accounts/register/")
+                  return false;
+              }
+
+              function registerForm(form) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: "footer"});
+                  window.location.assign("https://app.monkeylearn.com/accounts/register/?email=" + form.email.value)
+                  return false;
+              }
+
+            </script>
+
+            <script type="text/javascript">
+            </script>
+            <style type="text/css">
+                html {
+                    background: #f6f7fb;
+                }
+                #wrapper_header #header .container nav .navbar>li>a {
+                    color: #2b4250;
+                }
+                #wrapper_header #header {
+                    background: #fff;
+                }
+               
+                .right-content {
+                    position: absolute;
+                    top: 90px;
+                    right: 0;
+                    left: 250px;
+                    height: auto;
+                    padding: 20px 30px;
+                    padding-bottom: 150px;
+                }
+                #wrapper_header #header .container nav #toggle_m_nav #m_nav_menu .m_nav_ham {
+                    background: #2b4250;
+                }
+                /* //css */
+                .left-nav ul li {
+                    list-style: none;
+                }
+                .left-nav  ul li a {
+                    width: 220px;
+                    height: 40px;
+                    line-height: 40px;
+                    margin: 10px 15px;
+                    border-radius: 20px;
+                    display: inline-block;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #333;
+                    
+                    color: #2b4250;
+                }
+                .left-nav  ul li .choose {
+                    background: #d6f7ff;
+                }
+                .account {
+                    /* display: none; */
+                    float: left;
+                    width: 100%;
+                }
+                h3 {
+                    font-size: 30px;
+                    margin: 50px 0;
+                    margin-bottom: 0;
+                }
+                .content-detail {
+                    float: left;
+                    width: 875px;
+                    
+                    background: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.13);
+                }
+                .content-detail .detail-header {
+                    float: left;
+                    width: 100%;
+                    height: 230px;
+                    background: url(Public/Home/images/new_index/tittle.png) no-repeat center center;
+                    border-radius: 10px 10px 0 0px ;
+
+                }
+                .content-detail .detail-header img {
+                    width: 24%;
+                    padding: 70px 20px;
+                }
+                .hdt-number {
+                    float: right;
+                    padding: 80px 20px;
+                    font-size: 28px;
+
+                }
+                .hdt-number span {
+                    float: left;
+                    width: 100%;
+                    color: #fff;
+                }
+                .content-detail ul {
+                    float: left;
+                    width: 100%;
+                }
+                .content-detail ul li {
+                    float: left;
+                    width: 90%;
+                    padding: 0 5%;
+                    height: 78px;
+                    
+                    line-height: 78px;
+                    color: #2b4250;
+                    cursor: pointer;
+                }
+                .content-detail ul li label {
+                  float: left;
+                  width: 18%;
+                  text-align: left;
+                }
+                .content-detail ul li input {
+                  width: 75%;
+                  height: 2.5rem;
+           
+                  padding-left: 3%;
+                  border-radius: 5px;
+                  border: 1px solid #d1d1d1;
+                  color: #2b4250;
+                }
+                .content-detail ul li .mes-password {
+                  width: 54%;
+                }
+                .content-detail ul li span {
+                  color: #7f8a96;
+                }
+                .content-detail ul li em {
+                  font-style: normal;
+                  padding-right: 5px;
+                }
+                .content-detail ul li button {
+                  padding: 5px;
+                  color: #fff;
+                  background: #2EBF6D;
+                  height: 2.5rem;
+                  border-radius: 5px;
+                  text-align: center;
+                  color: #fff;
+                  border: none;
+                  background: #2EBF6D;
+                }
+                .under-line {
+                    border-bottom: 1px solid #d1d1d1;
+                }
+              
+                .pc-none {
+                    display: none;
+                }
+               
+                .submit {
+                  float: left;
+                  width: 875px;
+                  text-align: center;
+                  padding: 50px 0;
+
+                }
+                .submit input {
+                  padding: 5px;
+                  width: 200px;
+                  height: 2.5rem;
+                  border-radius: 5px;
+                  text-align: center;
+                  color: #fff;
+                  border: none;
+                  background: #2EBF6D;              
+                }
+                .line {
+                  float: left;
+                  width: 100%;
+                  height:1px;
+                  background: #d1d1d1;
+                  margin-bottom: 50px;
+                }
+                table {
+                  width: 875px;
+                  margin-top: 50px;
+                  border: 1px solid #d2d2d2;
+                }
+                table th {
+                  /* width: 25%; */
+                  background: #fff;
+                  padding: 8px;
+                  color: #2b3e51;
+                }
+                table td {
+                  text-align: center;
+                  color: #7f8a96;
+                  padding: 5px;
+                }
+                .mobile-table  {
+                  display: none;
+                }
+
+                
+                @media only screen and (max-width: 768px) {
+                    h3 {
+                      font-size: 30px;
+                      margin: 20px 0;
+                    }
+                    table {
+                      display: none;
+                    }
+                    .submit {
+                      width: 100%;
+                    }
+                    .content-detail ul li label {
+                      width: 30%;
+                    }
+                    .content-detail ul li input {
+                      width: 60%;
+                    }
+                    .content-detail ul li .mes-password {
+                      width: 20%;
+                    }
+                    .left-nav {
+                        display: none;
+                    }
+                    .right-content {
+                        left: 0;
+                        padding: 20px 18px;
+                    }
+                    .content-detail {
+                        width: 100%;
+                        
+                    }
+                    .content-detail .detail-header img {
+                        width: 44%;
+                        padding: 50px 20px;
+                    }
+                    .hdt-number {
+                        float: right;
+                        padding: 40px 0px;
+                        font-size: 28px;
+                    }
+                    .content-detail .detail-header{
+                        float: left;
+                        width: 100%;
+                        height: 160px;
+                        background: url(Public/Home/images/new_index/tittle.png) no-repeat center center;
+                        border-radius: 10px 10px 0 0px;
+                    }
+                   
+                    .get-hdt {
+                        background: url(Public/Home/images/new_index/get-hdt.png) no-repeat 10px center;
+                    }
+                    .content-detail ul li {
+                        font-size: 16px;
+                    }
+                    
+                    .join .under-line input {
+                        width: 57%;
+                    }
+                    .pc-none {
+                        display: block;
+                    } 
+                    .mobile-table {
+                      display: block;
+                      float: left;
+                      width: 100%;
+                    }
+                    .table-detail {
+                      float: left;
+                      width: 100%;
+                      background: #fff;
+                      margin-bottom: 1rem;
+                      border-radius: 10px;
+                      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.13);
+                    }
+                    .table-header {
+                      float: left;
+                      width: 90%;
+                      padding: 10px 5%;
+                      border-radius: 10px 10px 0 0;
+                      background: #dfe0e0;
+                    }
+                    .table-header span {
+                      float: left;
+                      width: 100%;
+                      margin: 0;
+                    }
+                    .table-header .defeat {
+                      width: 85%;
+                      padding: 10px 0;
+                      padding-left: 15%;
+                      color: #ff0000;
+                      background: url(Public/Home/images/new_index/warning.png) left center no-repeat;
+                    }
+                    .table-text {
+                      float: left;
+                      width: 100%;
+                    }
+                    .table-text div {
+                      float: left;
+                      padding: 10px 5%;
+                      width: 90%;
+                    }
+                    .table-text div span {
+                      margin: 0;
+                    } 
+                    .table-text div span:nth-child(1) {
+                      padding-right: 2%;
+                      color: #2b3e51;
+                    }
+                    .table-text div span:nth-child(2) {
+                      color: #7f8a96;
+                    }
+                    .table-header .success {
+                      width: 85%;
+                      padding: 10px 0;
+                      padding-left: 15%;
+                      color: #2ebf6d;
+                      background: url(Public/Home/images/new_index/check.png) left center no-repeat;
+                    }
+                }
+
+            </style>
+
+</head>
+
+
+<body>
+<div id="wrapper">
+<!-- HEADER -->
+     <div id="wrapper_header">
+        <header id="header">
+             <div class="container">
+                 <a href="{:U('index/index')}"  class="logo">
+                     <img src="Public/Home/images/new_index/logo-blue.png" class="logo_white" data-no-retina>
+                     <img src="Public/Home/images/new_index/logo_black.svg" class="logo_sticky" data-no-retina>
+                 </a>
+                 <nav>
+                    <div class="tab-mobile"><a href="index-cn.html">中文</a></div>
+                     <div id="toggle_m_nav" href="#">
+                         <div id="m_nav_menu" class="m_nav">
+                             <div class="m_nav_ham" id="m_ham_1"></div>
+                             <div class="m_nav_ham" id="m_ham_2"></div>
+                             <div class="m_nav_ham" id="m_ham_3"></div>
+                         </div>    
+                     </div>
+                     <span class="nav_wrapper" id="m_nav_container" >
+                         <ul class="navbar" >
+                            <h6 class="title">Menu</h6>
+                            <li class="pc-none"><a href="{:U('index/about')}">关于我们</a></li>
+                            <li><a href="{:U('user/index')}">个人中心</a></li>
+                            <li class="pc-none"><a href="#"></a></li>
+                         </ul>
+                         <span class="movile">
+                             <div class="no_visible">
+                                 <h6 class="title">Company</h6>
+                                 <li><a href="{:U('index/index','lang=cn',false)}">首页</a></li>
+                                 <li><a class="" href="{:U('index/about')}">关于我们</a></li>
+                             </div>
+                             <div class="visible">
+                                <a href="{:U('public/logout')}"><button class="signUp exit">退出</button></a>
+                             </div>
+                         </span>
+                     </span>
+                 </nav>
+             </div>
+         </header>
+   </div>
+<!--END HEADER -->
+    <div class="left-nav">
+        <ul>
+            <li><a href="{:U('user/index')}">总览</a></li>
+            <li><a href="{:U('user/invite')}">邀请朋友</a></li>
+            <li><a href="{:U('user/join')}">加入社区</a></li>
+            <li><a class="choose" href="{:U('user/transfer')}">HDT转出</a></li>
+            <li><a href="{:U('user/safe_center')}">安全中心</a></li>
+            <li><a href="{:U('user/code')}">提取码</a></li>
+        </ul>
+    </div>
+    <div class="right-content">
+        <div class="account">
+            <div class="intive-tittle">
+                <h3>HDT转出</h3>
+                <span>*最多可转出
+                    <em>188</em>
+                    HDT
+                </span>
+            </div>
+            
+            <div class="content-detail">
+                <div class="detail-header">
+                    <img src="Public/Home/images/new_index/tittle_logo.png"  alt="" />
+                    <div class="hdt-number">
+                        <span class="number"><!-- {$data['money']} -->200</span>
+                        <span class="coin-logo">HDT</span>
+                    </div>
+                </div>
+                <ul>
+                    <li class="under-line">
+                      <label for="address">输入地址</label>
+                      <input type="text" name="address" id="address" />
+                    </li>
+                    <li class="under-line">
+                      <label for="remarks">地址备注</label>
+                      <input type="text" name="remarks" id="remarks" />
+                    </li>
+                    <li class="under-line">
+                      <label for="number">转出数量</label>
+                      <input type="text" name="number" id="number" />
+                    </li>
+                    <li class="under-line">
+                      <label>手续费：</label>
+                      <span><em>55555</em>HDT</span>
+                    </li>
+                    <li class="under-line">
+                      <label for="address">提币密码</label>
+                      <input type="text" name="coinpassword" id="coinpassword" />
+                    </li>
+                    <li class="under-line">
+                      <label for="messagepassword">短信验证码</label>
+                      <input class="mes-password" type="text" name="messagepassword" id="messagepassword" />
+                      <button>发送短信验证码</button>
+                    </li>
+                    <li>
+                      <label for="">绑定手机：</label>
+                      <span>1854564561</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="submit">
+              <input type="submit" value="确定" />
+            </div> 
+            <div class="line"></div>
+            <div class="account">
+              <div class="intive-tittle">
+                  <h3>转出记录</h3>
+                  <table border="1">
+                    <tr>
+                      <th>时间</th>
+                      <th>数量</th>
+                      <th>地址备注</th>
+                      <th>状态</th>
+                    </tr>
+                    <tr>
+                      <td class="time">
+                        <span>2018-01-25　23:32:00</span>
+                        
+                      </td>
+                      <td class="number">500</td>
+                      <td>s445890123456jnys445890123456jny</td>
+                      <td>成功</td>
+
+                    </tr>
+                  </table>
+                  <div class="mobile-table">
+                      <div class="table-detail">
+                        <div class="table-header">
+                          <span>2018-01-25　   23:32:00</span>
+                          <span class="defeat">失败</span>
+                        </div>
+                        <div class="table-text">
+                          <div>
+                            <span>转出数量:</span>
+                            <span>10</span>
+                          </div>
+                          <div>
+                            <span>地址备注:</span>
+                            <span>奔波霸</span>
+                          </div>
+                          <div>
+                            <span>转出地址:</span>
+                            <span>s445890123456jnys</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="table-detail">
+                        <div class="table-header">
+                          <span>2018-01-25　   23:32:00</span>
+                          <span class="success">成功</span>
+                        </div>
+                        <div class="table-text">
+                          <div>
+                            <span>转出数量:</span>
+                            <span>10</span>
+                          </div>
+                          <div>
+                            <span>地址备注:</span>
+                            <span>奔波霸</span>
+                          </div>
+                          <div>
+                            <span>转出地址:</span>
+                            <span>s445890123456jnys</span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+<!--HERO -->
+          
+
+  <footer id="footer">
+              <!-- <div class="bottom">
+                <div class="bottom-left">
+                    <div class="logo">
+                        <img src="static/img/logo-blue.png" alt="" />
+                    </div>
+                    <div class="detail-text">
+                        <span>HuDong Network Technology Co.,Ltd</span>
+                        <span>official website：hudt.io</span>
+                        <span>official wechat：hudt-business</span>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <dl>
+                        <dt>
+                            <img src="static/img/wechat.jpg" alt="" />
+                        </dt>
+                        <dd>Wechat</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="static/img/Beechat.png" alt="" />
+                        </dt>
+                        <dd>Beechat</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="static/img/Telegram.png" alt="" /> 
+                        </dt>
+                        <dd>Telegram</dd>
+                    </dl>
+                </div>
+                <span class="bot">Hudong Tap Inc.All rights reserved 2018</span>
+              </div> -->  
+  </footer>
+
+</div>
+
+    <script type="text/javascript" src="__JS__/new_index/retina.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/retina.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js" ></script>
+    <script src="__JS__/new_index/packed.3704eaef.min.js" ></script>
+
+   <script type="text/javascript">
+       $('#signUp-form').validate({
+           messages: {
+               email: {required: "This field is required" , email: "Please enter a valid email address"}
+           }
+       });
+   </script>
+
+   <script type="text/javascript">
+       function getRelatedContent(el){
+         return $($(el).attr('href'));
+       }
+       // Get link by section or article id
+       function getRelatedNavigation(el){
+         return $('.scroll [href=#'+$(el).attr('id')+']');
+       }
+       $('.scroll').on('click',function(e){
+         e.preventDefault();
+         $('html,body').animate({scrollTop:getRelatedContent(this).offset().top - 50}, 1000);
+       });
+       
+         window.onload=function(event){
+            var button=document.getElementById("btn");
+            button.onclick=function(event){
+                document.getElementById("text").select();
+                document.execCommand("copy",false,null);
+                alert("复制成功");
+            };
+
+        };
+        
+
+   </script>
+   <!-- <script type="text/javascript">
+   _linkedin_data_partner_id = "76069";
+   </script><script type="text/javascript">
+   (function(){var s = document.getElementsByTagName("script")[0];
+   var b = document.createElement("script");
+   b.type = "text/javascript";b.async = true;
+   b.src = "../snap.licdn.com/li.lms-analytics/insight.min.js";
+   s.parentNode.insertBefore(b, s);})();
+   </script>
+    <noscript>
+     <img height="1" width="1" style="display:none;" alt="" src="../px.ads.linkedin.com/collect/-3pc=true&ck=&fmt=gif&an_user_id=6018284967895387890&pid=76069&anId=6018284967895387890.gif" tppabs="https://dc.ads.linkedin.com/collect/?pid=76069&fmt=gif" />
+    </noscript>
+    -->
+
+
+
+    </body>
+</html>

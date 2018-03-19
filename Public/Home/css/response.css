@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media (max-width:1900px){
+	.content{width:100%;}
+	.char{width:40%;padding-left:100px;}
+	.introduction{width:40%;padding-right:50px;}
+	.char img{width:80%;margin-left:10px;}
+	.text h1{font-size:16px;}
+	.text h2{font-size:16px;}
+	.line{width:100%;}
+	.text{width:60%;margin-right:50px;}
+	.img{width:60%;padding-bottom:50px;}
+	.img img{width:60%;}
+	.box p{width:60px;height:60px;}
+	.box{margin-right:-40px;}
+	.table{width:80%;}
+	
+	} 

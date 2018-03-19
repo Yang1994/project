@@ -1,0 +1,199 @@
+<include file="Public/head"/>
+<script language="javascript" type="text/javascript" src="__JS__/My97DatePicker/WdatePicker.js"></script>   
+<link href="__CSS__/information.css" rel="stylesheet" type="text/css" media="all">
+
+<div class="bg">
+   <form action="{:U('order/index')}" method="post" name="fromart" id="fromart" onSubmit="return oncheck();">
+	<div class="table"> 
+        <table>
+        	<tr>
+            	<td>姓名：</td>
+                <td align="left"> <input type="text" id="name" name="name" value="" onblur="checkName('name')"/><font color="#FF0000">*</font></td>
+            </tr>
+            <tr>
+            	<td>性别：</td>
+                <td align="left"> 
+				 <input name="sex" type="radio" value="1" checked>男
+			     <input name="sex" type="radio" value="2" >女 <font color="#FF0000">*</font>
+				</td>
+            </tr>
+            <tr>
+            	<td>联系电话：</td>
+              <td align="left"><input type="text" id="phone" name="phone" value="" onblur="checkRate('phone')"/> <font color="#FF0000">*</font></td>
+            </tr>
+            <tr>
+           		<td>游戏类型：</td>
+                <td align="left">
+				   <select name="gametype" id="gametype" >
+				      <option value="" selected>请选择</option>
+					  <volist name="game" id="game">
+						<option value="{$game.id}">{$game.name}</option>
+					  </volist>
+				   </select>
+			    <font color="#FF0000">*</font>
+			</td>
+            </tr>
+          
+            <tr>
+                <td>期望陪玩人员类型：</td>
+                <td align="left">
+                    <select name="roleid" id="roleid">
+			          <option value="">请选择</option>
+					  <volist name="info" id="info">
+					     <option value="{$info['id']}">{$info['name']}</option>
+					  </volist>
+			       </select><font color="#FF0000">*</font>
+              </td>
+            </tr> 
+			<tr>
+           		<td>陪玩地址：</td>
+                <td align="left">
+				   <select id="sortid" name="sortid" > 
+   	                    <option value="">--请选择网咖--</option> 
+                        <volist name="data" id="data">
+						<option value="{$data.id}">{$data.name}</option>
+						</volist> 
+                   </select>
+				   <select name="storesname" id="storesname"> 
+                   </select> 
+			    <font color="#FF0000">*</font>
+			   </td>
+            </tr>
+			<tr>
+           		<td>预约陪玩时间：</td>
+                <td align="left">
+                   <input class="Wdate" type="text" onClick="WdatePicker()" id="playtime" name="playtime" readonly value="{:date('Y-m-d H:i')}" onChange="change()"/> 
+			    </td>
+            </tr>
+			<tr>
+           		<td>陪玩小时：</td>
+                <td align="left">
+                  <select name="hour" id="hour">
+					    <option value="" selected>请选择</option>
+                        <option value="2">2小时</option>
+						<option value="3">3小时</option>
+						<option value="4">4小时</option>
+						<option value="5">5小时</option>
+						<option value="6">6小时</option>
+						<option value="7">7小时</option>
+						<option value="8">8小时</option>
+						<option value="9">9小时</option>
+                    </select>
+			    </td>
+            </tr>   
+      </table>
+    </div>
+	<input type="hidden" name="addtype" id="addtype" value="2"> 
+    <div class="btn">
+	    <input name="remark" type="hidden" id="remark" value="{$uinfo['nickname']}"  />
+	    <input name="price" type="hidden" id="price" value=""  />
+	    <input name="uid" type="hidden" id="uid" value="{$uinfo['id']}"  />
+    	<input name="提交" type="submit" value="提交信息">
+    </div>
+	</form>
+</div>
+
+
+<script type="text/javascript"> 
+			
+function getSelectVal(){ 
+	 
+   $.getJSON("{:U('order/shopshow')}",{sortid:$("#sortid").val()},function(json){ 
+        //alert(json);
+        var storesname = $("#storesname"); 
+        $("option",storesname).remove(); //清空原有的选项 
+        $.each(json,function(index,array){ 
+            var option = "<option value='"+array['id']+"'>"+array['storesname']+"</option>"; 
+            storesname.append(option); 
+        }); 
+    }); 
+		 
+} 
+				   
+$(function(){ 
+   // getSelectVal(); 
+    $("#sortid").change(function(){ 
+        getSelectVal(); 
+    }); 
+}); 
+
+</script>
+
+<script type="text/javascript">
+
+
+function oncheck(){
+  if(document.getElementById("name")!=null&&get_obj('name').value==''){
+		alert("姓名不能为空");
+		get_obj('name').focus();
+		return false;
+	}
+	if(document.getElementById("phone")!=null&&get_obj('phone').value==''){
+		alert("联系电话不能为空");
+		get_obj('phone').focus();
+		return false;
+	}
+	if(document.getElementById("gametype")!=null&&get_obj('gametype').value==''){
+		alert("游戏类型不能为空");
+		get_obj('gametype').focus();
+		return false;
+	}
+	if(document.getElementById("roleid")!=null&&get_obj('roleid').value==''){
+		alert("陪玩人员不能为空");
+		get_obj('roleid').focus();
+		return false;
+	}
+   if(document.getElementById("sortid")!=null&&get_obj('sortid').value==''){
+		alert("陪玩地址不能为空");
+		get_obj('sortid').focus();
+		return false;
+	}
+	if(document.getElementById("Wdate")!=null&&get_obj('Wdate').value==''){
+		alert("陪玩时间不能为空");
+		get_obj('hour').focus();
+		return false;
+	}
+	if(document.getElementById("hour")!=null&&get_obj('hour').value==''){
+		alert("陪玩小时不能为空");
+		get_obj('hour').focus();
+		return false;
+	}
+	
+
+	
+}
+
+ function checkRate(input)
+ {
+     var re =/^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;   //判断字符串是否为11位数字     
+     var nubmer = document.getElementById(input).value;
+     
+	 
+      if (!re.test(nubmer))
+     {
+         alert("请输入正确的手机号");
+         document.getElementById(input).value = "";
+         return false;
+      }
+ }
+ 
+ function checkName(input)
+ {
+     var re =  /^[\u4e00-\u9fa5]+$/g;   //判断字符串是否为中文  
+     var name1 = document.getElementById(input).value;
+     
+      if (!re.test(name1))
+     {
+         alert("请输入中文姓名");
+         document.getElementById(input).value = "";
+         return false;
+      }
+ }
+ 
+function get_obj(objval){
+   return document.getElementById(objval);
+}
+ </script>
+ 
+<include file="Public/footer"/>
+

@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>互动币预约--全球首家基于区块链的互动交流平台</title>
+    <meta name="description" content="全球首家基于区块链的互动交流平台">
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="__CSS__/reset.css">
+    <link rel="stylesheet" href="__CSS__/bespeak.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/bottom.css">
+    <style type="text/css">
+        .bg {
+            float: left;
+            position: relative;
+            width:100%;
+            height: 75%;
+            margin: 0 auto;
+            padding: 0;
+            background: url(__IMG__/bespeak/bespeak-success.png) no-repeat center center;
+            background-size: cover;
+        }
+        .data {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            text-align: center;
+            width: 100%;
+        }
+        .data span {
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .detail-text {
+            float: left;
+            width: 100%;
+        }
+        .detail-text span {
+            float: left;
+            width: 100%;
+            font-size: 18px;
+            color: #fff;
+            padding-bottom: 10px;
+        }
+       
+        
+        .success-text {
+            position: absolute;
+            width: 100%;
+            height: 320px;
+            top: 380px;
+            left: 0;
+            background: url(__IMG__/bespeak/success-text.png) no-repeat center center;
+        }
+        .show {
+            position: absolute;
+            top: 95px;
+            left: 0;
+            width: 100%;
+            height: 427px;
+            background: url(__IMG__/bespeak/show.png) no-repeat center center;
+          
+        }
+        .show .id-detail {
+            display: block;
+            width: 315px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        .show label {
+            float: left;
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid #999;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .show span {
+            float: left;
+            width: 40%;
+            margin: 0 auto;
+            line-height: 50px;
+            text-align: right;
+        }
+        .show input{
+            width: 120px;
+        } 
+        .show span:nth-child(2) {
+            width: 55%;
+            white-space:pre-wrap;
+            word-wrap:break-word;
+            word-break:break-all;
+            text-align: left;
+            padding-left: 5%;
+        }
+        .personal {
+            position: absolute;
+            top: 130px;
+            left: 34%;
+        }
+        .tip {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 48%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            z-index: 999999999999999;
+
+        }
+        .show .submit-bes {
+            width: 100%;
+            text-align: center;
+        }
+        @media (min-width: 769px) {
+            .show {
+                background-size: contain;
+            }
+        }
+        @media (min-width: 1600px) {
+            .personal {
+                position: absolute;
+                top: 130px;
+                left: 37%;
+            }
+        }
+        @media (max-width: 768px) {
+            
+            .show .id-detail {
+                width: 250px;
+                padding-top: 110px;
+            }
+            .show {
+                top: 60px;
+                
+            }
+            .show span {  
+                width: 40%;  
+            }
+            .show span:nth-child(2) {
+                width: 55%;
+            }
+            .personal {
+                position: absolute;
+                width: 27%;
+                top: 140px;
+                left: 3%;
+            }
+            .personal img {
+                width: 100%;
+            }
+
+            .success-text {
+                background-size: contain;
+                top: 320px;
+                height: 200px;
+            }
+            .bottom {
+                background: #2a1b15;
+            }
+            .bottom-left, .bottom-right {
+                display: none;
+            }
+            .tip {
+                left: 40%;
+            }
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bg">
+            <div class="header">
+                <div class="logo">
+                    <a href="{:U('index/index')}">
+                    <img src="__IMG__/bespeak/HDTLOGO.png" alt="" />
+                    </a>
+                </div>
+                <div class="exit">
+                    <if condition="is_user_login()">
+                        <a href="{:U('User/index')}">个人中心</a>
+                        <a href="{:U('Public/logout')}">退出</a>
+                    <else/>
+                        <a href="{:U('Public/login')}">登录</a>
+                        <a href="{:U('Public/register')}">注册</a>
+                    </if>
+                </div>
+                <div class="phone-logo">
+                    
+                    <img src="__IMG__/bespeak/phone-logo.png" alt="" width="60%";/>
+                </div>
+                <!-- <div class="user-menu">
+                    <a href="#" class="language j-btn-menu" data-menu='lang-menu'>CN</a>
+                    <div class="menu-list" id='lang-menu' style='float: right; text-align: right; position: absolute; right: 0px;'>
+                        <ul>
+                            <li>
+                                <a href='ru.htm'>CN</a>
+                            </li>
+                            <li>
+                                <a href='easyrocketstudio_default.html'>EN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> --> 
+                <div class="show">
+                    <div class="id-detail">
+                        <label>
+                            <span>我的HDT ID:</span>
+                            <span class="card-id">{$data['mid']}</span>
+                            <input type="hidden" id="id" name="id" value="{$data['id']}"></input>
+                        </label>
+                        <div class="tip">   
+                               
+                        </div>          
+                        <label>
+                            <span>DragonEX ID:</span>
+                            <span class="money"><input type="text" id="address" name="address" value="{$data['address']}"></input></span>
+                            <span class="submit-bes"><input class="submit" type="submit" value="修改" /></span>
+                        </label>
+                        <label>
+                            <span>数量（个）:</span>
+                            <span>{$data['money']}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="personal">
+                    <img src="__IMG__/bespeak/personal.png" alt="" />
+                </div>    
+                <div class="success-text"></div>
+            </div>
+        </div>
+        
+        <div class="bottom">
+            <div class="bottom-left">
+                <div class="logo">
+                    <img src="__IMG__/bespeak/logo.png" alt="" />
+                </div>
+                <div class="detail-text">
+                    <span>官网网址：hudt.io</span>
+                    <span>商务微信：hudt-business</span>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/wechat.jpg" alt="" />
+                    </dt>
+                    <dd>商务微信号</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/Beechat.png" alt="" />
+                    </dt>
+                    <dd>Beechat群</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/bespeak/Telegram.png" alt="" />
+                    </dt>
+                    <dd>Telegram群</dd>
+                </dl>
+            </div>
+            <div class="phone-bottom">
+                <div class="code">
+                    <span>商务微信号</span>
+                    <img src="__IMG__/bespeak/wechat.jpg" alt="" />
+                </div>
+                <span>www.hudongtoken.com</span>
+            </div>
+        </div>
+        
+    </div>
+    <script src="__JS__/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(".wrap").height($(window).height());
+        $(".j-btn-menu").click(function() {
+            $("ul").toggle();
+        });
+        $(window).resize(function(){ location.reload() });
+        $(".submit").click(function() {
+            var address = $("#address").val();
+            var id = $("#id").val();
+            if(address==''){
+                alert("龙网id不能为空!");
+            }
+            function show_tip(message){
+                console.log(message)
+                $(".tip").html(message);
+                $(".tip").show();
+                setInterval(function(){
+                    $(".tip").hide();
+                }, 2000);
+            }
+            console.info(address)
+            $.post("{:U('user/changeID')}",{"id":id,"address": address},function(res){
+                console.info(res)
+                if(res.status==1){
+                    show_tip(res.message);
+                    $("#address").val(res.address);
+                }else{
+                    show_tip(res.message);
+                }
+            });   
+        });
+    </script>
+</body>
+</html>

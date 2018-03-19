@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+    <link rel="stylesheet" href="__CSS__/normalize.css"/>
+    <link rel="stylesheet" href="__CSS__/prism.css"/>
+    <link rel="stylesheet" href="__CSS__/j.css">
+    <link rel="stylesheet" href="__CSS__/new_bottom.css">
+    <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/prism.js"></script>
+    <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+    <style type="text/css">
+        #wrapper_header #header .container nav .navbar .pc-block {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) { 
+            #wrapper_header #header .container nav .navbar  .pc-none {
+                display: none;
+            }
+            #wrapper_header #header .container nav .navbar .pc-block {
+                display: block;
+            }
+            #wrapper_header #header .container nav .navbar .pc-center {
+                display: none;
+            }
+            #hero .video a .img_mobile {
+              max-width: 534px;
+              width: 100%;
+              height: auto;
+              display: block;
+              margin: auto;
+              
+            }
+            #hero .video {
+              position: absolute;
+              bottom: 0;
+              top: 570px;
+            } 
+
+            #analyze .container {
+                padding-top: 280px;
+            }
+          
+
+
+        }
+
+
+    </style>
+</head> 
+
+<body>
+<div id="wrapper">
+<!-- HEADER -->
+    <div id="wrapper_header">
+        <header id="header">
+            <div class="container">
+                <a href="#"  class="logo">
+                    <img src="__IMG__/new_index/logo.png" class="logo_white" data-no-retina>
+                    
+                </a>
+                <nav>
+                    <div class="tab-mobile"><a href="{:U('index/index','lang=cn',false)}">中文</a></div>
+                    <div id="toggle_m_nav" href="#">
+                        <div id="m_nav_menu" class="m_nav">
+                            <div class="m_nav_ham" id="m_ham_1"></div>
+                            <div class="m_nav_ham" id="m_ham_2"></div>
+                            <div class="m_nav_ham" id="m_ham_3"></div>
+                        </div>
+                    </div>
+                    <span class="nav_wrapper" id="m_nav_container" >
+                        <ul class="navbar" >
+                            <h6 class="title">Menu</h6>
+                                <li class="pc-block"><a href="{:U('index/index')}">HOME</a></li>
+                                <li class="pc-none"><a href="{:U('index/about')}">About Us</a></li>
+                                <li class="pc-none"><a href="{:U('index/information')}">Information</a></li>
+                                <if condition="is_user_login()">
+                                    <li class="pc-center"><a href="{:U('User/index')}">User Center</a></li>
+                                <else/>
+                                </if>
+                            <li><a href="#" ></a></li>
+                         </ul>
+                         <span class="movile">
+                            <div class="no_visible">
+                                <h6 class="title">Company</h6>
+                                <li><a href="{:U('index/about')}">About Us</a></li>
+                                <li><a href="{:U('index/information')}">Information</a></li>
+                                <if condition="is_user_login()">
+                                    <li><a href="{:U('User/index')}">User Center</a></li>
+                                <else/>
+                                </if>
+                            </div>
+                            <div class="visible">
+                                <if condition="is_user_login()">
+                                    <a href="{:U('public/logout')}"><button class="signUp exit">Log Out</button></a>
+                                <else/>
+                                    <a href="{:U('public/login')}"><button class="login">Log in</button></a>
+                                    <a href="{:U('public/login')}"><button class="signUp">Sign up</button></a>
+                                </if> 
+                                <span class="tab"><a href="{:U('index/index','lang=cn',false)}">中文</a></span>
+                                
+                            </div>
+                        </span>
+                    </span>
+                </nav>
+            </div>
+        </header>
+    </div>
+<!--END HEADER -->
+
+
+<!--HERO -->
+<div id="hero">
+    <div class="container">
+        <div class="text_middle">
+            <h2>What is HDT?</h2>
+            <p>HDT is a decentralized application community based on blockchain.According to smart contracts to give users valid interactive behavior reward, issue mission pass.HDT integrates application developers and users in a decentralized community.In an autonomous community, fully stimulate the user to interactive and application developers to create.</p>
+            <div class="buttons">
+                <a href="upload/pdf/WhitePaper.pdf"><button class="sign_free">WHITEPAPER</button></a>
+            </div>
+        </div>
+        <div class="video">
+            <a class="show-video">
+                <span id="play"></span>
+                <!-- <img src="static/img/img_video@2x.png" class="img_video" width="0" height="0">
+                <img src="static/img/img_video@3x.png" class="img_mobile"> -->
+                <video id="img_video" class="img_video"  poster="__IMG__/new_index/img_video@2x.png" src="http://17gift.shangtv.cn/hudt.io/hudt_en.mp4"></video>
+                <!-- <video id="img_video1" class="img_mobile"  poster="__IMG__/new_index/img_video@3x.png" src="http://17gift.shangtv.cn/hudt.io/hudt.mp4"></video> -->
+            </a>     
+        </div>
+
+    </div>
+
+</div>
+<!--END HERO -->
+
+
+  <!-- LOGOS -->
+    <div class="section" id="blocks">
+        <div class="container">
+           
+            <div class="container_blocks" id="container_blocks">
+                <a href="#analyze" class="block scroll">
+                    <span class="icon" id="icon_2"></span>
+                    <h4>Under the decentralized account system</h4>
+                    <p>The decentration of account system designed by ethereum that allows user accounts to be no longer controlled by any organization to make users can freely select any application and link all the applications.</p>
+                   
+                </a>
+                <a href="#workflow" class="block scroll">
+                    <span class="icon"></span>
+                    <h4>Interaction produces value</h4>
+                    <p>By validly motivating users' interactive behavior, highly dynamic interaction acts as the basis for incentive selection, it fully stimulates the value creation of users and application developers.</p>
+                    
+                </a>
+                <a href="#implement" class="block scroll">
+                    <span class="icon" id="icon_3"></span>
+                    <h4>Intelligent recommendation system</h4>
+                    <p>Innovatively combines the three basic algorithms above and the interaction behavior based on the block chain. these interactive behaviors are important data for personalized intelligent</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- LOGOS -->
+
+    <!-- Analyze -->
+            <div id="analyze" class="section">
+                <div class="container">
+                    <div class="container_col">
+                        <div class="column text" id="col_2">
+                            <h3>Decentralized community ecology</h3>
+                            <p>Traditional Internet service providers to provide login authorization, although improved user experience, but it has brought the issue of channel monopoly. Therefore, based on the decentralized account system designed by Ethereum, we enable eco-users to hold token-based blockchain and smart contracts and use their own interactive behaviors to "vote" and spend on applications Produce an open, fair and democratic autonomous ecosystem.</p>
+                        </div>
+                        <div class="column" id="col_1">
+                            <img id="img_back" src="__IMG__/new_index/img_hero_03.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- END Analyze -->
+
+    <!-- WORKFLOW -->
+            <div id="workflow" class="section">
+                <div class="container">
+                    <div class="container_col">
+                        <div class="column text" id="col_1">
+                            <h3>Interaction produces value </h3>
+                            <p>In the highly varied era of mobile Internet, user groups have great initiative and influence to drive voicett direction, create word of mouth economy and subvert corporate brand. The role of the user has changed from the passive embracer of the value to the value creator.</p>
+                            <ul class="list">
+                                <li><p>The goal of application developers is not to create user value, but to encourage users to create their own value from the services provided by the application developers, so as to drive the promotion of product value.
+Interaction is the behavior path of value</p></li>
+                                <li><p>Interaction is the behavior path of value creation. The user is the core subject of interaction.</p></li>
+                                <!-- <li><p>Automatically share relevant content on social media</p></li> -->
+                                <li><p>By validly motivating users' interactive behavior, highly dynamic interaction acts as the basis for incentive selection, it fully stimulates the value creation of users and application developers.</p></li>
+                            </ul>
+                            <!-- <button class="btn_more">Learn More</button> -->
+                        </div>
+                        <div class="column" id="col_2">
+                            <div class="content">
+                                <img id="img_col2" src="__IMG__/new_index/back_monkey.png">
+                                <span class="container_icons">
+                                    <img id="img1" src="__IMG__/new_index/icon_zapier.png">
+                                    <img id="img2" src="__IMG__/new_index/icon_zendesk.png">
+                                    <img id="img3" src="__IMG__/new_index/icon_file.png">
+                                    <img id="img4" src="__IMG__/new_index/icon_gmail.png">
+                                    <img id="img5" src="__IMG__/new_index/icon_delighted.png">
+                                    <img id="img6" src="__IMG__/new_index/icon_tweet.png">
+                                    <img id="img7" src="__IMG__/new_index/icon_intercom.png">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- END WORKFLOW -->
+
+    <!-- Implement -->
+           <div id="implement" class="section">
+               <div class="container">
+                   <div class="container_col">
+                       <div class="column text" id="col_1">
+                           <h3>Intelligent recommendation system</h3>
+                           <p>Using three kinds of Internet common recommendation system based on the blockchain. Each interaction with the user reflects the essential needs of the user's heart, including browsing, clicking, comments, ratings, etc. These interactive behaviors are important data for personalized intelligent recommendation system. According to the user's own unique behavior data, Users generate unique portraits, and interactive behavior among users to make a comparison, you can build a similarity matrix. Under the decentralized account system, it is possible to collect user interaction data, so as to make the recommendation system more accurate, and the user requirements and application requirements more closely match.</p>
+                       </div>
+                       <div class="column" id="col_2">
+                           <img style="width: 100%; "src="__IMG__/new_index/add.png"  alt="" />
+                       </div>
+                   </div>
+               </div>
+           </div>
+     <!--           END Implement -->
+    <!-- TESTIMONY-->
+            <div id="testimony" class="section">
+                <h4 class="dev">Development Plan</h4>
+                <div class="container">
+                     <div class="row">
+                         <div class="col">
+                            <img src="__IMG__/new_index/Develop.png">
+                        </div>
+                     </div>
+                </div>
+                <div class="signUp_section">
+                    <div class="text_middle">
+                        <h3>Start your interaction today</h3>
+                        <p>Get your behavior reward and fully forced on your creation</p>
+                        <div class="signUp-form">
+                            <if condition="is_user_login()">
+                                    
+                            <else/>
+                                <a href="{:U('public/login')}"><button class="sign_free">Sign Up for Free</button></a></li>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- END testimony -->
+
+
+
+  <footer id="footer">
+
+      <div class="bottom">
+          <div class="bottom-left">
+              <div class="logo">
+                  <img src="__IMG__/new_index/logo-blue.png" alt="" />
+              </div>
+              <div class="detail-text">
+                  <span>HuDong Network Technology Co.,Ltd</span>
+                  <span>official website：hudt.io</span>
+                  <span>official wechat：hudt-business</span>
+              </div>
+          </div>
+          <div class="bottom-right">
+              <dl>
+                  <dt>
+                      <img src="__IMG__/new_index/wechat.jpg" alt="" />
+                  </dt>
+                  <dd>Wechat</dd>
+              </dl>
+              <dl>
+                  <dt>
+                      <img src="__IMG__/new_index/Beechat.png" alt="" />
+                  </dt>
+                  <dd>Beechat</dd>
+              </dl>
+              <dl>
+                  <dt>
+                      <img src="__IMG__/new_index/Telegram.png" alt="" /> 
+                  </dt>
+                  <dd>Telegram</dd>
+              </dl>
+          </div>
+          <span class="bot">Hudong Tap Inc.All rights reserved 2018</span>
+      </div>              
+  </footer>
+
+</div>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.min.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js"></script>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js"></script>
+    <script type="text/javascript" src="__JS__/new_index/packed.3704eaef.min.js"></script>
+    <script type="text/javascript">
+    $("#hero .video a").click(function() {
+        document.getElementById('img_video').play();
+        document.getElementById('img_video').controls=true
+        document.getElementById('play').style.display = 'none';     
+    });
+    $(document).ready(function(){
+        var width = $(window).width();
+        console.log(width);
+
+        if (width < 780 ) {
+           $('video').removeClass('img_video').addClass('img_mobile');
+          $('video').prop("poster", "__IMG__/new_index/img_video@3x.png");
+        } else {  
+        }
+    })
+    </script>
+</body>
+</html>

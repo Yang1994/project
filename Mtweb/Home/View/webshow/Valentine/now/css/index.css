@@ -1,0 +1,215 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.wrap {
+    float: left;
+    width: 100%;
+    height: 75rem;
+    padding-top: 12rem;
+    background: url('../images/bg.jpg') 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+
+.header-text {
+    float: left;
+    width: 90%;
+    padding: 6rem 5% 4rem 5%;
+    text-align: left;
+}
+
+.header-text span {
+    float: left;
+    width: 100%;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.active {
+    float: left;
+    width: 100%;
+    background: url('../images/hd.png') center center no-repeat;
+    background-size: 55%;
+}
+
+.active span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 4rem;
+    line-height: 4.4rem;
+    font-size: 1.5rem;
+    color: pink;
+}
+
+.center-text {
+    float: left;
+    width: 80%;
+    text-align: center;
+    padding-bottom: 30px;
+    padding: 0 10%;
+    margin-bottom: 2rem;
+}
+
+.center-text p {
+    text-indent: 6px;
+    font-size: 1rem;
+    color: #7726b6;
+}
+
+.table {
+    position: relative;
+    float: left;
+    margin: 0 5%;
+    width: 88%;
+    border: 6px solid #ebd1ff;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.table-header {
+    float: left;
+    width: 100%;
+    padding: 1.5rem 0 0.5rem;
+    background: #fffbe3;
+    font-size: 18px;
+    text-align: center;
+    color: #8e8d84;
+}
+
+.table-header span {
+    float: left;
+    width: 20%;
+}
+
+.table-content {
+    float: left;
+    width: 100%;
+    height: 4rem;
+    color: #8e8d84;
+    font-size: 12px;
+}
+
+.table-header .nickname {
+    float: left;
+    width: 37%;
+}
+
+.table-content:nth-child(odd) {
+    background: #ffeec6;
+}
+
+.table-content:nth-child(even) {
+    background: #fffbe3;
+}
+
+.table-content .name-content {
+    float: left;
+    width: 40%;
+    padding-top: 14px;
+    padding-left: 2%;
+}
+
+.name-content img {
+    float: left;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.name-content .name-text {
+    float: left;
+    width: 68%;
+    padding-left: 10px;
+}
+
+.name-content .name-text span {
+    float: left;
+    width: 100%;
+}
+
+.ranking {
+    float: left;
+    width: 15%;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+.ranking span {
+    padding-left: 16%;
+}
+
+.ranking img {
+    float: left;
+    width: 60%;
+    padding: 0.5rem 0%;
+}
+
+.number {
+    float: left;
+    width: 20%;
+    height: 4rem;
+    background: url('/Public/Home/images/valentine/mooncake.png') left center no-repeat;
+    background-size: 39%;
+}
+
+.number span {
+    display: block;
+    padding-left: 44%;
+    line-height: 4rem;
+}
+
+.reward {
+    float: left;
+    width: 23%;
+    height: 3rem;
+    padding-top: 1rem;
+}
+
+.reward span {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.footer {
+    float: left;
+    width: 90%;
+    padding: 0rem 5%;
+    font-size: 1rem;
+    padding-top: 1rem;
+    color: #fff;
+}
+.footer p {
+    padding: 0;
+    margin: 0;
+}
+
+.header-img {
+    display: block;
+    width: 40%;
+}
+
+.cash_number {
+    line-height: 2rem;
+}
+.tabtitle {
+    position: absolute;
+    top: -1rem;
+    width: 60%;
+    margin: 0 20%;
+    z-index: 9;
+}
+.tabtitle span {
+    float: left;
+    width: 50%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    background: #d50073;
+    color: #fff;
+}
+.tabtitle .choose {
+    background: #ff2dad;
+}

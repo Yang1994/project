@@ -1,0 +1,105 @@
+<extend name="Public/base" />
+
+<block name="body">
+	<!-- 标题栏 -->
+	
+	<div class="cf">
+
+        <!-- 高级搜索 -->
+		<form action="{:U()}" method="post" class="form-horizontal">
+		<div class="search-form fr cf">
+			<div class="sleft">
+				选择年：<select name="year">
+				  <option>请选择查询年</option>
+				  <for start="2015" end="2021">
+
+				  <option value="{$i}">{$i}</option>
+				  </for>
+				</select>选择月：<select name="month">
+				  <option>请选择查询月份</option>
+				   <for start="1" end="13">
+				   <option value="{$i}">{$i}</option>
+				   </for>
+				</select>
+			    <input name="uid" type="hidden" value="{$uid}" />
+				<input name="sub" class="btn submit-btn " type="submit" value="查询" />	
+			</div>
+		</div>
+		</form>
+    </div>
+	
+	
+	<div class="tab-wrap">
+		<div class="tab-wrap">
+		   <ul class="tab-nav nav">
+	          <li class="current"><a href="#">{$repdate}</a></li>
+		   </ul>
+		
+		<div class="tab-content">
+			
+			<div class="form-item">
+				<label class="item-label">游神工作时长：{$hour}&nbsp;小时</label>
+				<div class="controls">
+					&nbsp;
+				</div>
+			</div>
+			
+			<div class="form-item">
+				<label class="item-label">游神工作金额：{$price}&nbsp;元</label>
+				<div class="controls">
+					&nbsp;
+				</div>
+			</div>
+			
+			<div class="form-item">
+				<label class="item-label">游神抽成比例：{$info['percent']}&nbsp;%</label>
+				<div class="controls">
+					&nbsp;
+				</div>
+			</div>
+			
+			<div class="form-item">
+				<label class="item-label">利润收入：{$lprice}&nbsp;元</label>
+				<div class="controls">
+					&nbsp;
+				</div>
+			</div>
+			
+			<div class="main-title">
+				<h2>报表详细情况</h2>  
+			</div>
+		
+			<!-- 数据表格 -->
+			<div class="data-table">
+				<table>
+					<!-- 表头 -->
+					<thead>
+						<tr>
+						   <th class="row-selected row-selected"><input class="check-all" type="checkbox"></th>
+						   <th>游神昵称</th><th>工作时长</th><th>工作金额</th><th>利润收入</th>  				
+						</tr>
+					</thead>
+					
+					<volist name="data" id="data">
+							<tr>
+							   <td><input class="ids" type="checkbox" value="{$data['id']}" name="ids[]"></td>
+							   <td>{$data['nickname']}</td><td>{$data['hour']}</td>
+							   <td>{$data['money']}</td><td>{$data['price']}</td>
+							</tr>
+					</volist>
+				</table>
+			</div>
+			
+			<div class="form-item">
+				<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+			</div>
+			<br>
+			
+	    </div>
+		
+	</div>
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+</block>

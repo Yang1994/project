@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+    <link rel="stylesheet" href="__CSS__/normalize.css"/>
+    <link rel="stylesheet" href="__CSS__/prism.css"/>
+    <link rel="stylesheet" href="__CSS__/j.css">
+    <link rel="stylesheet" href="__CSS__/new_bottom.css">
+    <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/prism.js"></script>
+    
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+    <style type="text/css">
+        .section#analyze .container .container_col #col_1 img#img_back {
+            top: -100px;
+        }
+        .bottom-left .logo img {
+            width: 190px;
+        }
+        #wrapper_header #header .container .logo .logo_white {
+            width: 200px;
+        }
+        #wrapper_header #header .container nav .navbar .pc-block {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) { 
+            #wrapper_header #header .container nav .navbar  .pc-none {
+                display: none;
+            }
+            #wrapper_header #header .container nav .navbar  .pc-block {
+                display: block;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div id="wrapper">
+    <!-- HEADER -->
+    <div id="wrapper_header">
+        <header id="header">
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="__IMG__/new_index/logo-cn.png" class="logo_white" data-no-retina>
+                </a>
+                <nav>
+                    <div class="tab-mobile"><a href="{:U('index/index',false)}">EN</a></div>
+                    <div id="toggle_m_nav" href="#">
+                        <div id="m_nav_menu" class="m_nav">
+                            <div class="m_nav_ham" id="m_ham_1"></div>
+                            <div class="m_nav_ham" id="m_ham_2"></div>
+                            <div class="m_nav_ham" id="m_ham_3"></div>
+                        </div>
+                    </div>
+                    <span class="nav_wrapper" id="m_nav_container" >
+                        <ul class="navbar" >
+                            <h6 class="title">菜单</h6>
+                                <li class="pc-block"><a href="{:U('index/index','lang=cn',false)}">首页</a></li>
+                                <li class="pc-none"><a href="{:U('index/about')}">关于我们</a></li>
+                                <li class="pc-none"><a href="{:U('index/information')}">资讯</a></li>
+                                <if condition="is_user_login()">
+                                    <li class="pc-center"><a href="{:U('User/index')}">个人中心</a></li>
+                                <else/>
+                                </if>
+                            </if>
+                            <li><a href="#"></a></li>
+                         </ul>
+                         <span class="movile">
+                            <div class="no_visible">
+                                <h6 class="title">Company</h6>
+                                <li><a href="{:U('index/about')}">关于我们</a></li>
+                                <li><a href="{:U('index/information')}">资讯</a></li>
+                                <if condition="is_user_login()">
+                                    <li><a href="{:U('User/index')}">个人中心</a></li>
+                                <else/>
+                                </if>
+                            </div>
+                            <div class="visible">
+
+                                <if condition="is_user_login()">
+                                    <a href="{:U('User/logout')}"><button class="signUp exit">退出</button></a>
+                                <else/>
+                                    <a href="{:U('public/login')}"><button class="login">登录</button></a>
+                                    <a href="{:U('public/login')}"><button class="signUp">注册</button></a>
+                                </if> 
+                                <span class="tab"><a href="{:U('index/index')}">EN</a></span>
+                                
+                            </div>
+                        </span>
+                    </span>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!--END HEADER -->
+
+    <!--HERO -->
+    <div id="hero">
+        <div class="container">
+            <div class="text_middle">
+                <h2>互动力是什么？</h2>
+                <p>互动力是（基于区块链）去中心化的应用社区。根据智能合约对用户有效的互动行为进行奖励，发放任务通行证。互动力将应用开发者与用户整合在一个去中心化社区。在一个自治社区内，充分激发用户与应用开发者的价值共创。</p>
+                <div class="buttons">
+                    <a href="upload/pdf/whitepaper.pdf"><button class="sign_free">白皮书</button></a>
+                </div>
+            </div>
+            <div class="video">
+                <a class="show-video">
+                <span id="play"></span>
+                <!-- <img src="static/img/img_video@2x.png" class="img_video" width="0" height="0">
+                <img src="static/img/img_video@3x.png" class="img_mobile"> -->
+                <video id="img_video" class="img_video"  poster="__IMG__/new_index/img_video@2x.png" src="http://17gift.shangtv.cn/hudt.io/hudt.mp4"></video>
+                <!-- <video id="img_video1" class="img_mobile"  poster="__IMG__/new_index/img_video@3x.png" src="http://17gift.shangtv.cn/hudt.io/hudt.mp4"></video> -->
+                </a>    
+            </div>
+            <!--  <div class="video">
+                        <a class="show-video" VideoPlaceholder data-toggle="modal" data-target="#videoModal" data-theVideo="https://player.vimeo.com/video/250262782">
+                            <img src="__IMG__/new_index/img_video@2x.png" class="img_video">
+                            <img src="__IMG__/new_index/img_video@2x.png" class="img_mobile">
+                        </a>     
+                    </div> -->
+        </div>
+    </div>
+    <!--END HERO -->
+
+    <!-- LOGOS -->
+    <div class="section" id="blocks">
+        <div class="container">
+            <div class="container_blocks" id="container_blocks">
+                <a href="#analyze" class="block scroll">
+                    <span class="icon" id="icon_2"></span>
+                    <h4>去中心化账号体系</h4>
+                    <p>用户不再受任何机构控制，使用户可以自由地选择任何应用，并通过这个去中心化的账户把所有的的应用关联起来。</p>
+                   
+                </a>
+                <a href="#workflow" class="block scroll">
+                    <span class="icon"></span>
+                    <h4>互动产生价值</h4>
+                    <p>有效的激励用户的互动行为，以高度动态互动的行为作为激励选择的依据；充分激发互动力应用社区去中心化的特点，达成用户与应用开发者的价值共创 </p>
+                    
+                </a>
+                <a href="#implement" class="block scroll">
+                    <span class="icon" id="icon_3"></span>
+                    <h4>智能的推荐体系</h4>
+                    <p>创新性的将基于用户基本信息推荐、基于内容的推荐算法等基本算法和基于区块链的互动行为结合，这些互动行为是个性化智能推荐系统的重要的数据。</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- LOGOS -->
+
+    <!-- Analyze -->
+    <div id="analyze" class="section">
+        <div class="container">
+            <div class="container_col">
+                <div class="column text" id="col_2">
+                    <h3>去中心化的社区生态</h3>
+                    <p>传统互联网服务商提供登录授权的方式，虽然改善了用户体验，却带来了渠道垄 断问题。我们因此基于以太坊设计出的去中心化的账户系统，让生态内的用户持有基于区块链和智能合约的代币方式，利用其自身的互动行为为应用进行“投票”和消费，以产生一个公开公平民主的自治生态系统。 </p>
+                </div>
+                <div class="column" id="col_1">
+                    <img id="img_back" src="__IMG__/new_index/img_hero_03.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Analyze -->
+
+    <!-- WORKFLOW -->
+    <div id="workflow" class="section">
+        <div class="container">
+            <div class="container_col">
+                <div class="column text" id="col_1">
+                    <h3>互动产生价值 </h3>
+                    <p>在高度丰富多变的移动互联网时代，用户群体拥有驱动言论方向、打造口碑经济和颠覆企业品牌的巨大主动权和影响力，用户的角色已从价值的被动接受者向价值共创者转变。</p>
+                    <ul class="list">
+                        <li><p>1、应用开发者的目标不再是创造用户价值，而是鼓励用户从应用开发者提供的服务中创造自身需要的价值，从而带动产品价值的提升。</p></li>
+                        <li><p>2、互动是价值共创的行为轨迹，用户是互动的核心主体。</p></li>
+                        <li><p>3、以高度动态的互动行为作为激励选择的依据；充分激发用户与应用开发者的价值共创。</p></li>
+                    </ul>
+                    <!-- <button class="btn_more">Learn More</button> -->
+                </div>
+                <div class="column" id="col_2">
+                    <div class="content">
+                        <img id="img_col2" src="__IMG__/new_index/back_monkey.png">
+                        <span class="container_icons">
+                            <img id="img1" src="__IMG__/new_index/icon_zapier.png">
+                            <img id="img2" src="__IMG__/new_index/icon_zendesk.png">
+                            <img id="img3" src="__IMG__/new_index/icon_file.png">
+                            <img id="img4" src="__IMG__/new_index/icon_gmail.png">
+                            <img id="img5" src="__IMG__/new_index/icon_delighted.png">
+                            <img id="img6" src="__IMG__/new_index/icon_tweet.png">
+                            <img id="img7" src="__IMG__/new_index/icon_intercom.png">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END WORKFLOW -->
+
+    <!-- Implement -->
+    <div id="implement" class="section">
+        <div class="container">
+            <div class="container_col">
+                <div class="column text" id="col_1">
+                   <h3>智能的推荐体系</h3>
+                   <p>基于区块链将三种互联网常用推荐系统结合。用户的每一次互动操作无不反应用户内心的本质需求，包括浏览、点 击、评论、评分等，这些互动行为是个性化智能推荐系统的重要数据，根据用户自 身独有的行为数据，可以为每个用户生成特有的画像，而将用户之间的互动行为做 对比，可以构建相似度关系矩阵。在去中心化的账号体系下，使收集用户互动行为 数据成为可能，从而让推荐系统更加精准，用户需求与应用需求更加匹配。 </p>
+                </div>
+                <div class="column" id="col_2">
+                   <img style="width: 100%; "src="__IMG__/new_index/add.png"  alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  END Implement -->
+    <!-- TESTIMONY-->
+    <div id="testimony" class="section">
+        <h4 class="dev">历程与规划</h4>
+        <div class="container">
+             <div class="row">
+                 <div class="col">
+                    <img src="__IMG__/new_index/dev-cn.png">
+                </div>
+             </div>
+        </div>
+        <div class="signUp_section">
+            <div class="text_middle">
+                <h3>互动从今天开始</h3>
+                <p>发挥你的才能，并得到你的互动奖励吧！</p>
+                <div class="signUp-form">
+                    <if condition="is_user_login()">
+                                    
+                    <else/>
+                        <a href="{:U('public/login')}"><button class="sign_free">立即注册</button></a></li>
+                    </if>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END testimony -->
+
+    <footer id="footer">
+        <div class="bottom">
+            <div class="bottom-left">
+                <div class="logo">
+                    <img src="__IMG__/new_index/logo-blue-cn.png" alt="" />
+                </div>
+                <div class="detail-text">
+                    <span>互动网络国际有限公司</span>
+                    <span>官网网址：hudt.io</span>
+                    <span>商务微信：hudt-business</span>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <dl>
+                    <dt>
+                        <img src="__IMG__/new_index/wechat.jpg" alt="" />
+                    </dt>
+                    <dd>Wechat</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/new_index/Beechat.png" alt="" />
+                    </dt>
+                    <dd>Beechat</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="__IMG__/new_index/Telegram.png" alt="" /> 
+                    </dt>
+                    <dd>Telegram</dd>
+                </dl>
+            </div>
+            <span class="bot">Hudong Tap Inc.All rights reserved 2018</span>
+        </div>  
+    </footer>
+
+</div>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.min.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js"></script>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js"></script>
+    <script src="__JS__/new_index/packed.3704eaef.min.js"></script>
+    <script type="text/javascript">
+    $("#hero .video a").click(function() {
+        document.getElementById('img_video').play();
+        document.getElementById('img_video').controls=true
+        document.getElementById('play').style.display = 'none';     
+    });
+    $(document).ready(function(){
+        var width = $(window).width();
+        console.log(width);
+
+        if (width < 780 ) {
+          $('video').removeClass('img_video').addClass('img_mobile');
+          $('video').prop("poster", "__IMG__/new_index/img_video@3x.png");
+        } else {  
+        }
+    })
+    </script>
+    </body>
+</html>

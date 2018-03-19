@@ -1,0 +1,108 @@
+<include file="Public/head"/>  
+<link href="__CSS__/information.css" rel="stylesheet" type="text/css" media="all">
+
+<div class="bg">
+   <form action="{:U('register/save')}" method="post" name="fromart" id="fromart" onSubmit="return oncheck();">
+	<div class="table"> 
+        <table>
+            <tr>
+               <td>请输入手机号：</td>
+               <td align="left"><input type="text" id="mobile" name="mobile" value=""/> <font color="#FF0000">*</font></td>
+            </tr>
+            
+			<tr>
+           		<td>请设置密码：</td>
+                <td align="left"><input type="password" id="pwd" name="pwd" value=""/> <font color="#FF0000">*</font></td>
+            </tr>
+		  
+		    <tr>
+           		<td>请确认密码：</td>
+                <td align="left"><input type="password" id="pwdRepeat" name="pwdRepeat" value=""/> <font color="#FF0000">*</font></td>
+            </tr>
+			
+            <tr>
+           		<td>短信验证码：</td>
+                <td align="left"><input type="text" id="mobileCode" name="mobileCode" value=""/>
+			        <input id="btnCode" type="button"  value="免费获取验证码"  />
+					<script type="text/javascript">
+                        $('#btnCode').click(function(){
+                              var mobile = $.trim($('#mobile').val());
+                              $.post('{:U('register/sendMobileCode')}', {'mobile':mobile},function(res){
+                                  if (res == 0) {
+								     GetNumber();
+                                     alert('发送成功');
+                                  } else {
+                                     alert('发送失败');
+                                  }
+                              });
+                        });
+					   
+                     var count = 60;
+                     
+					 function GetNumber() {
+                          $("#btnCode").attr("disabled", "disabled");
+                          $("#btnCode").val(count + "秒之后点击获取")
+                          count--;
+                          if (count > 0) {
+                               setTimeout(GetNumber, 1000);
+                          }else {
+                               $("#btnCode").val("点击获取验证码");
+                               $("#btnCode").attr("disabled","");
+                          }
+                     }
+                  </script>
+                </td>
+            </tr>
+		  </table>
+	 </div>	
+    <div class="btn">
+    	<input name="sbt" type="submit" value="注册">
+    </div>
+	</form>
+</div>
+
+<script type="text/javascript">
+function oncheck(){
+  
+	if(document.getElementById("phone")!=null&&get_obj('phone').value==''){
+		alert("手机号码不能为空");
+		get_obj('phone').focus();
+		return false;
+	}
+	
+	if(document.getElementById("pwd")!=null&&get_obj('pwd').value==''){
+		alert("密码不能为空");
+		get_obj('pwd').focus();
+		return false;
+	}
+	if(document.getElementById("pwdRepeat")!=null&&get_obj('pwdRepeat').value==''){
+		alert("确认密码不能为空");
+		get_obj('pwdRepeat').focus();
+		return false;
+	}
+	if(document.getElementById("mobileCode")!=null&&get_obj('mobileCode').value==''){
+		alert("验证码不能为空");
+		get_obj('mobileCode').focus();
+		return false;
+	}
+	
+}
+
+  function checkRate(input)
+  {
+      var re =/^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;   //判断字符串是否为11位数字     
+      var nubmer = document.getElementById(input).value;
+     
+	 
+      if (!re.test(nubmer)){
+         alert("请输入正确的手机号");
+         document.getElementById(input).value = "";
+         return false;
+      }
+  }
+ 
+ </script>
+
+
+<include file="Public/footer"/>
+

@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+.leftarrow{position:absolute;left:2.5%;top:50%;margin-top:-56px;cursor:pointer;}
+.rightarrow{position:absolute;left:95%;top:50%;margin-top:-56px;cursor:pointer;}
+.content{width:80%;margin-left:auto;margin-right:auto;overflow:hidden; padding-bottom:50px; }
+.char{padding-top:20px;padding-bottom:20px;margin-left:50px;float:left;}
+.char img{ width:600px; height:800px;}
+.introduction{float:right;margin-right:20px;}
+.text{padding-top:20px; width:591px;}
+.text h1{float:left;font-size:24px;}
+.text h2{float:right;font-size:24px; width:470px;word-wrap: break-word;}
+.line{padding-top:20px;padding-bottom:20px;}
+.name *{float:left;}
+.name img{margin-top:20px;}
+.name span{font-size:48px;font-weight:bold;margin-left:10px;}
+.text input{float:right;margin-top:20px;width:120px;background-color:#f19ec2;font-size:24px;line-height:42px;border-radius:8px;cursor:pointer;color:white;}
+.img{margin-left:40px;overflow:hidden;}
+.box{float:left;padding-left:10px;padding-right:10px;padding-top:50px;position:relative;}
+.box p{background-color:black;position:absolute;left:10px;top:34px;opacity:0.6;width:100px;height:120px;z-index:10;}
+.box img{ width:100px; height:120px;}

@@ -1,0 +1,81 @@
+
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>主播查询</h2>
+	</div>
+	
+	<div class="cf">
+		<div>
+			<label>主&nbsp;播&nbsp;&nbsp;id&nbsp;:&nbsp;</label>
+			<input type="text" name="uid" value="{:I('uid')}" placeholder="请输入主播id">&nbsp;&nbsp;
+			<a class="sch-btn" href="javascript:;" id="search" url="{:U('User/findUser')}"><i class="btn-search"></i></a>
+		</div>
+	</div><br>
+
+	<!-- 数据表格 -->
+    <div class="data-table">
+		<table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"></th>
+                    <th>编号</th><th>用户id</th><th>昵称</th><th>状态</th>
+            		<th>操作</th>  				
+                </tr>
+            </thead>
+			
+			<volist name="data" id="data"  key="k">
+                <tr>
+					<td><input class="ids" type="checkbox" value="{$data['id']}" name="ids[]"></td>
+					<td>{$k}</td> 
+					<td>{$data['uid']}</td>
+					<td>{$data['nick_name']}</td>		       
+					<td>
+			  			<eq name="data.statue" value="1">直播中</eq>
+			  			<eq name="data.statue" value="0">已下线</eq>
+			  		</td>
+					<td>
+					    <a href="{:U('User/setFine','&group_id=1&uid='.$data['uid'],false)}" class="confirm ajax-get">添加</a>			  
+					</td>
+            	</tr>
+            </volist>
+        </table>
+  	</div>
+  	
+	<!-- 分页 -->
+	<div class="page">
+         {$_page}
+    </div>
+</block>
+
+<block name="script">
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.cf').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+		
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/fineUser')}');
+	</script>	
+</block>

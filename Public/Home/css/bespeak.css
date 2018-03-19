@@ -1,0 +1,374 @@
+/* 
+* @Author: anchen
+* @Date:   2018-01-11 18:21:10
+* @Last Modified by:   anchen
+* @Last Modified time: 2018-01-15 11:41:54
+*/
+ html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            position: relative;
+            width:100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .bg {
+            float: left;
+            position: relative;
+            width:100%;
+            height: 75%;
+            margin: 0 auto;
+            padding: 0;
+            background: url('../images/bespeak/yuyue-1.png') no-repeat center center;
+            background-size: cover;
+        }
+        .header {
+            float: left;
+            width: 80%;
+            padding: 55px 10%;
+        }
+        .header .logo {
+            float: left;
+            width: 20%;
+        }
+        .bottom {
+            float: left;
+            width: 60%;
+            height: 25%;
+            background: #041528;
+            padding: 0 20%;
+        }
+        .text {
+            position: absolute;
+            top: 165px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+        .text span {
+            font-size: 36px;
+        }
+        .user-menu {
+            position: absolute;
+            top: 68px;
+            right: 7%;
+            z-index: 4;
+        }
+        .exit {
+            float: right;
+            color: #41abe2;
+            font-size: 24px;
+        }
+        .exit a {
+            border-radius: 5px;
+            border: 1px solid #42b573;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+        .exit a:hover {
+            background: #42b573;
+        }
+        .user-menu a.language, .user-menu a.btn {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        .language:after {
+            display: inline-block;
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 6px 0 6px;
+            border-color: #02bb71 transparent transparent transparent;
+            margin-left: 5px;
+        }
+        .language {
+            color: #fff;
+            font-size: 19px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        .menu-list {
+            
+            margin-top: 20px;
+            float: right;
+            text-align: right;
+            position: absolute;
+            right: 0px;
+            display: block;
+        }
+        ul {
+            display: none;
+            height: 450px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .user-menu .menu-list li {
+            float: right;
+        }
+
+        .menu-list li {
+            margin-bottom: 8px;
+            background-color: #fdfdfd;
+            float: left;
+            border-radius: 5px;
+            clear: both;
+        }
+        .menu-list li:hover {
+            background: #02bb71;
+        }
+        .menu-list a {
+            z-index: 1;
+            display: inline-block;
+            height: 40px;
+            padding: 0 20px;
+            line-height: 40px;
+            color: #041527;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            outline: none;
+            position: relative;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .logo img {
+            width: 150px;
+        }
+        .button {
+            position: absolute;
+            width: 100%;
+            margin: 0 auto;
+            left: 0;
+            bottom: 4rem;
+            text-align: center;
+        }
+        .button input {
+            width: 200px;
+            height: 50px;
+            line-height: 44px;
+            background: #f15a24;
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .data {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            text-align: center;
+            width: 100%;
+        }
+        .data span {
+            color: #fff;
+            font-size: 24px;
+        }
+        .bottom-left {
+            float: left;
+            width: 50%;
+            padding-top: 60px;
+        }
+        .bottom-left .logo {
+            float: left;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+        .bottom-left .logo img {
+          
+            width: 40%;
+        }
+        .detail-text {
+            float: left;
+            width: 100%;
+        }
+        .detail-text span {
+            float: left;
+            width: 100%;
+            font-size: 18px;
+            color: #fff;
+            padding-bottom: 10px;
+        }
+        .bottom-right {
+            float: right;
+            padding-top: 50px;
+            width: 50%;
+        }
+        .bottom-right dl {
+            float: left; 
+            width: 30%;
+        }
+        .bottom-right dl dt {
+            margin: 0 auto;
+            padding: 0 15%;
+        }
+        .bottom-right dl img {
+            width: 100%;
+          
+        }
+        .bottom-right dl dd {
+            text-align: center;
+            padding-top: 20px;
+            color: #fff;
+        }
+        .phone-logo {
+            display: none;
+        }
+        .phone-bottom {
+            display: none;
+        }
+         .dumu {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 5;
+            
+        }
+        .dumu .dumu-text {
+            margin-top: ;
+            width: 500px;
+            margin: 100px auto 0;
+            background: #fff;
+            text-align: center;
+            padding: 20px 0 30px;
+            border-radius: 10px;
+        }
+        h2, .dumu-text span, .dumu-text p, .dumu input {
+            display: block;
+            width: 80%;
+            margin: 0 10%;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-family: '幼圆';
+            font-weight: bold;
+        }
+        .dumu span, .dumu p{
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .close span{
+            text-align: right;
+        }
+        .dumu p {
+            margin-top: 30px;
+        }
+        .dumu input {
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid #9f9f9f;
+        }
+        .dumu .submit {
+            width: 40%;
+            margin: 0 30%;
+            background: #f15a24;
+            border: none;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .exit {
+                display: none;
+            }
+            .exit a {
+                padding: 5px;
+            }
+            .text {
+                top: 70px;  
+            }
+            .text span {
+                font-size: 20px;
+            }
+            .user-menu {
+                position: absolute;
+                top: 12px;
+                right: 2%;
+                z-index: 4;
+            }
+            .bottom {
+                background: #2a1b15;
+            }
+            /*.bottom-left, .bottom-right {
+                display: none;
+            }*/
+            /*.phone-logo {
+                display: block;
+                float: left;
+                width: 100%;
+                text-align: center;
+            }*/
+            .header {
+                float: left;
+                width: 100%;
+                padding: 0;
+            }
+            .button {
+                
+                bottom: 50px;
+                
+            }
+            .data {
+                
+                bottom: 5px;
+                
+            }
+            .data span {
+                color: #fff;
+                font-size: 18px;
+            }
+            .button input {
+                width: 200px;
+                height: 50px;
+                line-height: 50px;
+                background: #f15a24;
+                color: #fff;
+                border: none;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            /*.phone-bottom {
+                display: block;
+                float: left;
+                width: 100%;
+            }
+            .phone-bottom .code {
+                margin: 0 auto;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .phone-bottom .code span {
+                float: left;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+            .phone-bottom span {
+                float: left;
+                width: 100%;
+                text-align: center;
+                color: #fff;
+            }*/
+            .dumu .dumu-text {
+                width: 300px;
+                margin: 20px auto 0;
+            }
+            .exit{
+                display: block;
+                width: 98%;
+                background: #2a1b15;
+                line-height: 50px;
+                padding: 0 1%;
+                font-size: 16px;
+            }
+        }

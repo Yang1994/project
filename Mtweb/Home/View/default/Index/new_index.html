@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--[If IE 9]>
+    <html  class="ie9">
+<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>互动力官网--全球首家基于区块链的互动交流平台</title>
+    <link rel="stylesheet" href="__CSS__/normalize.css"/>
+    <link rel="stylesheet" href="__CSS__/prism.css"/>
+    <link rel="stylesheet" href="__CSS__/j.css">
+    <link rel="stylesheet" href="__CSS__/new_bottom.css">
+    <script type="text/javascript" src="__JS__/new_index/jquery.min.js" ></script>
+    <script type="text/javascript" src="__JS__/new_index/prism.js"></script>
+    <meta name="description" content="全球首家基于区块链的互动交流平台"/>
+    <meta name="keywords" content="互动币,分布式CDN,共享CDN,区块链"/>
+            <!-- Segment -->
+
+            <!-- <script type="text/javascript">
+                !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+                analytics.load("vM8EdJRFIU6PMcT7G0iCKilNaJLyMyFJ");
+                }}();
+            </script> -->
+
+
+
+<!-- Segment -->
+<!-- <script>
+    analytics.page('Landing', 'Home');
+</script>
+ -->
+
+            <script type="text/javascript">
+              function register(loc) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: loc});
+                  // window.location.assign("https://app.monkeylearn.com/accounts/register/")
+                  return false;
+              }
+
+              function registerForm(form) {
+                  // Segment
+                  analytics.track('Clicked Signup', {location: "footer"});
+                  window.location.assign("https://app.monkeylearn.com/accounts/register/?email=" + form.email.value)
+                  return false;
+              }
+
+            </script>
+
+</head>
+
+<body>
+<div id="wrapper">
+<!-- HEADER -->
+    <div id="wrapper_header">
+        <header id="header">
+            <div class="container">
+                <a href="#"  class="logo">
+                    <img src="__IMG__/new_index/logo.png" class="logo_white" data-no-retina>
+                    <img src="__IMG__/new_index/logo_black.svg" class="logo_sticky" data-no-retina>
+                </a>
+                <nav>
+                    <div class="tab-mobile"><a href="{:U('index/index','lang=cn',false)}">中文</a></div>
+                    <div id="toggle_m_nav" href="#">
+                        <div id="m_nav_menu" class="m_nav">
+                            <div class="m_nav_ham" id="m_ham_1"></div>
+                            <div class="m_nav_ham" id="m_ham_2"></div>
+                            <div class="m_nav_ham" id="m_ham_3"></div>
+                        </div>
+                    </div>
+                    <span class="nav_wrapper" id="m_nav_container" >
+                        <ul class="navbar" >
+                            <h6 class="title">Menu</h6>
+                                <li><a href="{:U('index/about')}">About us</a></li>
+                            <if condition="is_user_login()">
+                                <li><a href="{:U('User/index')}">Person Center</a></li>
+                            <else/>
+                            </if>
+                            <li><a href="#" ></a></li>
+                         </ul>
+                         <span class="movile">
+                            <!-- <div class="no_visible">
+                                <h6 class="title">Company</h6>
+                                <li><a href="{:U('index/about')}">About Us</a></li>
+                                <if condition="is_user_login()">
+                                    <li><a href="{:U('User/index')}">个人中心</a></li>
+                                <else/>
+                                </if>
+                            </div> -->
+                            <div class="visible">
+                                <if condition="is_user_login()">
+                                    <li><a href="{:U('User/logout')}">Log Out</a></li>
+                                <else/>
+                                    <button class="login" onclick="location.href='https://hudt.io/index.php?s=public/login';">Log in</button>
+                                    <a href="{:U('public/login')}"><button class="signUp">Sign up</button></a>
+                                </if> 
+                                <span class="tab"><a href="{:U('index/new_index','lang=cn',false)}">中文</a></span>
+                            </div>
+                        </span>
+                    </span>
+                </nav>
+            </div>
+        </header>
+    </div>
+<!--END HEADER -->
+
+
+<!--HERO -->
+           <div id="hero">
+                <div class="container">
+                    <div class="text_middle">
+                        <h2>What is HDT?</h2>
+                        <p>HDT is a decentralized application community based on blockchain.According to smart contracts to give users valid interactive behavior reward, issue mission pass.HDT integrates application developers and users in a decentralized community.In an autonomous community, fully stimulate the user to interactive and application developers to create.</p>
+                        <div class="buttons">
+                            <a href="" onclick="register('hero');"><button class="sign_free">WHITEPAPER</button></a>
+                        </div>
+                    </div>
+                    <div class="video">
+                        <a class="show-video" videoplaceholder="" data-toggle="modal" data-target="#videoModal" data-thevideo="https://player.vimeo.com/video/250262782">
+                            <img src="__IMG__/new_index/img_video@2x.png" class="img_video" width="0" height="0">
+                            <img src="__IMG__/new_index/img_video@3x.png" class="img_mobile">
+                        </a>     
+                    </div>
+                </div>
+
+           </div>
+<!--END HERO -->
+
+
+<!-- LOGOS -->
+            <div class="section" id="blocks">
+                <div class="container">
+                   
+                    <div class="container_blocks" id="container_blocks">
+                        <a href="#analyze" class="block scroll">
+                            <span class="icon" id="icon_2"></span>
+                            <h4>Under the decentralized account system</h4>
+                            <p>The decentration of account system designed by ethereum that allows user accounts to be no longer controlled by any organization to make users can freely select any application and link all the applications.</p>
+                           
+                        </a>
+                        <a href="#workflow" class="block scroll">
+                            <span class="icon"></span>
+                            <h4>Interaction produces value</h4>
+                            <p>By validly motivating users' interactive behavior, highly dynamic interaction acts as the basis for incentive selection, it fully stimulates the value creation of users and application developers.</p>
+                            
+                        </a>
+                        <a href="#implement" class="block scroll">
+                            <span class="icon" id="icon_3"></span>
+                            <h4>Intelligent recommendation system</h4>
+                            <p>Innovatively combines the three basic algorithms above and the interaction behavior based on the block chain. these interactive behaviors are important data for personalized intelligent</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    <!-- LOGOS -->
+
+    <!-- Analyze -->
+            <div id="analyze" class="section">
+                <div class="container">
+                    <div class="container_col">
+                        <div class="column text" id="col_2">
+                            <h3>Decentralized community ecology</h3>
+                            <p>Traditional Internet service providers to provide login authorization, although improved user experience, but it has brought the issue of channel monopoly. Therefore, based on the decentralized account system designed by Ethereum, we enable eco-users to hold token-based blockchain and smart contracts and use their own interactive behaviors to "vote" and spend on applications Produce an open, fair and democratic autonomous ecosystem.</p>
+                           <!--  <ul class="list">
+                               <li><p>From topic classification to sentiment analysis and entity extraction.</p></li>
+                               <li><p>Process text data in Google Sheets, CSV or Excel.</p></li>
+                               <li><p>Check our integrations, no coding required:</p></li>
+                           </ul> -->
+                            <!-- <a href="javascript:if(confirm('https://chrome.google.com/webstore/detail/monkeylearn/cedpjjdkkbclbllppflfmoacfcjpmdng?hl=en  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://chrome.google.com/webstore/detail/monkeylearn/cedpjjdkkbclbllppflfmoacfcjpmdng?hl=en'" tppabs="https://chrome.google.com/webstore/detail/monkeylearn/cedpjjdkkbclbllppflfmoacfcjpmdng?hl=en" target="_blank" class="logo"><img src="__IMG__/new_index/google_sheets.png" tppabs="https://monkeylearn.com/__IMG__/new_index/google_sheets.png"></a>
+                            <a href="javascript:if(confirm('https://marketplace.rapidminer.com/UpdateServer/faces/product_details.xhtml?productId=rmx_monkeylearn  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://marketplace.rapidminer.com/UpdateServer/faces/product_details.xhtml?productId=rmx_monkeylearn'" tppabs="https://marketplace.rapidminer.com/UpdateServer/faces/product_details.xhtml?productId=rmx_monkeylearn" target="_blank" class="logo"><img src="__IMG__/new_index/rapidminer.png" tppabs="https://monkeylearn.com/__IMG__/new_index/rapidminer.png"></a> -->
+                            <!-- <button class="btn_more">Learn More</button> -->
+                        </div>
+                        <div class="column" id="col_1">
+                            <img id="img_back" src="__IMG__/new_index/img_hero_03.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- END Analyze -->
+
+    <!-- WORKFLOW -->
+            <div id="workflow" class="section">
+                <div class="container">
+                    <div class="container_col">
+                        <div class="column text" id="col_1">
+                            <h3>Interaction produces value </h3>
+                            <p>In the highly varied era of mobile Internet, user groups have great initiative and influence to drive voicett direction, create word of mouth economy and subvert corporate brand. The role of the user has changed from the passive embracer of the value to the value creator.</p>
+                            <ul class="list">
+                                <li><p>The goal of application developers is not to create user value, but to encourage users to create their own value from the services provided by the application developers, so as to drive the promotion of product value.
+Interaction is the behavior path of value</p></li>
+                                <li><p>Interaction is the behavior path of value creation. The user is the core subject of interaction.</p></li>
+                                <!-- <li><p>Automatically share relevant content on social media</p></li> -->
+                                <li><p>By validly motivating users' interactive behavior, highly dynamic interaction acts as the basis for incentive selection, it fully stimulates the value creation of users and application developers.</p></li>
+                            </ul>
+                            <!-- <button class="btn_more">Learn More</button> -->
+                        </div>
+                        <div class="column" id="col_2">
+                            <div class="content">
+                                <img id="img_col2" src="__IMG__/new_index/back_monkey.png">
+                                <span class="container_icons">
+                                    <img id="img1" src="__IMG__/new_index/icon_zapier.png">
+                                    <img id="img2" src="__IMG__/new_index/icon_zendesk.png">
+                                    <img id="img3" src="__IMG__/new_index/icon_file.png">
+                                    <img id="img4" src="__IMG__/new_index/icon_gmail.png">
+                                    <img id="img5" src="__IMG__/new_index/icon_delighted.png">
+                                    <img id="img6" src="__IMG__/new_index/icon_tweet.png">
+                                    <img id="img7" src="__IMG__/new_index/icon_intercom.png">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- END WORKFLOW -->
+
+    <!-- Implement -->
+           <div id="implement" class="section">
+               <div class="container">
+                   <div class="container_col">
+                       <div class="column text" id="col_1">
+                           <h3>Intelligent recommendation system</h3>
+                           <p>Using three kinds of Internet common recommendation system based on the blockchain. Each interaction with the user reflects the essential needs of the user's heart, including browsing, clicking, comments, ratings, etc. These interactive behaviors are important data for personalized intelligent recommendation system. According to the user's own unique behavior data, Users generate unique portraits, and interactive behavior among users to make a comparison, you can build a similarity matrix. Under the decentralized account system, it is possible to collect user interaction data, so as to make the recommendation system more accurate, and the user requirements and application requirements more closely match.</p>
+                           <!-- <ul class="list">
+                               <li><p>Train and run custom machine learning models in our cloud.</p></li>
+                               <li><p>Built in open source SDKs for major languages.</p></li>
+                               <li><p>Check our <a href="api/index.htm" tppabs="https://monkeylearn.com/docs/article/api-reference/" target="_blank">API docs</a> and <a href="javascript:if(confirm('https://github.com/monkeylearn  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/monkeylearn'" tppabs="https://github.com/monkeylearn" target="_blank">SDKs</a>.</p></li>
+                           </ul> -->
+                           <!-- <button class="btn_more">Learn More</button> -->
+                       </div>
+                       <div class="column" id="col_2">
+                           <img style="width: 100%; "src="__IMG__/new_index/add.png"  alt="" />
+                       </div>
+                   </div>
+               </div>
+           </div>
+     <!--           END Implement -->
+    <!-- TESTIMONY-->
+            <div id="testimony" class="section">
+                <h4 class="dev">Development Plan</h4>
+                <div class="container">
+                    <!-- <div class="img-tree">
+                        <div class="tree-detail">
+                            <img style="float: left;"src="__IMG__/new_index/Develop.png" alt="" />
+                        </div>
+                    </div> -->
+                     <div class="row">
+                         <div class="col">
+                            <img src="__IMG__/new_index/Develop.png">
+                            <!-- <div class="text">
+                                <h4>Alex MacCaw</h4>
+                                <h5>Co-Founder & CEO @ Clearbit</h5>
+                                <p>â€œMonkeyLearn is an integral part of Clearbit - itâ€™s saved countless hours.â€</p>
+                                <a><img src="__IMG__/new_index/logo_clearbit.png" tppabs="https://monkeylearn.com/__IMG__/new_index/logo_clearbit.png"></a>
+                            </div> -->
+                        </div>
+                     </div>
+                <!-- <span>
+                    <div class="row">
+                        <div class="col">
+                            <img src="__IMG__/new_index/img_testimony1.png" tppabs="https://monkeylearn.com/__IMG__/new_index/img_testimony1.png">
+                            <div class="text">
+                                <h4>Alex MacCaw</h4>
+                                <h5>Co-Founder & CEO @ Clearbit</h5>
+                                <p>â€œMonkeyLearn is an integral part of Clearbit - itâ€™s saved countless hours.â€</p>
+                                <a><img src="__IMG__/new_index/logo_clearbit.png" tppabs="https://monkeylearn.com/__IMG__/new_index/logo_clearbit.png"></a>
+                            </div>
+                        </div>
+                        <div class="col" id="col_2">
+                            <img src="__IMG__/new_index/img_testimony2.png" tppabs="https://monkeylearn.com/__IMG__/new_index/img_testimony2.png">
+                            <div class="text">
+                                <h4>Guillaume Cabane</h4>
+                                <h5>VP Growth @ Segment</h5>
+                                <p>â€œWe use Zapier with MonkeyLearn to collect, classify and analyze the sentiment of responses to our outbound emails. Itâ€™s been a great tool for allowing us to automate sales workflows without the need to rope in developers.â€</p>
+                                <a><img src="__IMG__/new_index/logo_segment.png" tppabs="https://monkeylearn.com/__IMG__/new_index/logo_segment.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="__IMG__/new_index/img_testimony3.png" tppabs="https://monkeylearn.com/__IMG__/new_index/img_testimony3.png">
+                            <div class="text">
+                                <h4>Rand Fishkin</h4>
+                                <h5>Co-Founder @ Moz</h5>
+                                <p>â€œMonkeyLearn is one of the most innovative and compelling platforms I've used. I've also loved working with MonkeyLearn's team - their willingness to help me build great products to help our community have put them among my favorite new companies.â€</p>
+                                <a><img src="__IMG__/new_index/logo_moz.png" tppabs="https://monkeylearn.com/__IMG__/new_index/logo_moz.png"></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="__IMG__/new_index/img_testimony4.png" tppabs="https://monkeylearn.com/__IMG__/new_index/img_testimony4.png">
+                            <div class="text">
+                                <h4>Stephen Blum</h4>
+                                <h5>Co-Founder & CEO @ PubNub</h5>
+                                <p>â€œI'm using MonkeyLearn APIs to get CRM lead categories for marketing drip campaigns. Alert on support desk agent happiness and customer churn risk.â€</p>
+                                <a><img src="__IMG__/new_index/logo_pubnub.png" tppabs="https://monkeylearn.com/__IMG__/new_index/logo_pubnub.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </span> -->
+                </div>
+                <div class="signUp_section">
+                    <div class="text_middle">
+                        <h3>Start your interaction today</h3>
+                        <p>Get your behavior reward and fully forced on your creation</p>
+                        <div class="signUp-form">
+                            <if condition="is_user_login()">
+                                    
+                            <else/>
+                                <a href="{:U('public/login')}"><button class="sign_free">Sign Up for Free</button></a></li>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- END testimony -->
+
+
+
+  <footer id="footer">
+      <!-- <div class="nav_footer">
+          <div class="container">
+              <ul>
+                  <li class="column_footer ">
+                      <h5>Use Cases</h5>
+                      <a href="">Automate Workflows</a>
+                      <a href="">Analyze Text Data</a>
+                      <a href="">Implement NPL Features</a>
+                  </li>
+                  <li class="column_footer">
+                      <h5>Resources</h5>
+                      <a href="pricing/index.htm" tppabs="https://monkeylearn.com/pricing">Pricing</a>
+                      <a href="/integrations">Integrations</a>
+                      <a href="javascript:if(confirm('http://help.monkeylearn.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://help.monkeylearn.com/'" tppabs="http://help.monkeylearn.com/">Help</a>
+                      <a href="api/index.htm" tppabs="https://monkeylearn.com/api">API Reference</a>
+                      <a href="blog/index.htm" tppabs="https://monkeylearn.com/blog">Blog</a>
+                  </li>
+                  <li class="column_footer">
+                      <h5>Company</h5>
+                      <a href="about/index.htm" tppabs="https://monkeylearn.com/about">About</a>
+                      <a href="javascript:if(confirm('https://twitter.com/monkeylearn  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://twitter.com/monkeylearn'" tppabs="https://twitter.com/monkeylearn">Twitter</a>
+                      <a href="javascript:if(confirm('https://github.com/monkeylearn  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='https://github.com/monkeylearn'" tppabs="https://github.com/monkeylearn">Github</a>
+                      <a href="javascript:if(confirm('http://slack.monkeylearn.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://slack.monkeylearn.com/'" tppabs="http://slack.monkeylearn.com/">Slack</a>
+                  </li>
+                  <li class="column_footer">
+                      <h5>Legal</h5>
+                      <a href="privacy/index.htm" tppabs="https://monkeylearn.com/privacy">Privacy Policy</a>
+                      <a href="terms/index.htm" tppabs="https://monkeylearn.com/terms">Terms</a>
+                  </li>
+              </ul>
+              <a href="index.htm"  class="logo"><img src="__IMG__/new_index/logo-blue.png" tppabs="https://monkeylearn.com/__IMG__/new_index/logo_black.svg" data-no-retina></a>
+          </div>
+      </div> -->
+
+             <div class="bottom">
+                <div class="bottom-left">
+                    <div class="logo">
+                        <img src="__IMG__/new_index/logo-blue.png" alt="" />
+                    </div>
+                    <div class="detail-text">
+                        <span>HuDong Network Technology Co.,Ltd</span>
+                        <span>official website：hudt.io</span>
+                        <span>official wechat：hudt-business</span>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <dl>
+                        <dt>
+                            <img src="__IMG__/new_index/wechat.jpg" alt="" />
+                        </dt>
+                        <dd>Wechat</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="__IMG__/new_index/Beechat.png" alt="" />
+                        </dt>
+                        <dd>Beechat</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="__IMG__/new_index/Telegram.png" alt="" /> 
+                        </dt>
+                        <dd>Telegram</dd>
+                    </dl>
+                </div>
+                <span class="bot">Hudong Tap Inc.All rights reserved 2018</span>
+            </div>
+               
+  </footer>
+
+</div>
+
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.min.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.waypoints.min.js"></script>
+    <!-- <script type="text/javascript" src="__JS__/new_index/retina.js"></script> -->
+    <script type="text/javascript" src="__JS__/new_index/jquery.validate.js"></script>
+    <script src="__JS__/new_index/packed.3704eaef.min.js"></script>
+
+    <script type="text/javascript">
+        $('#signUp-form').validate({
+            messages: {
+               email: {required: "This field is required" , email: "Please enter a valid email address"}
+            }
+        });
+    </script>
+
+    <!--script type="text/javascript">
+        function getRelatedContent(el){
+            return $($(el).attr('href'));
+        }
+        // Get link by section or article id
+        function getRelatedNavigation(el){
+            return $('.scroll [href=#'+$(el).attr('id')+']');
+        }
+        $('.scroll').on('click',function(e){
+          e.preventDefault();
+            $('html,body').animate({scrollTop:getRelatedContent(this).offset().top - 50}, 1000);
+        });
+    </script>
+    <script type="text/javascript">
+    _linkedin_data_partner_id = "76069";
+     </script><script type="text/javascript">
+    (function(){var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"/*tpa=https://snap.licdn.com/li.lms-analytics/insight.min.js*/;
+    s.parentNode.insertBefore(b, s);})();
+    </script> 
+    <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="px.ads.linkedin.com/collect/-3pc=true&ck=&fmt=gif&an_user_id=6018284967895387890&pid=76069&anId=6018284967895387890.gif" tppabs="https://dc.ads.linkedin.com/collect/?pid=76069&fmt=gif" />
+    </noscript-->
+
+    </body>
+</html>

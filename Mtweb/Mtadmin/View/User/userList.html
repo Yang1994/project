@@ -1,0 +1,107 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>连麦管理</h2>
+	</div>
+    
+	<div class="cf">
+		<!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div>
+				<label>&nbsp;</label>
+				<label>用户id:</label>
+				<input type="text" name="uid" value="{:I('uid')}" placeholder="请输入主播id">
+				<label>&nbsp;</label>
+				<label>连麦状态：</label>
+				<select id="status" name="status" class="status">
+				 	<option value=""  <if condition="$Status eq 2">selected</if>>全部</option>
+					<option value="1" <if condition="$Status eq 1 ">selected</if>>开启</option>
+					<option value="0" <if condition="$Status eq 0 ">selected</if>>关闭</option>
+				</select>&nbsp;
+				<a class="sch-btn" href="javascript:;" id="search" url="{:U('User/userList')}"><i class="btn-search"></i></a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 数据表格 -->
+    <div class="data-table">
+		<table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"></th>
+                    <th>编号</th><th>用户id</th><th>昵称</th><th>姓名</th>
+                    <th>证件类型</th><th>证件号码</th><th>连麦状态</th><th>操作</th>  				
+                </tr>
+            </thead>
+			
+			<volist name="data" id="data"  key="k">
+                <tr>
+					<td><input class="ids" type="checkbox" value="{$data['uid']}" name="ids[]"></td>
+					<td>{$k}</td> 
+					<td>{$data['uid']}</td>
+					<td>{$data['nick_name']}</td>
+					<td>{$data['name']}</td>
+					<td>
+						<eq name="data.identify_type" value="3">军人证</eq>
+						<eq name="data.identify_type" value="2">护照</eq>
+						<eq name="data.identify_type" value="1">身份证</eq>
+			  			<eq name="data.identify_type" value=""></eq>
+					</td>
+					<td>{$data['identification']}</td>
+					<td>
+			  			<eq name="data.can_link_mic" value="1">开启</eq>
+			  			<eq name="data.can_link_mic" value="0">关闭</eq>
+			  		</td> 
+					<td>
+					    <a href="{:U('User/change_mic?uid='.$data['uid'].'&mic='.abs(1-$data['can_link_mic']))}" class="ajax-get">{$data.can_link_mic|show_mic_op}</a>					  
+					</td>
+            	</tr>
+            </volist>
+        </table>
+  	</div>
+	
+	<!-- 分页 -->
+	<div class="page">
+        {$_page}
+    </div>
+</block>
+
+<block name="script">
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+		
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+
+        var status = $('.status').val();
+        
+        if(status){
+        	searchurl = url+'&status='+status;
+        }else{
+        	searchurl = url;
+        }
+		window.location.href = searchurl;
+	});
+
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/userList')}');
+	</script>	
+</block>

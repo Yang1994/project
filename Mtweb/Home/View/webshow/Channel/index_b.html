@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="17岁以下禁入，真人面对面私聊，最新深夜福利">
+    <title>17玩直播，美女交友</title>
+    <link rel="stylesheet" href="__CSS__/reset.css">
+    <style>
+        html, body {
+            float: left;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .wrap { 
+            float: left;
+            width: 100%;
+            height: 100%;
+            background: url("{$info['link_img']}") center center no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap img {
+            float: left;
+            width: 100%;
+        }
+        .bottom-bg {
+            position: fixed;
+            width: 34%;
+            left: 60%;
+            top: 2rem;
+        }
+        .bottom-bg img {
+            float: left;
+            width: 100%;
+        }
+        
+
+    </style> 
+</head>
+<body>
+    <div class="wrap">
+        <div class="bottom-bg">
+            <a href="{:U('Channel/download','id='.$info['id'],false)}"><img src="{$info['bottom_img']}" alt="17wan下载" /></a>
+        </div>
+
+    </div>
+        <script src="__JS__/jquery.js" charset="utf-8" type="text/javascript">
+        $(".wrap").height($(window).height());
+    </script>
+</body>
+</html>  

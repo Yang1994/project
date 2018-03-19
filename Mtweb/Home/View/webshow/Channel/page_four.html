@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en" style="font-size: 20px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body,html{
+            position: relative;
+            width:100%;
+            height:100%;
+        }
+        .header{
+            position: absolute;
+            top:0;
+            left:0;
+            width:3rem;
+        }
+        .header_line1 {
+            position: absolute;
+            left: 40%;
+            top: 1%;
+            -webkit-transform: rotate(-7deg);
+            -webkit-animation: xian1 0.7s linear infinite alternate;
+        }
+        @-webkit-keyframes xian1 {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        .header_line2 {
+            position: absolute;
+            left: 26%;
+            top: 1%;
+            -webkit-transform: rotate(-36deg);
+            -webkit-animation: xian2 1s linear infinite alternate;
+
+        }
+        @-webkit-keyframes xian2 {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        .header_line3 {
+            position: absolute;
+            left: 18%;
+            top: 7%;
+            -webkit-transform: rotate(101deg);
+            -webkit-animation: xian3 0.4s linear infinite alternate;
+
+        }
+        @-webkit-keyframes xian3 {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        .header_line4 {
+            position: absolute;
+            left: 70%;
+            top: 1%;
+            -webkit-transform: rotate(217deg);
+            -webkit-animation: xian4 1.3s linear infinite alternate;
+        }
+        @-webkit-keyframes xian4 {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        .header_line5 {
+            position: absolute;
+            left: 79%;
+            top: 6%;
+            -webkit-transform: rotate(246deg);
+            -webkit-animation: xian5 1.6s linear infinite alternate;
+        }
+        @-webkit-keyframes xian5 {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        .header_logo {
+            position: absolute;
+            width: 2rem;
+            left: 2%;
+            top: 4%;
+        }
+        .car_xingxing {
+            position: absolute;
+            top: 34%;
+            left: 10%;
+            -webkit-animation: san 1s linear infinite alternate;
+        }
+        @-webkit-keyframes san {
+            from {
+                opacity:0;
+                -webkit-transform: scale(1);
+            }
+            to {
+                opacity:1;
+                -webkit-transform: scale(1.2);
+            }
+        }
+        .box{
+            position: relative;
+            width:100%;
+            height:100%;
+        }
+        .header_title {
+            top:5%;
+            width:50%;
+            position: absolute;
+            left:0;
+            right:0;
+            margin: auto;
+        }
+        .car_img{
+            width:100%;
+            height: 100%;
+            display: block;
+        }
+        .car_img_down{
+            width: 64%;
+            position: absolute;
+            left: 21% ;
+            bottom: 1.5rem;
+            z-index: 9999;
+            -webkit-animation: move 0.3s linear infinite alternate;
+        }
+
+        @-webkit-keyframes move {
+            0% {
+                -webkit-transform: rotate(5deg);
+            }
+            50% {
+                  -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(-5deg);
+            }
+        }
+        .fontsize{
+            width:100%;
+            text-align: center;
+            font-size: 0.5rem;
+            position: absolute;
+            bottom: 0;
+            color: white;
+            -webkit-transform: scale(0.8);
+        }
+    </style>
+</head>
+<body>
+<input type="hidden" name="auto_download" class="auto_download" value="{$info['auto_download']}">
+<div class="box">
+    <a href="{:U('Channel/download','id='.$info['id'],false)}"><img class="car_img down" src="{$info['link_img']}"  alt=""></a>
+    <a href="{:U('Channel/download','id='.$info['id'],false)}"><img class="car_img_down down" src="{$info['bottom_img']}" alt=""></a>
+</div>
+</body></html>
+<script type="text/javascript">
+    var auto = $('.auto_download').val();
+    if(auto==1){
+        setTimeout(function(){
+            invokeClick(document.getElementById("down_btn"));   
+        },500);
+    } 
+    function invokeClick(element) {
+    if(element.click){
+        element.click(); //判断是否支持click() 事件  
+    } else if(element.fireEvent) {
+        element.fireEvent('onclick'); //触发click() 事件  
+    } else if(document.createEvent) {  
+        var evt = document.createEvent("MouseEvents"); //创建click() 事件  
+        evt.initEvent("click", true, true); //初始化click() 事件  
+        element.dispatchEvent(evt); //分发click() 事件  
+    }
+}
+</script>
